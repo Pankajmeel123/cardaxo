@@ -1,0 +1,42 @@
+// .custom-button-container {
+//   width: 100%;
+//   text-align: center;
+//   padding: 4vh 50px;
+// }
+
+ion-row {
+  width: 100%;
+}
+
+.height-container {
+  height: 90vh;
+}
+
+.max-width-input {
+  max-width: 400px;
+}
+
+.checklist{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img{
+    width: 25px;
+  }
+}
+
+.image-width {
+  max-width: 400px;
+  width: 100%;
+}
+
+.padding-head {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.limited-width {
+  max-width: 400px;
+  margin: 0 auto;
+  color: var(--ion-color-primary);
+}

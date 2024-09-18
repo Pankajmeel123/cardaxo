@@ -1,0 +1,58 @@
+.custom-button-container {
+  width: 100%;
+  text-align: center;
+  padding: 4vh 50px;
+}
+
+.total_balance {
+  margin-top: 15px;
+  padding: 0px 10px;
+
+  ion-card {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    color: var(--ion-color-primary);
+    margin: 10px 5px;
+    background: var(--ion-color-secondary);
+  }
+
+  h5{
+    margin: 10px 0 0;
+  }
+
+  ion-col{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ion-icon {
+    font-size: 3vh;
+  }
+
+  .balance{
+    text-align: left;
+    padding:10px;
+    color: var(--ion-color-primary);
+    p{
+      display: flex;
+      align-items: center;
+    }
+    ion-icon{
+      margin-right: 10px;
+    }
+  }
+
+  h5 {
+    font-size: 12px;
+    padding: 0px !important;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: -10px;
+  }
+}

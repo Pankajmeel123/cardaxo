@@ -1,0 +1,36 @@
+ion-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 0px 50px;
+
+  span {
+    color: #414141;
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+}
+
+ion-card:before {
+  content: "copied";
+  position: absolute;
+  top: -150px;
+  right: 0px;
+  background: var(--ion-color-primary, white);
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.height-container {
+  height: 70vh;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,27 @@
+.image_kyc {
+  margin: 4vh 20px 6vh 20px;
+  border-radius: 8px;
+  border-style: dashed;
+  border-color: var(--ion-color-primary);
+  height: 236px;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.custom-button-container {
+  width: 100%;
+  text-align: center;
+  padding: 4vh 50px;
+}
+
+
+
+
+ion-button {
+  font-weight: bold;
+  text-transform: unset;
+  max-width: 700px;
+  margin: auto;
+  height: 50px;
+
+}

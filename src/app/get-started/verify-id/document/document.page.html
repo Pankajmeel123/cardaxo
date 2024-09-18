@@ -1,0 +1,175 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+  <ion-grid>
+    <ion-row class="ion-justify-content-between height-container">
+      <ion-col>
+        <ion-grid>
+          <!-- first page -->
+          <ion-row *ngIf="pageIndex === 0" class="ion-justify-content-center ion-align-items-center">
+            <ion-col size="12">
+              <h2>Select your document type</h2>
+              <p>
+                We need to determine if any identity documenttis authentic and belongs to you
+              </p>
+            </ion-col>
+            <ion-col size="12" *ngFor="let verification of verifications; index as i" style="padding: 0px;">
+              <ion-button (click)="toggleDoc(i,verification)" class="left_btn" expand="full" color="primary" shape="round" style="font-weight: bold;margin: 10px 0 !important; text-transform:uppercase;  max-width: 700px; margin: auto; height: 50px;">
+                {{verification.name}}<ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+              </ion-button>
+              <!-- <ion-card [ngClass]="{'ion-card-active': selectedIndex === i}" (click)="toggleDoc(i,verification)">
+                <ion-card-header>
+                  <ion-card-subtitle>
+                    <ion-icon [name]="verification.icon"></ion-icon>
+                    {{verification.name}}</ion-card-subtitle>
+
+                </ion-card-header>
+              </ion-card> -->
+            </ion-col>
+          </ion-row>
+          <!-- end first page -->
+
+          <!-- second page -->
+          <ion-row *ngIf="pageIndex === 1" class="ion-justify-content-center ion-align-items-center">
+            <ion-col size="12">
+              <h2 style="text-transform: uppercase;">Complete Your Verification</h2>
+              <!-- <h4>Scan your {{typeDoc}}</h4> -->
+              <p>The process usually takes 1-5 minutes, but may occasionally take longer</p>
+
+              <!-- <p>
+                Please make sure that all information is within the borders of the scanner
+              </p> -->
+              <ion-grid>
+                <ion-row class="ion-justify-content-center prepare">
+                  <ion-col size="12" class="step_col">
+                    <p>Take a selfie.</p>
+                    <ion-spinner color="primary" name="bubbles" *ngIf="isLoading && sequenceFlow == 0"></ion-spinner>
+                    <ion-icon name="checkmark-done-circle-outline" color="primary"
+                    *ngIf="(!isLoading && sequenceFlow == 0) || sequenceFlow > 0"></ion-icon>
+                  </ion-col>
+                  <ion-col size="12" class="step_col">
+                    <p>Scan the front of document.</p>
+                    <ion-spinner color="primary" name="bubbles" *ngIf="isLoading && sequenceFlow == 1"></ion-spinner>
+                    <ion-icon name="checkmark-done-circle-outline" color="primary"
+                    *ngIf="(!isLoading && sequenceFlow == 1) || sequenceFlow > 1"></ion-icon>
+                  </ion-col>
+                  <ion-col size="12" class="step_col">
+                    <p>Scan the back of document.</p>
+                    <ion-spinner color="primary" name="bubbles" *ngIf="isLoading && sequenceFlow == 2"></ion-spinner>
+                    <ion-icon name="checkmark-done-circle-outline" color="primary"
+                    *ngIf="(!isLoading && sequenceFlow == 2) || sequenceFlow > 2"></ion-icon>
+                  </ion-col>
+                  <ion-col size="12" class="step_col">
+                    <p>Submit the document.</p>
+                    <ion-spinner color="primary" name="bubbles" *ngIf="isLoading && sequenceFlow == 3"></ion-spinner>
+                    <ion-icon name="checkmark-done-circle-outline" color="primary"
+                    *ngIf="(!isLoading && sequenceFlow == 3) || sequenceFlow > 3"></ion-icon>
+                  </ion-col>
+                  <!-- </div> -->
+                </ion-row>
+              </ion-grid>
+
+
+              <div class="ion-padding-bottom">
+              </div>
+            </ion-col>
+          </ion-row>
+          <!-- end second page  -->
+        </ion-grid>
+      </ion-col>
+      <ion-col size="12">
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <ion-col *ngIf="pageIndex === 1">
+            <p style="font-size: 10px;">to complete the verification process, you need to submit all the documents. of experience any issues, contact support</p>
+            <app-primary-button [label]="typeOfAction[sequenceFlow+1]" [isLoading]="isLoading"
+              (click)="scan()"></app-primary-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="3" offset="3" class="line">
+        <hr class="line_color" [ngClass]="{'line_color_active': pageIndex === 0}" />
+      </ion-col>
+      <ion-col size="3" class="line">
+        <hr class="line_color" [ngClass]="{'line_color_active': pageIndex === 1}" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <div class="the_first_page" *ngIf="pageIndex === 0">
+    <div class="ion-padding-horizontal">
+
+      <div class="ion-padding-bottom">
+        <h2>Select the type of document you wish to scan</h2>
+        <p>
+          We need to determine if any identity documenttis authentic and belongs to you
+        </p>
+      </div>
+
+
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col style="max-width: 700px;">
+          <ion-card [ngClass]="{'ion-card-active': selectedIndex === i}" (click)="toggleDoc(i,verification)"
+            *ngFor="let verification of verifications; index as i">
+            <ion-card-header>
+              <ion-card-subtitle>
+                <ion-icon [name]="verification.icon"></ion-icon>
+                {{verification.name}}</ion-card-subtitle>
+
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+    </div>
+
+
+    <div class="custom-button-container ">
+      <ion-button expand="full" shape="round" (click)="nextSecondPage()">NEXT</ion-button>
+    </div>
+  </div>
+
+
+  <div class="the_second_page" *ngIf="pageIndex === 1">
+    <div class="ion-padding-horizontal">
+
+      <h2>Scan your {{typeDoc}}</h2>
+
+      <ion-row class="ion-justify-content-center">
+        <div class="image_kyc">
+          <img src="assets/image/kyc.jpg" style="height: 236px;" alt="">
+        </div>
+      </ion-row>
+
+      <div class="ion-padding-bottom">
+        <p>
+          Please make sure that all information is within the borders of the scanner
+        </p>
+      </div>
+
+
+
+    </div>
+    <div class="custom-button-container ">
+      <ion-button expand="full" shape="round" (click)="scan()">Scan</ion-button>
+    </div>
+  </div> -->
+
+
+
+</ion-content>
+
+<div id='veriff-root'></div>

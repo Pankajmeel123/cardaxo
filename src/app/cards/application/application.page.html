@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: bold;">Application</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="height-container">
+      <ion-col size="12">
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <img src="assets/image/w_logo.png" alt=""
+            style="margin-bottom: -10px; margin-right: 10px; width: 70%;">
+          <!-- <h6 style="font-weight: 400; font-size: 30px; ">CARDAXO</h6> -->
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-row class="ion-justify-content-center">
+          <ion-card>
+            <ion-item>
+              <ion-input label="First Name" label-placement="floating" placeholder="Enter your first name"
+                (ionChange)="firstNameChanage($event)"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Last Name" label-placement="floating" placeholder="Enter your last name"
+                (ionChange)="lastNameChanage($event)"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="email" label="Email" label-placement="floating" (ionChange)="emailChanage($event)"
+                placeholder="Enter your email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ionic-selectable style="max-width:fit-content !important" class="max-width-input ion-text-start"
+                label-placement="floating" fill="solid" item-content [(ngModel)]="port" [items]="countries"
+                itemValueField="code" itemTextField="name" [canSearch]="true" (onChange)="countryCodeChange($event)">
+                <ng-template ionicSelectableItemTemplate let-port="item" let-isPortSelected="true">
+                  {{port.name}} ({{port.code}})
+                </ng-template>
+                <ng-template ionicSelectableValueTemplate let-port="value">
+                  {{port.name}} ({{port.code}})
+                </ng-template>
+                <ng-template ionicSelectablePlaceholderTemplate>
+                  Country Code
+                </ng-template>
+              </ionic-selectable>
+            </ion-item>
+            <!-- <ion-item>
+              <ion-input label="Country Code" label-placement="floating" placeholder="Ex:+91"
+                (ionChange)="mobileCodeChanage($event)"></ion-input>
+            </ion-item> -->
+            <ion-item>
+              <ion-input label="Mobile" label-placement="floating" placeholder="Enter your mobile"
+                (ionChange)="mobileChanage($event)"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number" label="Recharge Amount (USD)" label-placement="floating"
+                (ionChange)="firstChargeChanage($event)" placeholder="Enter first recharge amount (USD)"></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-row>
+
+
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+
+
+  <div class="custom-button-container ">
+    <ion-button expand="full" shape="round" (click)="apply()"
+      style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px;"><ion-spinner
+        name="lines" *ngIf="isLoading"></ion-spinner>{{ isLoading ? '' : 'APPLY' }}</ion-button>
+  </div>
+</ion-content>

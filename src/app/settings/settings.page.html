@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="font-weight: bold;">
+      Account
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button><ion-icon name="notifications-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col style="padding: 50px;">
+        <ion-icon name="person-circle-outline" color="secondary" size="large"></ion-icon>
+        <p style="color: var(--ion-color-secondary);">{{account}}</p>
+      </ion-col>
+      <ion-col size="12" style="padding: 5px 15px;">
+        <ion-button color="danger" expand="full" id="logout-alert">LOGOUT</ion-button>
+      </ion-col>
+      <ion-col size="12" style="padding: 5px 15px;">
+        <ion-button color="danger" fill="outline" id="delete-alert">DELETE ACCOUNT</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-alert trigger="logout-alert" header="Are you sure you want to logout!" [buttons]="alertButtons"></ion-alert>
+  <ion-alert trigger="delete-alert" header="Are you sure you want to delete your account!"
+    [buttons]="alertButtons"></ion-alert>
+</ion-content>

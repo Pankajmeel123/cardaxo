@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-align-center app_bar_title">Activation</ion-title>
+    <ion-buttons slot="end">
+      <div style="width: 48px;"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+
+  <div class="the_second_page">
+    <div class="ion-padding-horizontal">
+
+      <h2>Take a picture with your passport</h2>
+
+      <ion-row class="ion-justify-content-center">
+        <div class="image_kyc">
+          <img src="assets/image/kyc.jpg" style="height: 236px;" alt="">
+        </div>
+      </ion-row>
+
+      <div class="ion-padding-bottom">
+        <p>
+          Please make sure that all information is within the borders of the camera
+        </p>
+      </div>
+
+
+
+
+    </div>
+    <div class="custom-button-container ">
+      <ion-button expand="full" shape="round" (click)="scan()"><ion-spinner name="lines"
+          *ngIf="isLoading"></ion-spinner>{{ isLoading ? '' : 'Capture' }}</ion-button>
+    </div>
+  </div>
+
+
+
+</ion-content>

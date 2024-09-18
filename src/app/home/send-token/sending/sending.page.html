@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-align-center app_bar_title">Send {{cryptoName}}</ion-title>
+    <ion-buttons slot="end">
+      <div style="width: 48px;"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <img src="assets/image/logo-carddd.png" alt="" width="30px" height="45px"
+            style="margin-bottom: -10px; margin-right: 10px;">
+          <h6 style="font-weight: 400; font-size: 30px; ">CARDAXO</h6>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-row class="ion-justify-content-center">
+          <ion-card>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-input type="text" placeholder="Enter or paste the address" [(ngModel)]="fromAddress"
+                      (ionChange)="addressChanage($event)"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input type="number" placeholder="Enter amount" (ionChange)="amountChanage($event)"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <a href="#" (click)="pasteText($event)">
+                    <p expand="full">Paste</p>
+                  </a>
+                </ion-col>
+                <ion-col class="divider-col" size="auto">
+                  <div class="divider"></div>
+                </ion-col>
+                <ion-col class="ion-text-center">
+                  <a href="#" (click)="scanText($event)">
+                    <p expand="full">Scan</p>
+                  </a>
+                </ion-col>
+              </ion-row>
+              <div class="divider_horz"></div>
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <a href="#" (click)="transfer($event)">
+                    <p><ion-spinner name="lines" *ngIf="isLoading"></ion-spinner>{{ isLoading ? '' :
+                      'Send' }}</p>
+                  </a>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-row>
+
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

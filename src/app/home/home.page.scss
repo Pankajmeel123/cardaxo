@@ -1,0 +1,143 @@
+.total_balance {
+  margin-top: 15px;
+  padding: 0px 10px;
+
+  ion-card {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    color: var(--ion-color-primary);
+    margin: 10px 5px;
+    background: var(--ion-color-secondary);
+  }
+
+  h5{
+    margin: 10px 0 0;
+  }
+
+  ion-col{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ion-icon {
+    font-size: 3vh;
+  }
+
+  .balance{
+    text-align: left;
+    padding: 0 20px;
+    color: var(--ion-color-primary);
+    p{
+      display: flex;
+      align-items: center;
+    }
+    ion-icon{
+      margin-right: 10px;
+    }
+  }
+
+  h5 {
+    font-size: 12px;
+    padding: 0px !important;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: -10px;
+  }
+}
+
+
+// .portfolio {
+
+
+//   .horizontal-scroll {
+//     display: grid;
+//     grid-auto-flow: column;
+//     // grid-gap: 1px;
+//     overflow-x: auto;
+//     scroll-behavior: smooth;
+//   }
+
+//   ion-card {
+//     padding-top: 14px;
+//     width: 180px;
+//     margin-top: 0px;
+//     border-radius: 10px;
+
+//     ion-card-subtitle {
+//       font-size: 18px;
+//       margin: -5px 0px 10px 0px;
+//     }
+
+//     ion-card-title {
+//       font-size: 18px;
+//     }
+//   }
+
+
+// }
+
+.assets {
+  ion-grid{
+    padding: 0;
+  }
+  ion-card {
+    border-radius: 10px;
+    padding: 2px;
+    background: var(--ion-color-primary);
+    color: var(--ion-color-secondary);
+
+
+
+    ion-card-content {
+      padding: 0px;
+    }
+
+    ion-card-title {
+      font-size: 16px;
+      color: var(--ion-color-secondary);
+    }
+
+    ion-card-subtitle{
+      color: var(--ion-color-secondary);
+    }
+
+
+  }
+
+
+
+}
+
+.head_section {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 2vh 0vh 2vh;
+
+  h4 {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .total_balance {
+    ion-card {
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}

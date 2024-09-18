@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-align-center app_bar_title">Transaction</ion-title>
+    <ion-buttons slot="end">
+      <div style="width: 48px;"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+  <div *ngIf="isLoading">
+    <ion-card *ngFor="let i of [].constructor(10);">
+      <ion-card-content>
+        <app-skeleton-card></app-skeleton-card>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="!isLoading && !( transactionsRoynex && transactionsRoynex.length > 0)">
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
+        <ion-col size="8">
+          <h4>
+            There is no Transaction.
+          </h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <div *ngIf="!isLoading && transactionsRoynex && transactionsRoynex.length > 0">
+    <ion-card *ngFor="let transaction of transactionsRoynex; let i = index" (click)="toggleDetails(i)">
+      <ion-card-content>
+        <ion-item [lines]="showDetails === i ? 'full' : 'none'">
+          <ion-label>Transaction ID</ion-label>
+          <ion-label slot="end">{{ transaction.order_id }}<ion-icon
+              [name]="showDetails === i ? 'caret-up-outline': 'caret-down-outline'"
+              style="padding-left: 10px;"></ion-icon></ion-label>
+        </ion-item>
+        <ion-list lines="none" *ngIf="showDetails === i">
+          <!-- <ion-item>
+            <ion-label>Credit</ion-label>
+            <ion-label slot="end">{{ bankTransaction.credit | number:'1.1-4'}} {{
+              bankTransaction.tx_currency}}</ion-label>
+          </ion-item> -->
+          <ion-item>
+            <ion-label>Amount</ion-label>
+            <ion-label slot="end">{{ transaction.amount | number:'1.1-4'}} {{ cryptoName
+              }}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>fee</ion-label>
+            <ion-label slot="end">{{ transaction.fee ?? 0 | number:'1.1-4'}} {{ cryptoName
+              }}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Transaction Type</ion-label>
+            <ion-label slot="end">{{ transaction.transaction_type }}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Transaction State</ion-label>
+            <ion-label slot="end">{{ transaction.transaction_status }}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Transaction Date</ion-label>
+            <ion-label slot="end">{{ transaction.created_at | date: 'medium'}}</ion-label>
+          </ion-item>
+          <!-- <ion-item>
+            <ion-label>MC Trade no.</ion-label>
+            <ion-label slot="end">{{ bankTransaction.mc_trade_no }}</ion-label>
+          </ion-item> -->
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+
+
+
+
+
+</ion-content>

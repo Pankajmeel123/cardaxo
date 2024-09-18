@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center app_bar_title" style="font-weight: bold;"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+
+  <ion-grid>
+    <ion-row class="height-container">
+      <ion-row class="ion-align-items-center padding-head">
+        <ion-col size="12" size-md="6">
+          <img class="image-width" src="assets/image/w_logo.png" height="40px" width="250px" alt="">
+        </ion-col>
+        <ion-col size="12" size-md="6">
+          <h2>REGISTER</h2>
+          <!-- <p class="limited-width" style="text-align: left; margin: 20px 0px 5px;">COUNTRY CODE</p>
+          <ionic-selectable class="max-width-input ion-text-start" fill="outline"
+              item-content [(ngModel)]="port" [items]="countries" itemValueField="code" itemTextField="name"
+              [canSearch]="true" (onChange)="countryCodeChange($event)">
+              <ng-template ionicSelectableItemTemplate let-port="item" let-isPortSelected="true">
+                {{port.name}} ({{port.code}})
+              </ng-template>
+              <ng-template ionicSelectableValueTemplate let-port="value">
+                {{port.name}} ({{port.code}})
+              </ng-template>
+              <ng-template ionicSelectablePlaceholderTemplate>
+                Country Code
+              </ng-template>
+            </ionic-selectable> -->
+          <p class="limited-width" style="text-align: left; margin: 20px 0px 5px;">MOBILE NUMBER</p>
+          <ion-input style="padding: 0px 20px;" class="ion-text-start max-width-input" fill="outline"
+              (ionChange)="inputNumberChanage($event)" type="number"></ion-input>
+          <app-primary-button label="NEXT" (click)="send()"></app-primary-button>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

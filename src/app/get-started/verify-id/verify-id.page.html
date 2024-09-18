@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+  <ion-grid>
+    <ion-row class="height-container">
+      <ion-row class="padding-head">
+        <ion-col size="12" size-md="6">
+          <p class="limited-width ion-padding-vertical">Before purchasing a card, you need to complete the following security certifications</p>
+          <div class="checklist">1. Bind Email <span *ngIf="true"><img src="/assets/image/check-mark.png"></span></div>
+          <div class="checklist">2. Bind Mobile <span *ngIf="false"><img src="/assets/image/check-mark.png"></span></div>
+          <div class="checklist">3. Identity Verification <span></span></div>
+          <!-- <div>4</div> -->
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col>
+          <p style="font-size: 10px;" class="limited-width">
+            As we're a financial service, we have comply<br>
+            <span style="font-weight: bold;">KYC and AML requirements.</span>
+          </p>
+          <app-primary-button label="NEXT" (click)="next()"></app-primary-button>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <div class="ion-padding-horizontal">
+
+    <img src="assets/image/verifyID.png" alt="">
+    <h2>We need to verify your ID</h2>
+    <p>
+      In order to create an account, we need to be 100% sure that You are you.
+      As we're a financial service, we have comply
+      <span>KYC and AML requirements.</span>
+    </p>
+
+    <p>
+      You just need to go through some steps which will help us to build a secure system together.
+    </p>
+  </div>
+  <div class="custom-button-container ">
+    <ion-button expand="full" shape="round" (click)="next()"
+      style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px;">NEXT</ion-button>
+  </div> -->
+
+</ion-content>

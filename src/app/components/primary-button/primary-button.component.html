@@ -1,0 +1,4 @@
+<div class="padding-bottom">
+  <ion-button expand="full" (click)="onClick($event)"><ion-spinner name="lines"
+      *ngIf="isLoading"></ion-spinner>{{ isLoading ? '' : label }}</ion-button>
+</div>

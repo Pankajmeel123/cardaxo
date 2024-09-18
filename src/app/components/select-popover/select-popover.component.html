@@ -1,0 +1,11 @@
+<ion-toolbar>
+  <ion-searchbar animated="true" [(ngModel)]="searchTerm"></ion-searchbar>
+</ion-toolbar>
+
+<ion-list>
+  <ion-item class="ion-border" *ngFor="let country of filterItems()" (click)="selectItem(country.code, country.name)"
+    tappable>
+    <ion-label> {{country.name}}
+      ({{country.code}})</ion-label>
+  </ion-item>
+</ion-list>

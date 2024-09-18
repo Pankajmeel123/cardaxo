@@ -1,0 +1,7 @@
+{
+  "name": "Cardaxo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

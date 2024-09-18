@@ -1,0 +1,128 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="font-weight: bold;">
+      WALLET
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button><ion-icon name="gift-outline"></ion-icon></ion-button>
+      <ion-button><ion-icon name="notifications-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-text-center margin-left-content" style="--background:white">
+  <div class="total_balance">
+    <ion-card class="balance">
+      <p><ion-icon  name="wallet-outline" size="large"></ion-icon>TOTAL BALANCE</p>
+      <h1>${{total | number:'1.1-4'}}</h1>
+    </ion-card>
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col (click)="navigateAction(i)" *ngFor="let walletAction of walletActions; let i = index" size="3">
+            <ion-icon [name]="walletAction.icon"></ion-icon>
+            <h5>{{walletAction.name}}</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+  <!--
+  <div class="portfolio">
+
+    <div class="head_section">
+      <h4>
+        Portfolio
+      </h4>
+      <p>See all</p>
+    </div>
+
+    <div class="horizontal-scroll">
+      <ion-card *ngFor="let currency of currencies">
+        <img [src]="currency.logo" alt="" height="80px">
+        <ion-card-content>
+          <ion-card-subtitle>{{currency.name}}</ion-card-subtitle>
+          <ion-card-title>
+            {{currency.price}}
+          </ion-card-title>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </div> -->
+
+  <div class="assets" style="color: black;">
+
+    <div class="head_section">
+      <h4>
+        Assets
+      </h4>
+      <a href="#" (click)="manageCoins($event)">
+        <p>Manage</p>
+      </a>
+    </div>
+
+    <div *ngIf="isLoading">
+      <ion-card *ngFor="let i of [].constructor(10);">
+        <ion-card-content>
+          <app-skeleton-card></app-skeleton-card>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngIf="!isLoading && !( wallet && (wallet.coins?.length ?? 0) > 0)">
+      <ion-grid>
+        <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
+          <ion-col size="8">
+            <h4>
+              There is no address, click on Manage to add one
+            </h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div *ngIf="!isLoading && wallet && (wallet.coins?.length ?? 0) > 0">
+      <ion-card *ngFor="let coin of wallet.coins; let i = index">
+        <ion-card-content (click)="logTransaction(coin.address ?? '', coin.main_chain ?? '')">
+          <ion-grid>
+            <ion-row class="ion-align-items-center ion-justify-content-between">
+              <ion-row class="ion-align-items-center">
+                <ion-col size="auto" style="display: flex;">
+                  <img [src]="getIconCoin(coin.symbol ?? 'BTC')" alt="" width="40px" height="40px">
+                </ion-col>
+                <ion-col class="ion-text-start" size="auto">
+                  <ion-card-title style="font-weight: bold;">
+                    {{coin.symbol ?? ''}}
+                  </ion-card-title>
+                  <ion-card-subtitle>
+                    {{ coin.name ?? '' }}
+                  </ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+              <ion-col size="auto" class="ion-text-end">
+                <ion-card-title>
+                  {{coin.transactions && coin.transactions.length > 0 ? coin.transactions[0].total ?? 0 : 0}}
+                </ion-card-title>
+                <ion-card-subtitle>
+                  ≈ ${{coin.transactions && coin.transactions.length > 0 ? coin.transactions[0].inUSD ?? 0 : 0}}
+                </ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <ng-container *ngIf="banners">
+      <div *ngFor="let data of banners">
+        <a [href]="data.link">
+          <img [src]="'https://wallet.cardaxo.com/'+data.image">
+        </a>
+      </div>
+    </ng-container>
+
+  </div>
+
+
+
+</ion-content>

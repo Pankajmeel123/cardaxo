@@ -1,0 +1,105 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-align-center app_bar_title">OTP VERIFICATION</ion-title>
+    <ion-buttons slot="end">
+      <div style="width: 48px;"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+
+
+  <ion-grid>
+    <ion-row class="height-container">
+      <ion-row class="ion-align-items-center padding-head">
+        <ion-col size="12" size-md="6">
+          <img class="image-width" src="assets/image/w_logo.png" height="40px" width="250px" alt="">
+        </ion-col>
+        <ion-col size="12" size-md="6">
+          <h2>OTP VERIFICATION</h2>
+          <p class="limited-width">Please enter Code sent to <span>{{phoneNumber}}</span></p>
+          <ion-row class="limited-width">
+            <ion-col>
+              <ion-input fill="solid" type="number" #input1 [(ngModel)]="otp1" color="primary"
+                (input)="onInput($event, input2, input1)" (paste)="onPaste($event)"></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input fill="solid" type="number" #input2 [(ngModel)]="otp2" (input)="onInput($event, input5, input1)"
+                (paste)="onPaste($event)"></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input fill="solid" type="number" #input5 [(ngModel)]="otp3" (input)="onInput($event, input6, input2)"
+                (paste)="onPaste($event)"></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input fill="solid" type="number" #input6 [(ngModel)]="otp4" (input)="onInput($event, input7, input5)"
+                (paste)="onPaste($event)"></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input fill="solid" type="number" #input7 [(ngModel)]="otp5" (input)="onInput($event, input8, input6)"
+                (paste)="onPaste($event)"></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-input fill="solid" type="number" #input8 [(ngModel)]="otp6"
+                (input)="onInputFinal($event, input8, input7)" (paste)="onPaste($event)"></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col size="12" style="padding: 0 15px;">
+          <app-primary-button label="Verify" (click)="verify()" [isLoading]="isLoading"></app-primary-button>
+          <p (click)="resend()"><span style="font-weight: bold;">Resend Code</span></p>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <!-- <div class="the_first_page">
+    <div class="ion-padding-horizontal">
+      <img src="assets/image/OTP2_verification.png" alt="" height="350px">
+      <div class="ion-padding-bottom">
+        <h2>Verification Code</h2>
+        <p>
+          Please enter Code sent to <span>93432432</span>
+        </p>
+      </div>
+
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input fill="solid" type="number" #input1 (input)="onInput($event, input2)"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-input fill="solid" type="number" #input2 (input)="onInput($event, input5)"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-input fill="solid" type="number" #input5 (input)="onInput($event, input6)"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-input fill="solid" type="number" #input6></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+    </div>
+    <div class="custom-button-container ">
+      <ion-button expand="full" shape="round" (click)="verify()">Verify</ion-button>
+    </div>
+    <p><span style="font-weight: bold;">Resend Code</span></p>
+  </div> -->
+
+</ion-content>
+
+<div style="display: none;" id="sign-in-button"></div>

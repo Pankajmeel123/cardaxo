@@ -1,0 +1,106 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-align-center app_bar_title">Recharge {{cryptoName}}</ion-title>
+    <ion-buttons slot="end">
+      <div style="width: 48px;"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <img src="assets/image/logo-carddd.png" alt="" width="30px" height="45px"
+            style="margin-bottom: -10px; margin-right: 10px;">
+          <h6 style="font-weight: 400; font-size: 30px; ">CARDAXO</h6>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-row class="ion-justify-content-center">
+          <ion-card>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-input type="number" placeholder="Enter your amount" [(ngModel)]="amount"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row expand="full" class="ion-justify-content-evenly">
+                <ion-col [size]="isScreenLarge ? '4':'12'" class="ion-text-center price-col" (click)="setText('100')">
+                  <h5>100 {{cryptoName}}</h5>
+                </ion-col>
+                <ion-col [size]="isScreenLarge ? '4':'12'" class="ion-text-center price-col" (click)="setText('200')">
+                  <h5>200 {{cryptoName}}</h5>
+                </ion-col>
+                <ion-col [size]="isScreenLarge ? '4':'12'" class="ion-text-center price-col" (click)="setText('300')">
+                  <h5 expand="full">300 {{cryptoName}}</h5>
+                </ion-col>
+                <ion-col [size]="isScreenLarge ? '4':'12'" class="ion-text-center price-col" (click)="setText('500')">
+                  <h5 expand="full">500 {{cryptoName}}</h5>
+                </ion-col>
+                <ion-col [size]="isScreenLarge ? '4':'12'" class="ion-text-center price-col" (click)="setText('1000')">
+                  <h5 expand="full">1000 {{cryptoName}}</h5>
+                </ion-col>
+                <ion-col [size]="isScreenLarge ? '4':'12'" class="ion-text-center price-col" (click)="setText('0')">
+                  <h5 expand="full">Other</h5>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-list>
+                    <ion-item>
+                      <ion-label><b>Conversion Rate:</b></ion-label>
+                      <ion-card-subtitle>{{rateUSD}}</ion-card-subtitle>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label><b>amount in {{baseCryptoName}}:</b></ion-label>
+                      <ion-card-subtitle>{{getAmountRate()}}</ion-card-subtitle>
+                    </ion-item>
+                    <ion-item lines="none">
+                      <ion-label><b>amount in usdt:</b></ion-label>
+                      <ion-card-subtitle>{{amount}}</ion-card-subtitle>
+                    </ion-item>
+
+                  </ion-list>
+                  <!-- <ion-item>
+                    <ion-input type="number" placeholder="Enter your amount" [(ngModel)]="amount"></ion-input>
+                  </ion-item> -->
+                </ion-col>
+              </ion-row>
+              <div class="divider_horz"></div>
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <a href="#" (click)="recharge($event)">
+                    <h5><ion-spinner name="lines" *ngIf="isLoading"></ion-spinner>{{ isLoading ? '' :
+                      'RECHARGE' }}</h5>
+                  </a>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-row>
+
+
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+
+
+</ion-content>
