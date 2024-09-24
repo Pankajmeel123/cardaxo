@@ -7,17 +7,17 @@ import { CardGuard } from '../core/guard/card.guard';
 const routes: Routes = [
   {
     path: '',
-    canActivate: [CardGuard],
+    // canActivate: [CardGuard],
     component: CardsPage
   },
   {
     path: 'application',
-    canActivate: [CardGuard],
+    // canActivate: [CardGuard],
     loadChildren: () => import('./application/application.module').then(m => m.ApplicationPageModule)
   },
   {
     path: 'activation',
-    canActivate: [CardGuard],
+    // canActivate: [CardGuard],
     loadChildren: () => import('./activation/activation.module').then(m => m.ActivationPageModule)
   },
   {
