@@ -1,10 +1,44 @@
 .limited-width {
-  max-width: 400px;
-  margin: 0 auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-style: italic;
+  color: #fff;
+  font-size: 14px;
+}
+.newlogo_w {
+	border: 2px solid #d7bd87;
+	height: 280px;
+	border-radius: 50px;
+	width: 280px !important;
+ margin: 34% auto 0;
+}
+.newlogo_w img{ width: 280px; height: auto;}
+.text_get_started h1 {
+	color: #fff;
+	text-transform: uppercase;
+	padding: 40px 0 0px;
+}
+.dytxt {
+	animation-name: example;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
 }
 
+@keyframes example {
+  0% {
+    color:#fff
+  }
+  25% {
+    color:#b99652
+  }
+  50% {
+    color:#dbc28d
+  }
+  75% {
+    color:#3e3a2f
+  }
+  to {
+    color:#fff
+  }
+}
 ion-row {
   width: 100%;
 }
@@ -15,4 +49,21 @@ ion-row {
 
 ion-menu {
   display: none;
+}
+
+ion-button {
+	height: 50px;
+	font-size: 16px !important;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+// .button-native {
+// 	background: #b0893a;
+// 	background-size: 400% 400%;
+// }.button-native:hover {
+// 	box-shadow: 0 0 20px #b0893a;
+// }
+.custom-primary-button {
+  background-color: #FF5733; /* Your desired color */
+  color: white; /* Text color */
 }

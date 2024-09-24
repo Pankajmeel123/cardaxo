@@ -30,10 +30,6 @@ export class UserService {
     return await this.http.post<IUser>('roynex', 'users/addUserKycDetail', body);
   }
 
-  public async userKycDetail() {
-    return await this.http.get<IUser>('roynex', 'users/userKycDetail');
-  }
-
   public async bannerList() {
     return await this.http.get<IUser>('roynex', 'common/bannerList');
   }

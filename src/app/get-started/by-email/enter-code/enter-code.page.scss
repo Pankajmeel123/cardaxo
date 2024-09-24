@@ -35,23 +35,59 @@ ion-row {
 .image-width {
   max-width: 400px;
 }
-
+.app_bar_title {
+	padding-inline-start: 0px;
+	padding-inline-end: 0px;
+	text-align: left;
+	font-size: 14px;
+	font-weight: normal;
+}.newlogo_w {
+	border: 2px solid #d7bd87;
+	height: 280px;
+	border-radius: 50px;
+	width: 280px !important;
+ margin: 34% auto 0;
+}
+.newlogo_w img{ width: 280px; height: auto;}
 .padding-head {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.limited-width {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+.text_get_started h2 {
+	color: #fff;
+	text-transform: uppercase;
+	padding: 40px 0 0px;
+	text-align: left;
+	font-size: 20px; position: relative;margin-bottom: 0;
 }
-
+.limited-width {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 12px;
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0 0 20px;
+}
+.input-fill-solid.sc-ion-input-md-h .input-wrapper.sc-ion-input-md {
+	border-radius: 5px !important;
+	padding: 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+}
 ion-input{
-  color: black !important;
-  --background:var(--ion-color-primary) !important;
+  color: #fff;
+  --background:#000;
   --border-radius: 5px;
-  --placeholder-color: var(--ion-color-secondary)
+  --placeholder-color: #fff;border: 1px solid #bfa56a;font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+}.sc-ion-input-md-h:not(.legacy-input) {
+	min-height: 46px;
+	border-radius: 4px;
 }
 
 ion-input {

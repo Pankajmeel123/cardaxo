@@ -25,14 +25,20 @@
   ion-icon {
     font-size: 3vh;
   }
-
+  .total_balance .balance  {
+    text-align: left;
+    padding: 14px 20px;
+    border: 1px solid #fff;
+    color: var(--ion-color-secondary-contrast);
+    margin-top: 30px !important;
+  }
   .balance{
     text-align: left;
-    padding: 0 20px;
-    color: var(--ion-color-primary);
+    padding: 0 20px;border: 1px solid #fff;
+    color: var(--ion-color-secondary-contrast); text-transform: uppercase;
     p{
       display: flex;
-      align-items: center;
+      align-items: center; color: var(--ion-color-secondary-contrast);
     }
     ion-icon{
       margin-right: 10px;
@@ -41,17 +47,45 @@
 
   h5 {
     font-size: 12px;
-    padding: 0px !important;
+    padding: 0px !important;color: var(--ion-color-secondary-contrast);
   }
 
   h1 {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     margin-top: -10px;
   }
 }
 
+.new_logohome img {
+  width: 50px;
+  border: 1.5px solid #e3bb69;
+  height: 50px;
+  border-radius: 50px;
+  padding: 3px;
+  float: left;
+}
+.new_logohome h2 { color: var(--ion-color-secondary-contrast);
+	float: left;
+	vertical-align: top;
+	padding: 13px 0 0 7px;
+	margin: 0;  
+	font-size: 20px;
+	font-weight: 500;
+}
+.total_balance ion-card { 
+	background: #0000004f;
+}
 
+
+ion-icon{color: var(--ion-color-secondary-contrast)}
+.iocn_wall{ width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  line-height: 63px;
+  text-align: center;
+  margin: auto;}
 // .portfolio {
 
 
@@ -88,11 +122,14 @@
   }
   ion-card {
     border-radius: 10px;
-    padding: 2px;
-    background: var(--ion-color-primary);
-    color: var(--ion-color-secondary);
+  padding: 2px;
+  background: #0000006b;
+  color: var(--ion-color-secondary-contrast);
+  border: 1px solid #917a48;
+.manage_button{ background: var(--ion-color-primary);}
 
-
+.add_img{ width: 100%; float: left;}
+.add_img img{ width: 100%; float: left;}
 
     ion-card-content {
       padding: 0px;
@@ -100,11 +137,11 @@
 
     ion-card-title {
       font-size: 16px;
-      color: var(--ion-color-secondary);
+      color: var(--ion-color-secondary-contrast);
     }
 
     ion-card-subtitle{
-      color: var(--ion-color-secondary);
+      color: var(--ion-color-secondary-contrast);
     }
 
 
@@ -120,12 +157,18 @@
   padding: 2vh 2vh 0vh 2vh;
 
   h4 {
-    font-weight: bold;
-    margin: 0;
+   color: var(--ion-color-secondary-contrast);
+    margin: 0; font-weight: normal; font-size: 14px;
   }
 
   p{
     margin: 0;
+    color: var(--ion-color-secondary-contrast);
+    font-weight: normal;
+    font-size: 14px;
+    background:var(--ion-color-primary);
+    padding: 3px 10px;
+    border-radius: 5px;
   }
 }
 

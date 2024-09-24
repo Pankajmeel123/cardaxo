@@ -35,8 +35,10 @@ ion-row {
   padding-right: 10px;
 }
 
-.limited-width {
-  max-width: 400px;
+.limited-width { 
   margin: 0 auto;
   color: var(--ion-color-primary);
+}
+ion-input  { 
+	text-align: center !important;
 }

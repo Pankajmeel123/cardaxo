@@ -55,8 +55,7 @@ export class PayPage implements OnInit {
       const data = {
         'recharge_amount': this.getAmountRate().toString(),
         'pay_coin': 'usdt',
-        'address': this.address,
-        'usdt_amount': this.amount.toString(),
+        'address': this.address
       }; //TODO don't forget to change it
       const response: any = await this.cardService.cardRecharge(data);
       if (isFailedResponse(response)) {

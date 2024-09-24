@@ -10,25 +10,23 @@
   <ion-grid>
     <ion-row class="ion-justify-content-start height-container">
       <ion-row class="ion-align-items-center">
-        <ion-col size="12" size-md="6">
-          <ion-row class="ion-justify-content-center ion-align-items-center">
-            <img src="assets/image/w_logo.png" alt="" height="45px"
-              style="margin-bottom: 40px; margin-right: 10px;">
+        <ion-col size="12" size-md="6" style="align-items: end !important;">
+          <ion-row class="ion-justify-content-center ion-align-items-center newlogo_w">
+            <img src="assets/image/newlogo.png" alt="" >
             <!-- <h6 style="font-weight: 400; font-size: 30px; ">CARDAXO</h6> -->
-          </ion-row>
+          </ion-row> 
+          <div class="text_get_started">
           <h1 style="font-weight: bold;">Welcome to CARDAXO</h1>
-          <p class="limited-width">Trusted by millions, CARDAXO is a secure wallet making the world of web2 accessible
-            to
-            all.</p>
-        </ion-col>
-        <ion-col size="12" size-md="6">
+          <p class="limited-width">Our gateway to seamless <b class="dytxt">Crypto</b> payments and ecure wallets. </p></div>
+        </ion-col> 
+        <!-- <ion-col size="12" size-md="6">
           <img src="assets/image/NFT_4.png" alt="" style="max-width: 300px;" width="80%">
-        </ion-col>
+        </ion-col> -->
       </ion-row>
       <ion-row class="ion-justify-content-center ion-align-items-center" style="align-items: end !important;
       padding-bottom: 15px;">
-        <ion-col style="padding: 0 15px;">
-          <app-primary-button label="Get Started" (click)="getStarted()"></app-primary-button>
+        <ion-col style="padding: 0 15px;--ion-background-color: #c4a051;">
+          <app-primary-button label="Get Started" (click)="getStarted()" class="custom-primary-button "></app-primary-button>
         </ion-col>
       </ion-row>
     </ion-row>

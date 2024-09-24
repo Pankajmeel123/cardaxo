@@ -16,34 +16,36 @@
     <ion-row class="height-container">
       <ion-row class="ion-align-items-center padding-head">
         <ion-col size="12" size-md="6">
-          <img class="image-width" src="assets/image/w_logo.png" height="40px" width="250px" alt="">
+          <ion-row class="ion-justify-content-center ion-align-items-center newlogo_w">
+            <img src="assets/image/newlogo.png" alt="">
+          </ion-row>
         </ion-col>
-        <ion-col size="12" size-md="6">
+        <ion-col size="12" size-md="6" class="text_get_started">
           <h2>OTP VERIFICATION</h2>
           <p class="limited-width">Please enter Code sent to <span>{{email}}</span></p>
           <ion-row class="limited-width">
             <ion-col>
-              <ion-input fill="solid" type="number" #input1 [(ngModel)]="otp1" color="secondary"
+              <ion-input fill="solid" type=" " #input1 [(ngModel)]="otp1" color="secondary"
                 (input)="onInput($event, input2, input1)" (paste)="onPaste($event)"></ion-input>
             </ion-col>
             <ion-col>
-              <ion-input fill="solid" type="number" [(ngModel)]="otp2" #input2 (input)="onInput($event, input5, input1)"
+              <ion-input fill="solid" type=" " [(ngModel)]="otp2" #input2 (input)="onInput($event, input5, input1)"
                 (paste)="onPaste($event)"></ion-input>
             </ion-col>
             <ion-col>
-              <ion-input fill="solid" type="number" #input5 [(ngModel)]="otp3" (input)="onInput($event, input6, input2)"
+              <ion-input fill="solid" type=" " #input5 [(ngModel)]="otp3" (input)="onInput($event, input6, input2)"
                 (paste)="onPaste($event)"></ion-input>
             </ion-col>
             <ion-col>
-              <ion-input fill="solid" type="number" #input6 [(ngModel)]="otp4" (input)="onInput($event, input7, input5)"
+              <ion-input fill="solid" type=" " #input6 [(ngModel)]="otp4" (input)="onInput($event, input7, input5)"
                 (paste)="onPaste($event)"></ion-input>
             </ion-col>
             <ion-col>
-              <ion-input fill="solid" type="number" [(ngModel)]="otp5" #input7 (input)="onInput($event, input8, input6)"
+              <ion-input fill="solid" type=" " [(ngModel)]="otp5" #input7 (input)="onInput($event, input8, input6)"
                 (paste)="onPaste($event)"></ion-input>
             </ion-col>
             <ion-col>
-              <ion-input fill="solid" type="number" [(ngModel)]="otp6" #input8
+              <ion-input fill="solid" type=" " [(ngModel)]="otp6" #input8
                 (input)="onInputFinal($event, input8, input7)" (paste)="onPaste($event)"></ion-input>
             </ion-col>
           </ion-row>
@@ -52,7 +54,7 @@
       <ion-row class="ion-justify-content-center ion-align-items-center">
         <ion-col size="12" style="padding: 0 15px;">
           <app-primary-button label="Verify" (click)="verify()" [isLoading]="isLoading"></app-primary-button>
-          <p (click)="resend()"><span style="font-weight: bold;">Resend Code</span></p>
+          <p (click)="resend()"><span style="font-weight:500; color: #bfa56a;">Resend Code</span></p>
         </ion-col>
       </ion-row>
     </ion-row>

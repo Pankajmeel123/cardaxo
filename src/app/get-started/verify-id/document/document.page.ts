@@ -73,8 +73,8 @@ export class DocumentPage implements OnInit {
   }
 
   async addUserKYC(kyc_document_type_id:string){
-    await this.userService.addUserKYC({kyc_document_type_id:kyc_document_type_id.toString()}).then((res:any)=>{
-      this.kycFrom.user_kyc_id = res.data.id?.toString();
+    await this.userService.addUserKYC({kyc_document_type_id:kyc_document_type_id.toString()}).then(res=>{
+      this.kycFrom.user_kyc_id = kyc_document_type_id.toString();
     })
     this.nextSecondPage();
   }
