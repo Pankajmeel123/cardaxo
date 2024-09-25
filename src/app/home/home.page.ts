@@ -34,17 +34,9 @@ export class HomePage {
       name: 'Deposit',
       icon: 'download'
     },
-    // {
-    //   name: 'Swap',
-    //   icon: 'git-compare'
-    // },
     {
-      name: 'Send',
-      icon: 'send-outline'
-    },
-    {
-      name: 'Scan',
-      icon: 'scan-outline'
+      name: 'Recharge',
+      icon: 'card-outline'
     },
   ];
   banners:any;
@@ -80,8 +72,10 @@ export class HomePage {
     if (index === 1)
       this.router.navigate(['/home/receive-token']);
 
-    if (index === 2)
+    if (index === 2){
+      console.log(123)
       this.router.navigate(['/home/recharge']);
+    }
   }
 
   async getWallet() {

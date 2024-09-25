@@ -21,10 +21,12 @@ export class RechargePage implements OnInit {
   constructor(private router: Router, private walletService: WalletService, private toastController: ToastController, private cryptoCompareService: CryptoCompareService) { }
 
   ngOnInit() {
+    console.log(123)
   }
 
   async recharge(mainChain: string, address: string, amount: number, rateUSD: number) {
     if (amount > 0) {
+      console.log(321)
       this.router.navigate(['/home/recharge/pay'], { queryParams: { name: mainChain, address: address, amount: amount, rateUSD: rateUSD } });
     } else {
       const toast = await this.toastController.create({

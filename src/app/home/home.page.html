@@ -18,7 +18,7 @@
     <ion-card>
       <ion-grid>
         <ion-row>
-          <ion-col (click)="navigateAction(i)" *ngFor="let walletAction of walletActions; let i = index" size="3">
+          <ion-col (click)="navigateAction(i)" *ngFor="let walletAction of walletActions; let i = index" size="4">
           <div class="iocn_wall">  <ion-icon [name]="walletAction.icon"></ion-icon></div>
             <h5>{{walletAction.name}}</h5>
           </ion-col>
@@ -121,10 +121,6 @@
           <img [src]="'https://wallet.cardaxo.com/'+data.image">
         </a>
       </div>
-      <div class="add_img">
-        <img src="assets/image/advertisement.jpg">
-        
-            </div>
     </ng-container>
 
   </div>

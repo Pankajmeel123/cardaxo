@@ -1,10 +1,10 @@
-<ion-tabs>
+<ion-tabs (ionTabsWillChange)="getTabValue()">
   <ion-tab-bar slot="bottom" class="sidebar-tab-bar">
     <ion-tab-button tab="home">
       <ion-icon name="wallet-outline"></ion-icon>
       Wallet
     </ion-tab-button>
-    <ion-tab-button tab="cards">
+    <ion-tab-button [tab]="cardNav">
       <ion-icon name="card"></ion-icon>
       Cards
     </ion-tab-button>
