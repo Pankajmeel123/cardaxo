@@ -12,7 +12,7 @@ export class TabsComponent implements OnInit {
 
   cardNav:string = 'card'
 
-  constructor(private cardService:CardService, private userService: UserService, private router:Router) {
+  constructor(private cardService:CardService, private userService: UserService, public router:Router) {
 
   }
 
