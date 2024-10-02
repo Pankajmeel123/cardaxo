@@ -1,16 +1,23 @@
 ion-card {
   border-radius: 10px;
-  padding: 8px;
+  padding: 8px;}
 
-
-
-  ion-card-content {
+  
+  ion-card { 
+    border-radius: 10px;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.4196078431);
+    color: var(--ion-color-secondary-contrast);
+    border: 1px solid #917a48;}
+  
+    ion-card-title {
+      font-size: 16px;
+      color: var(--ion-color-secondary-contrast);
+    }
+   
+    ion-card-subtitle { color: var(--ion-color-secondary-contrast);}
+ 
+   ion-card-content {
     padding: 0px;
   }
-
-  ion-card-title {
-    font-size: 16px;
-  }
-
-
-}
+ 
