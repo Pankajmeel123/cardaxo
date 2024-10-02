@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { TabsComponent } from './tabs/tabs.component';
 import { AuthGuard } from './core/guard/auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
 
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'verify-pin',
     loadChildren: () => import('./verify-pin/verify-pin.module').then(m => m.VerifyPinPageModule)
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
 
 ];
