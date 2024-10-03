@@ -1,25 +1,27 @@
 <ion-header [translucent]="true" style="--background: #fff">
   <ion-toolbar>
     <ion-title style="font-weight: bold;" class="new_logohome">
-      <img src="assets/image/newlogo.png" alt="">   <h2> WALLET</h2>
+      <img src="assets/image/newlogo.png" alt="">
+      <h2> WALLET</h2>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button><ion-icon name="gift-outline"></ion-icon></ion-button>
       <ion-button><ion-icon name="notifications-outline"></ion-icon></ion-button>
     </ion-buttons>
-  </ion-toolbar> 
-</ion-header> 
+  </ion-toolbar>
+</ion-header>
 <ion-content [fullscreen]="true" class="ion-text-center margin-left-content" style="--background: black">
-  <div class="total_balance" style="background-image: url('assets/image/bg_home.png'); background-size: cover; background-position: center;padding: 0px 0 10px;">
+  <div class="total_balance"
+    style="background-image: url('assets/image/bg_home.png'); background-size: cover; background-position: center;padding: 0px 0 10px;">
     <ion-card class="balance">
-      <p><ion-icon  name="wallet-outline" size="large"></ion-icon>TOTAL BALANCE</p>
+      <p><ion-icon name="wallet-outline" size="large"></ion-icon>TOTAL BALANCE</p>
       <h1>${{total | number:'1.1-4'}}</h1>
     </ion-card>
     <ion-card>
       <ion-grid>
         <ion-row>
           <ion-col (click)="navigateAction(i)" *ngFor="let walletAction of walletActions; let i = index" size="4">
-          <div class="iocn_wall">  <ion-icon [name]="walletAction.icon"></ion-icon></div>
+            <div class="iocn_wall"> <ion-icon [name]="walletAction.icon"></ion-icon></div>
             <h5>{{walletAction.name}}</h5>
           </ion-col>
         </ion-row>
@@ -51,14 +53,15 @@
 
   </div> -->
 
-  <div class="assets" style="background-image: url('assets/image/home_btmbg.png'); background-repeat: repeat-y;background-size: cover; background-position: center;padding: 0px 0 10px;">
+  <div class="assets"
+    style="background-image: url('assets/image/home_btmbg.png'); background-repeat: repeat-y;background-size: cover; background-position: center;padding: 0px 0 10px;">
 
     <div class="head_section">
       <h4>
         Assets
       </h4>
       <a href="#" (click)="manageCoins($event)">
-        <p  class="manage_button">Manage</p>
+        <p class="manage_button">Manage</p>
       </a>
     </div>
 
@@ -70,7 +73,7 @@
       </ion-card>
     </div>
 
-    
+
 
     <div *ngIf="!isLoading && !( wallet && (wallet.coins?.length ?? 0) > 0)">
       <ion-grid>
@@ -124,7 +127,133 @@
     </ng-container>
 
   </div>
+  <div class="candy_bx_page">
+    <div class="candy_bx"
+      style="background-image: url('assets/image/bg_candy_bx.png'); background-size: cover; background-position: center;padding: 0px 0 10px;">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row class="ion-align-items-center ion-justify-content-between">
+            <ion-row class="ion-align-items-center">
+              <ion-col size="8" style="display: flex;">
+                <div class="earn_upto">
+                  <h2>Earn upto <span> 2500</span> Candy's per referral</h2>
+                </div>
+              </ion-col>
+              <ion-col size="4" style="display: flex;">
+                <div class="earn_upto"><img src="assets/image/gift.png"></div>
+              </ion-col>
+            </ion-row>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
 
 
+
+    </div>
+    <div class="lv1_allbx">
+      <div class="LV1">
+        <ion-card-content>
+          <ion-grid>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="3" style="display: flex;">
+                <div class="lvi_text">
+                  <h2>LV1</h2>
+                </div>
+              </ion-col>
+              <ion-col size="6" style="display: flex;">
+                <div class="liv_bar"></div>
+
+              </ion-col>
+              <ion-col size="3" style="display: flex;">
+                <div class="lvi_text">
+                  <h2>0/10</h2>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="4" style="display: flex;">
+                <div class="lvi_text">
+                  <h3>Card Activation </h3>
+                  <p>20%</p>
+                </div>
+              </ion-col>
+              <ion-col size="4" style="display: flex;">
+                <div class="lvi_text">
+                  <h3> Transaction</h3>
+                  <p>0.05%</p>
+                </div>
+
+              </ion-col>
+              <ion-col size="4" style="display: flex;">
+                <div class="lvi_text">
+                  <h3> Tier 2</h3>
+                  <p>10%</p>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+        
+
+      </div>
+
+      <div class="withdrawable_bx">
+        <ion-card-content>
+          <ion-grid>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="7" style="display: flex;">
+                <div class="withdrawable_bx_text">
+                  <h2>Withdrawable (USDT)</h2>
+                  <h3>$10.0</h3>
+                  <p>Claim</p>
+                </div>
+              </ion-col>
+              <ion-col size="5" style="display: flex;">
+                <div class="withdrawable_bx_text">
+                <img src="assets/image/withdrawable_gift.png"></div>
+              </ion-col> 
+             
+            </ion-row>
+            
+          </ion-grid>
+        </ion-card-content>
+
+
+
+      </div>
+
+      <div class="invited_friends">
+         
+            <ion-row class="ion-align-items-center">
+              <ion-col size="4" style="display: flex;">
+                <div class="invited_friends_bx_text">
+                  <h2>invited Friends</h2>
+                  <h3>0</h3>
+                 </div>
+              </ion-col>
+              <ion-col size="4" style="display: flex;">
+                <div class="invited_friends_bx_text">
+                  <h2>Processing (USDT)</h2>
+                  <h3>00.0</h3>
+                 </div>
+              </ion-col> 
+              <ion-col size="4" style="display: flex;"> 
+                <div class="invited_friends_bx_text">
+                  <h2>Settled (USDT)</h2>
+                  <h3>00.0</h3>
+                 </div>
+              </ion-col>
+            </ion-row>
+            
+        
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
 
 </ion-content>
