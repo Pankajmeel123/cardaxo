@@ -1,13 +1,126 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" style="--background: #fff">
   <ion-toolbar>
-    <ion-title>candy</ion-title>
+    <ion-title style="font-weight: bold;" class="new_logohome">
+      <h2> invite Friends</h2>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="gift-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">candy</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="candy_bx_page">
+    <div class="candy_bx"
+      style="background-image: url('assets/image/bg_candy_bx.png'); background-size: cover; background-position: center;padding: 0px 0 10px;">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row class="ion-align-items-center ion-justify-content-between">
+            <ion-row class="ion-align-items-center">
+              <ion-col size="8" style="display: flex;">
+                <div class="earn_upto">
+                  <h2>Referral Friends <span> 2500</span> Candy's per referral</h2>
+                </div>
+              </ion-col>
+              <ion-col size="4" style="display: flex;">
+                <div class="earn_upto"><img src="assets/image/gift.png"></div>
+              </ion-col>
+            </ion-row>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </div>
+    <div class="lv1_allbx">
+      <div class="LV1">
+        <ion-card-content>
+          <ion-grid>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="4" style="display: flex;">
+                <div class="lvi_text"> <img src="assets/image/candy_logo.png"> </div>
+              </ion-col>
+              <ion-col size="8" style="display: flex;">
+                <div class="lvi_text">
+                  <h2>Candy Balance</h2>
+                  <h3>7500</h3>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </div>
+      <div class="withdrawable_bx">
+        <ion-row>
+          <ion-col size="4"><strong>
+            <p>Earned</p>
+            </strong></ion-col>
+          <ion-col size="4"><strong>
+            <p>Candy</p>
+            </strong></ion-col>
+          <ion-col size="4"><strong>
+            <p>Candy Balance</p>
+            </strong></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <p>aarav@gmail.com</p>
+          </ion-col>
+          <ion-col size="4">
+            <p>2500</p>
+          </ion-col>
+          <ion-col size="4">
+            <p>7500</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <p>aviraj@gmail.com</p>
+          </ion-col>
+          <ion-col size="4">
+            <p>2500</p>
+          </ion-col>
+          <ion-col size="4">
+            <p>5000</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <p>avi@gmail.com</p>
+          </ion-col>
+          <ion-col size="4">
+            <p>2500</p>
+          </ion-col>
+          <ion-col size="4">
+            <p>2500</p>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <div class="invited_friends">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="3" style="display: flex;">
+          <div class="invited_friends_bx_text"> <img src="assets/image/gift-box.png"> </div>
+        </ion-col>
+        <ion-col size="9" style="display: flex;">
+          <div class="invited_friends_bx_text">
+            <h2>Partner Promotion Recruiting</h2>
+            <h3>Join now for more rebate</h3>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="partner_promotion">
+   
+  
+    <h2>Referral step</h2>  
+    <h3><span><img src="assets/image/icon_share1.png"></span> with friends</h3>
+    <h3><span><img src="assets/image/icon_share2.png"></span> Friend Registration</h3>
+    <h3><span><img src="assets/image/icon_share3.png"></span> Friend activation card or spending, you can earn commission</h3>
+ 
+     
+  </div>
+  </div>
 </ion-content>
