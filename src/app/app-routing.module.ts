@@ -40,7 +40,11 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: RegisterComponent
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'candy',
+    loadChildren: () => import('./candy/candy.module').then( m => m.CandyPageModule)
   },
 
 ];
