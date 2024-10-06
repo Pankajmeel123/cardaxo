@@ -22,6 +22,10 @@ export class UserService {
     return await this.http.post<IUser>('roynex', 'users/signInByEmail', body);
   }
 
+  public async signUpByEmail(body: Record<string, any>) {
+    return await this.http.post<IUser>('roynex', 'users/signUpByEmail', body);
+  }
+
   public async addUserKYC(body: Record<string, any>) {
     return await this.http.post<IUser>('roynex', 'users/addUserKyc', body);
   }

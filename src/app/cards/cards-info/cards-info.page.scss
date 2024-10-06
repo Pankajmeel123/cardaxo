@@ -287,7 +287,10 @@ img {
       position: absolute;
       bottom: 17px;
       left: 25px;
-     
+
+      .number-container{
+        display: flex;
+      }
       span {
         display: block;
         
@@ -296,11 +299,11 @@ img {
           text-transform: uppercase;
           font-weight: bold;
         }
-        
         &.number {
           color: #fff;
           font-weight: 600;
           letter-spacing: 1px;
+          padding: 0 5px 0px 0px;
         }
       }
     }

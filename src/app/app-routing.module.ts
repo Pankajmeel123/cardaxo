@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'settings',
         loadChildren: () => import('./settings/settings.module').then(m => m.SettingsPageModule)
       },
+      {
+        path: 'candy',
+        loadChildren: () => import('./candy/candy.module').then( m => m.CandyPageModule)
+      },
     ],
   },
   {
@@ -41,10 +45,7 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
-  {
-    path: 'candy',
-    loadChildren: () => import('./candy/candy.module').then( m => m.CandyPageModule)
-  },
+  
 
 ];
 

@@ -7,9 +7,32 @@
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-text-center">
   <div class="information">
-    <div class="wrapper">
+    <div *ngIf="!isLoading && !( cardDetails && cardDetails.encoded_card_detail)">
+      <ion-grid>
+        <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
+          <ion-col size="8">
+            <h4> The card isn't active yet.
+              Please, <a href="#" (click)="retry($event)">retry later.</a> </h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="wrapper" *ngIf="isLoading">
       <div class="cc mastercard "> 
-        <!-- <div class="check_applyicon"><img src="assets/image/check__mark.png"> </div> -->
+        <svg width="295" height="87">
+          <path d="M 0 0 C 50 50 250 0 300 87"></path>
+        </svg>
+        <div class="container">
+          <div class="type">Prepaid Card</div>
+          <div class="circuit">
+            <div class="logo_card"> <img style="width: 199px !important;opacity: 0.1;" src="/assets/image/newlogo.png"> </div>
+            <img style="width: 90px !important; height: auto;" src="/assets/image/payicon.png"> </div>
+        </div>
+        <app-skeleton-big-card style="position: absolute;bottom: 17px;left: 25px;width: 84%;"></app-skeleton-big-card>
+      </div>
+    </div>
+    <div class="wrapper" *ngIf="!isLoading && cardDetails && cardDetails.encoded_card_detail">
+      <div class="cc mastercard "> 
         <svg width="295" height="87">
           <path d="M 0 0 C 50 50 250 0 300 87"></path>
         </svg>
@@ -21,107 +44,16 @@
         </div>
         <div class="holder"> <span class="name">Virtual  CARD </span>
           <p style="padding: 0;margin: 0;font-size: 10px;text-align: left;">Spend & AMT withdrawal</p>
-          <span class="number">1234 4567 1234 3456</span>
-          <p style="padding: 0;margin: 0;font-size: 10px;text-align: left;">CVV:231 Expires : 12/26</p>
+          <div class="number-container">
+            <span class="number" *ngFor="let numberChunk of splitNumber(cardNumber)">{{ numberChunk }}</span>
+          </div>
+          <p style="padding: 0;margin: 0;font-size: 10px;text-align: left;">CVV:{{cvv}} Expires : {{expire}}</p>
         </div>
         <div style="bottom: 0; width: 78px; position: absolute; right: 0; float: right; text-align: right; background: rgb(79, 55, 5); border-radius: 200px 8px 52px 1px;">
-          <p style="color: #fff; font-weight: bold; padding: 2px 10px 6px; margin: 0; font-size: 16px; text-align: right;"><span style="float: left;width: 100%;font-size: 10px;font-weight: normal;color: #fff;text-align: right;">USD</span> 100</p>
+          <p style="color: #fff; font-weight: bold; padding: 2px 10px 6px; margin: 0; font-size: 16px; text-align: right;"><span style="float: left;width: 100%;font-size: 10px;font-weight: normal;color: #fff;text-align: right;">USD</span>{{total | number:'1.1-4'}}</p>
         </div>
       </div>
     </div>
-    
-    <!-- <div *ngIf="isLoading">
-      <ion-card>
-        <ion-card-header> --> 
-    <!-- <ion-card-title><b>Card Information</b></ion-card-title> --> 
-    <!-- <ion-card-title>
-            <ion-row class="ion-justify-content-center ion-align-items-center">
-              <img src="assets/image/logo-carddd.png" alt="" width="30px" height="45px"
-                style="margin-bottom: -10px; margin-right: 10px;">
-              <h6 style="font-weight: 400; font-size: 30px; ">CARDAXO</h6>
-            </ion-row>
-          </ion-card-title>
-          <ion-card-subtitle>${{total | number:'1.1-4'}}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          <app-skeleton-big-card></app-skeleton-big-card>
-        </ion-card-content>
-      </ion-card>
-    </div> -->
-    
-    <div *ngIf="!isLoading && !( cardDetails && cardDetails.encoded_card_detail)">
-      <ion-grid>
-        <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
-          <ion-col size="8">
-            <h4> The card isn't active yet.
-              Please, <a href="#" (click)="retry($event)">retry later.</a> </h4>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-    <div *ngIf="isLoading">
-      <ion-card>
-        <ion-card-content>
-          <div class="front" style="height: 100px !important;">
-            <div class="row">
-              <p>CARDAXO</p>
-              <p>${{total | number:'1.1-4'}}</p>
-              <img src="https://raw.githubusercontent.com/a-giuliano/credit-card-css/master/src/assets/mastercard.png"
-                alt="logo" /> </div>
-          </div>
-          <app-skeleton-big-card></app-skeleton-big-card>
-        </ion-card-content>
-      </ion-card>
-    </div>
-    <ion-card *ngIf="!isLoading && cardDetails && cardDetails.encoded_card_detail">
-      <ion-card-content>
-        <div class="front">
-          <div class="row">
-            <p>CARDAXO</p>
-            <p>${{total | number:'1.1-4'}}</p>
-            <img src="https://raw.githubusercontent.com/a-giuliano/credit-card-css/master/src/assets/mastercard.png"
-              alt="logo" /> </div>
-          <div class="row">
-            <p *ngFor="let numberChunk of splitNumber(cardNumber)" class="card-number">{{ numberChunk }}</p>
-          </div>
-          <div class="row">
-            <p class="cardholder">CVV: {{cvv}}</p>
-            <p class="exp-date">Expires: {{expire}}</p>
-          </div>
-        </div>
-      </ion-card-content>
-    </ion-card>
-    
-    <!-- <ion-card *ngIf="!isLoading && cardDetails && cardDetails.encoded_card_detail">
-      <ion-card-header> --> 
-    <!-- <ion-card-title><b>Card Information</b></ion-card-title> --> 
-    <!-- <ion-card-title>
-          <ion-row class="ion-justify-content-center ion-align-items-center">
-            <img src="assets/image/logo-carddd.png" alt="" width="30px" height="45px"
-              style="margin-bottom: -10px; margin-right: 10px;">
-            <h6 style="font-weight: 400; font-size: 30px; ">CARDAXO</h6>
-          </ion-row>
-        </ion-card-title>
-        <ion-card-subtitle>${{total | number:'1.1-4'}}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item>
-            <ion-label><b>Card Number:</b></ion-label>
-            <ion-card-subtitle>{{ cardNumber }}</ion-card-subtitle>
-          </ion-item>
-          <ion-item>
-            <ion-label><b>CVV:</b></ion-label>
-            <ion-card-subtitle>{{ cvv }}</ion-card-subtitle>
-          </ion-item>
-          <ion-item lines="none">
-            <ion-label><b>Expiration Date:</b></ion-label>
-            <ion-card-subtitle>{{ expire }}</ion-card-subtitle>
-          </ion-item>
-
-        </ion-list>
-      </ion-card-content>
-    </ion-card> --> 
   </div>
   <div class="assets">
     <div class="head_section">

@@ -35,10 +35,10 @@ export class EnterCodePage implements OnInit {
   }
 
   async ionViewWillEnter() {
-    if (this.route.snapshot.queryParams['email'] == null)
-      this.router.navigate(['']);
     this.email = this.route.snapshot.queryParams['email'];
-    this.sendCodeByEmail(this.email);
+    if(this.email){
+      this.sendCodeByEmail(this.email);
+    }
   }
 
 

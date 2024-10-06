@@ -16,27 +16,27 @@ export class GetStartedPage implements OnInit {
   }
 
   async getStarted() {
-    const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Sign In by?',
-      buttons: [
-        {
-          text: 'Email',
-          role: 'email',
-        },
-        {
-          text: 'Phone Number',
-          role: 'phone',
-        },
-      ],
-    });
+    // const actionSheet = await this.actionSheetCtrl.create({
+    //   header: 'Sign In by?',
+    //   buttons: [
+    //     {
+    //       text: 'Email',
+    //       role: 'email',
+    //     },
+    //     {
+    //       text: 'Phone Number',
+    //       role: 'phone',
+    //     },
+    //   ],
+    // });
 
-    actionSheet.present();
+    // actionSheet.present();
 
-    const { role } = await actionSheet.onWillDismiss();
+    // const { role } = await actionSheet.onWillDismiss();
 
-    if (role === 'phone')
-      this.router.navigate(['/get-started/otp']);
-    else
+    // if (role === 'phone')
+    //   this.router.navigate(['/get-started/otp']);
+    // else
       this.router.navigate(['/get-started/by-email']);
   }
 
