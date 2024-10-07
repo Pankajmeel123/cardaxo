@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/roynex/user.service';
 
 @Component({
   selector: 'app-candy',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandyPage implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit() {
+    this.referralUserList();
+  }
+
+  referralUserList(){
+    this.userService.referralUserList();
   }
 
 }
