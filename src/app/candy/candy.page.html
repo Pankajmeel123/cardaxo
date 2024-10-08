@@ -55,13 +55,13 @@
       <div class="withdrawable_bx">
         <ion-row>
           <ion-col size="4"><strong>
-            <p>Earned</p>
+              <p>Earned</p>
             </strong></ion-col>
           <ion-col size="4"><strong>
-            <p>Candy</p>
+              <p>Candy</p>
             </strong></ion-col>
           <ion-col size="4"><strong>
-            <p>Candy Balance</p>
+              <p>Candy Balance</p>
             </strong></ion-col>
         </ion-row>
         <ion-row>
@@ -113,14 +113,19 @@
       </ion-row>
     </div>
     <div class="partner_promotion">
-   
-  
-    <h2>Referral step</h2>  
-    <h3><span><img src="assets/image/icon_share1.png"></span> with friends</h3>
-    <h3><span><img src="assets/image/icon_share2.png"></span> Friend Registration</h3>
-    <h3><span><img src="assets/image/icon_share3.png"></span> Friend activation card or spending, you can earn commission</h3>
- 
-     
-  </div>
+      <h2>Referral step</h2>
+      <h3><span><img src="assets/image/icon_share1.png"></span> with friends</h3>
+      <h3><span><img src="assets/image/icon_share2.png"></span> Friend Registration</h3>
+      <h3><span><img src="assets/image/icon_share3.png"></span> Friend activation card or spending, you can earn
+        commission</h3>
+    </div>
+    <div class="invited_friends_button">
+      <ion-row class="ion-justify-content-center ion-align-items-center" style="align-items: end !important;">
+        <ion-col style="padding: 0 15px;--ion-background-color: #c4a051;">
+          <app-primary-button label="Invite" (click)="openModal()"
+            class="custom-primary-button "></app-primary-button>
+        </ion-col>
+      </ion-row>
+    </div>
   </div>
 </ion-content>
