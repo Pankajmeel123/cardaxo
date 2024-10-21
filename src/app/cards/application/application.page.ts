@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Preferences } from '@capacitor/preferences';
 import { ToastController } from '@ionic/angular';
 import { isFailedResponse } from 'src/app/core/http/http.model';
@@ -22,11 +22,15 @@ export class ApplicationPage implements OnInit {
   public firstCharge: string = '';
   public countries: any = countries;
   public port: any;
+  card:any;
+  coin:any;
 
 
-  constructor(private router: Router, private toastController: ToastController, private cardService: CardService) { }
+  constructor(private router: Router, private toastController: ToastController, private cardService: CardService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.card = JSON.parse(this.route.snapshot.queryParams['card']);
+    this.coin = JSON.parse(this.route.snapshot.queryParams['coin']);
   }
 
   // apply() {
@@ -70,7 +74,11 @@ export class ApplicationPage implements OnInit {
         'last_name': this.lastName,
         'mobile_code': this.mobileCode,
         'mobile': this.mobile,
-        'first_recharge_amount': this.firstCharge
+        'first_recharge_amount': this.firstCharge,
+        'card_type_id':this.card.card_type_id.toString(),
+        'total_card_fee':this.card.total_card_fee.toString(),
+        'coin_id':this.coin.coin_id?.toString() ?? this.coin.id.toString(),
+        'sub_coin_id':this.coin.coin_id ? this.coin.id.toString() : null,
       };
       const response: any = await this.cardService.apply(data);
       if (isFailedResponse(response)) {
@@ -85,26 +93,23 @@ export class ApplicationPage implements OnInit {
         return;
       }
       this.isLoading = false;
-      const toast = await this.toastController.create({
+      const toast1 = await this.toastController.create({
         message: 'Done',
         duration: 1000,
         position: 'bottom',
       });
-      await toast.present();
-      await toast.onDidDismiss().then(async () => {
-        await Preferences.set({ key: 'is_card', value: 'ok' });
+      await toast1.present();
+      await toast1.onDidDismiss().then(async () => {
         this.router.navigate(['/cards/cards-info']);
       });
-
-
     }
   }
 
   async validateField() {
     let message: string = '';
 
-    if (this.firstCharge.length > 0 && parseFloat(this.firstCharge) < 100) {
-      message = 'Please, enter amount at least 100$';
+    if (parseFloat(this.firstCharge) < 0) {
+      message = 'Please, enter amount greater then 0$';
     }
 
     if (this.firstCharge.length === 0) {

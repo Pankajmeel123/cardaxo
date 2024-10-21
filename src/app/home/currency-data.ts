@@ -101,14 +101,16 @@ export var currencies = [
   }
 ];
 
-export const iconCoin = {
-  'BTC': 'assets/image/btc.png',
-  'ETh': 'assets/image/eth6.png',
+export const iconCoin:{
+  [key: string]:string
+} = {
+  'btc': 'assets/image/btc.png',
+  'eth': 'assets/image/eth6.png',
   'USDT': 'assets/image/usdt.png',
-  'TRX': 'assets/image/tron1.png',
-  'BNB': 'assets/image/bnb.png',
+  'trx': 'assets/image/tron1.png',
+  'bnb_bsc': 'assets/image/bnb.png',
   'ADA': 'assets/image/ada.png',
   'HEX': 'assets/image/HEX.png',
-  'BUSD': 'assets/image/BUSD.png',
-  'SOL': 'assets/image/SOL2.jpg'
+  'xrp': 'assets/image/BUSD.png',
+  'sol': 'assets/image/SOL2.jpg'
 };

@@ -24,6 +24,11 @@ export class CardService {
     return await this.http.post('roynex', 'card/recharge', body);
   }
 
+  public async cardList(body:any) {
+    let data = body.assignedCoin ? {type:1} : {};
+    return await this.http.post('roynex', 'card/cardList',data);
+  }
+
   public async getDocType() {
     return await this.http.get('roynex', 'common/kycDocumentTypeList');
   }

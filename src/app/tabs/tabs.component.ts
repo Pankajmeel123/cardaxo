@@ -25,7 +25,7 @@ export class TabsComponent implements OnInit {
       if(res.status == 'ERROR' && res.message === 'Data Not Found'){
         this.userService.userKycDetail().then((res:any)=>{
           if(res.status === 'OK' && res.data?.user_kyc_details?.user_kyc_status === "accepted"){
-            this.cardNav = 'cards/application';
+            this.cardNav = 'cards/card-list';
             console.log(this.cardNav)
           }else{
             this.cardNav = 'cards';

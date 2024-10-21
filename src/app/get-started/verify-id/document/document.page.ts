@@ -121,7 +121,8 @@ export class DocumentPage implements OnInit {
           console.log(res)
           if (res && res.status == 'OK') {
             this.isLoading = false;
-            this.router.navigate(['/cards/application']);
+            // this.router.navigate(['/cards/apply-card']);
+            // this.router.navigate(['/cards/application']);
             // this.router.navigate(['/home']);
           } else {
             this.isLoading = false;

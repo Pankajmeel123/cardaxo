@@ -20,6 +20,8 @@ export class PayPage implements OnInit {
   public isLoading: boolean = false;
 
   isScreenLarge: boolean = window.innerWidth > 377;
+  card:any;
+  coin:any;
 
 
   constructor(private route: ActivatedRoute, private router: Router, private toastController: ToastController, private cardService: CardService) { }
@@ -32,6 +34,8 @@ export class PayPage implements OnInit {
     this.baseAmount = this.route.snapshot.queryParams['amount'];
     this.rateUSD = this.route.snapshot.queryParams['rateUSD'];
     this.usd = 1 / this.rateUSD;
+    this.card = JSON.parse(this.route.snapshot.queryParams['card']);
+    this.coin = JSON.parse(this.route.snapshot.queryParams['coin']);
   }
 
   setText(text: string) {
@@ -57,6 +61,9 @@ export class PayPage implements OnInit {
         'pay_coin': 'usdt',
         'address': this.address,
         'usdt_amount': this.amount.toString(),
+        'card_type_id':this.card.card_type_id.toString(),
+        'coin_id':this.coin.coin_id?.toString() ?? this.coin.id.toString(),
+        'sub_coin_id':this.coin.coin_id ? this.coin.id.toString() : null,
       }; //TODO don't forget to change it
       const response: any = await this.cardService.cardRecharge(data);
       if (isFailedResponse(response)) {

@@ -16,6 +16,11 @@ const routes: Routes = [
     loadChildren: () => import('./application/application.module').then(m => m.ApplicationPageModule)
   },
   {
+    path: 'card-list',
+    // canActivate: [CardGuard],
+    loadChildren: () => import('./card-list/card-list.module').then(m => m.CardListPageModule)
+  },
+  {
     path: 'activation',
     // canActivate: [CardGuard],
     loadChildren: () => import('./activation/activation.module').then(m => m.ActivationPageModule)

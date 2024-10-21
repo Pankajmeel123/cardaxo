@@ -11,11 +11,11 @@
     background: var(--ion-color-secondary);
   }
 
-  h5{
+  h5 {
     margin: 10px 0 0;
   }
 
-  ion-col{
+  ion-col {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -25,29 +25,37 @@
   ion-icon {
     font-size: 3vh;
   }
-  .total_balance .balance  {
+
+  .total_balance .balance {
     text-align: left;
     padding: 14px 20px;
     border: 1px solid #fff;
     color: var(--ion-color-secondary-contrast);
     margin-top: 30px !important;
   }
-  .balance{
+
+  .balance {
     text-align: left;
-    padding: 0 20px;border: 1px solid #fff;
-    color: var(--ion-color-secondary-contrast); text-transform: uppercase;
-    p{
+    padding: 0 20px;
+    border: 1px solid #fff;
+    color: var(--ion-color-secondary-contrast);
+    text-transform: uppercase;
+
+    p {
       display: flex;
-      align-items: center; color: var(--ion-color-secondary-contrast);
+      align-items: center;
+      color: var(--ion-color-secondary-contrast);
     }
-    ion-icon{
+
+    ion-icon {
       margin-right: 10px;
     }
   }
 
   h5 {
     font-size: 12px;
-    padding: 0px !important;color: var(--ion-color-secondary-contrast);
+    padding: 0px !important;
+    color: var(--ion-color-secondary-contrast);
   }
 
   h1 {
@@ -65,27 +73,34 @@
   padding: 3px;
   float: left;
 }
-.new_logohome h2 { 
+
+.new_logohome h2 {
   color: var(--ion-color-secondary-contrast);
-	float: left;
-	vertical-align: top;
-	padding: 8px 0 0 7px;
-	margin: 0;  
-	font-size: 20px;
-	font-weight: 500;
+  float: left;
+  vertical-align: top;
+  padding: 8px 0 0 7px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
 }
-.total_balance ion-card { 
-	background: #0000004f;
+
+.total_balance ion-card {
+  background: #0000004f;
 }
 
 
-ion-icon{color: var(--ion-color-secondary-contrast)}
-.iocn_wall{ width: 50px;
+ion-icon {
+  color: var(--ion-color-secondary-contrast)
+}
+
+.iocn_wall {
+  width: 50px;
   height: 50px;
   border-radius: 50px;
   border: 2px solid #fff;
   padding: 11px;
 }
+
 // .portfolio {
 
 
@@ -117,19 +132,30 @@ ion-icon{color: var(--ion-color-secondary-contrast)}
 // }
 
 .assets {
-  ion-grid{
+  ion-grid {
     padding: 0;
   }
+
   ion-card {
     border-radius: 10px;
-  padding: 2px;
-  background: #0000006b;
-  color: var(--ion-color-secondary-contrast);
-  border: 1px solid #917a48;
-.manage_button{ background: var(--ion-color-primary);}
+    padding: 2px;
+    background: #0000006b;
+    color: var(--ion-color-secondary-contrast);
+    border: 1px solid #917a48;
 
-.add_img{ width: 100%; float: left;}
-.add_img img{ width: 100%; float: left;}
+    .manage_button {
+      background: var(--ion-color-primary);
+    }
+
+    .add_img {
+      width: 100%;
+      float: left;
+    }
+
+    .add_img img {
+      width: 100%;
+      float: left;
+    }
 
     ion-card-content {
       padding: 0px;
@@ -140,7 +166,7 @@ ion-icon{color: var(--ion-color-secondary-contrast)}
       color: var(--ion-color-secondary-contrast);
     }
 
-    ion-card-subtitle{
+    ion-card-subtitle {
       color: var(--ion-color-secondary-contrast);
     }
 
@@ -158,16 +184,18 @@ ion-icon{color: var(--ion-color-secondary-contrast)}
   align-items: center;
 
   h4 {
-   color: var(--ion-color-secondary-contrast);
-    margin: 0; font-weight: normal; font-size: 14px;
+    color: var(--ion-color-secondary-contrast);
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
   }
 
-  p{
+  p {
     margin: 0;
     color: var(--ion-color-secondary-contrast);
     font-weight: normal;
     font-size: 14px;
-    background:var(--ion-color-primary);
+    background: var(--ion-color-primary);
     padding: 3px 10px;
     border-radius: 5px;
   }
@@ -185,8 +213,3 @@ ion-icon{color: var(--ion-color-secondary-contrast)}
 a {
   text-decoration: none;
 }
-
-
-
-
-

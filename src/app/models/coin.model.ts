@@ -11,6 +11,7 @@ export interface ICoin {
   wallet_id?: number;
   transactions?: ITransaction[];
   created_at?: Date;
+  sub_coin?: any[];
   updated_at?: Date;
 }
 

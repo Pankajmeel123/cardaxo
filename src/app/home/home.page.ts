@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { currencies, iconCoin } from './currency-data';
 import { Router } from '@angular/router';
-import { IWallet, Wallet } from '../models/wallet.model';
+import { IWallet } from '../models/wallet.model';
 import { WalletService } from '../services/roynex/wallet.service';
 import { isFailedResponse } from '../core/http/http.model';
 import { ToastController } from '@ionic/angular';
@@ -54,10 +54,11 @@ export class HomePage {
     });
   }
 
-  manageCoins(event: Event) {
+  async manageCoins(event: Event) {
     event.preventDefault();
-    if (this.wallet)
-      this.router.navigate(['/home/manage-coins'], { queryParams: { 'wallet': JSON.stringify(this.wallet) } });
+    const coins: any = await this.userService.coins();
+    if (coins)
+      this.router.navigate(['/home/manage-coins'], { queryParams: { 'wallet': JSON.stringify(this.wallet) ,'coins':JSON.stringify(coins.data) } });
   }
 
   logTransaction(address: string, mainChain: string) {
@@ -73,8 +74,7 @@ export class HomePage {
       this.router.navigate(['/home/receive-token']);
 
     if (index === 2){
-      console.log(123)
-      this.router.navigate(['/home/recharge']);
+      this.router.navigate(['/cards/card-list'], { queryParams: { 'assignedCoin': true } });
     }
   }
 
@@ -102,6 +102,16 @@ export class HomePage {
           coin.transactions[0].inUSD = inUSD;
         }
       }
+      coin.sub_coin?.forEach(async (sub) => {
+        if (sub.transactions && sub.transactions.length > 0) {
+          if ((sub.transactions[0].total ?? 0) > 0) {
+            let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(sub.main_chain ?? '');
+            let inUSD: number = sub.transactions[0].total! * responseUSD['USD'];
+            this.total += inUSD;
+            sub.transactions[0].inUSD = inUSD;
+          }
+        }
+      })
     });
     this.isLoading = false;
   }

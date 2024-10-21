@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { currencies, iconCoin } from '../currency-data';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IWallet } from 'src/app/models/wallet.model';
 import { WalletService } from 'src/app/services/roynex/wallet.service';
 import { ToastController } from '@ionic/angular';
@@ -17,17 +17,19 @@ export class RechargePage implements OnInit {
   public isLoading: boolean = true;
   protected currencies = currencies;
   protected iconCoin: Record<string, any> = iconCoin;
+  card:any;
 
-  constructor(private router: Router, private walletService: WalletService, private toastController: ToastController, private cryptoCompareService: CryptoCompareService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private walletService: WalletService, private toastController: ToastController, private cryptoCompareService: CryptoCompareService) { }
 
   ngOnInit() {
+    this.card = JSON.parse(this.route.snapshot.queryParams['card']);
     console.log(123)
   }
 
-  async recharge(mainChain: string, address: string, amount: number, rateUSD: number) {
+  async recharge(coin: any, mainChain: string, address: string, amount: number, rateUSD: number) {
     if (amount > 0) {
       console.log(321)
-      this.router.navigate(['/home/recharge/pay'], { queryParams: { name: mainChain, address: address, amount: amount, rateUSD: rateUSD } });
+      this.router.navigate(['/home/recharge/pay'], { queryParams: { name: mainChain, address: address, amount: amount, rateUSD: rateUSD, card:JSON.stringify(this.card), coin: JSON.stringify(coin) } });
     } else {
       const toast = await this.toastController.create({
         message: "You have no amount",
@@ -58,11 +60,20 @@ export class RechargePage implements OnInit {
         if ((coin.transactions[0].total ?? 0) > 0) {
           let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(coin.main_chain ?? '');
           coin.transactions[0].rateUSD = responseUSD['USD'];
-          console.log(`dddddd ${coin.transactions[0].rateUSD} ${responseUSD['USD']}`);
           let inUSD: number = coin.transactions[0].total! * responseUSD['USD'];
           coin.transactions[0].inUSD = inUSD;
         }
       }
+      coin.sub_coin?.forEach(async (sub) => {
+        if (sub.transactions && sub.transactions.length > 0) {
+          if ((sub.transactions[0].total ?? 0) > 0) {
+            let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(sub.main_chain ?? '');
+            sub.transactions[0].rateUSD = responseUSD['USD'];
+            let inUSD: number = sub.transactions[0].total! * responseUSD['USD'];
+            sub.transactions[0].inUSD = inUSD;
+          }
+        }
+      })
     });
     this.isLoading = false;
   }
