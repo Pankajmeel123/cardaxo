@@ -122,7 +122,7 @@ export class DocumentPage implements OnInit {
           if (res && res.status == 'OK') {
             this.isLoading = false;
             // this.router.navigate(['/cards/apply-card']);
-            // this.router.navigate(['/cards/application']);
+            this.router.navigate(['/cards/card-list']);
             // this.router.navigate(['/home']);
           } else {
             this.isLoading = false;
