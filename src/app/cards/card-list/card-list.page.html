@@ -12,8 +12,8 @@
 <ion-content [fullscreen]="true">
   <div *ngIf="step === 1">
     <div class="wrapper">
-      <div class="cc mastercard" *ngFor="let data of cardList" (click)="selectedCard = data.card_type_id">
-        <div *ngIf="selectedCard == data.card_type_id" class="check_applyicon"><img src="assets/image/check__mark.png"> </div>
+      <div class="cc mastercard" *ngFor="let data of cardList" (click)="selectedCard = data">
+        <div *ngIf="selectedCard?.card_type_id == data.card_type_id" class="check_applyicon"><img src="assets/image/check__mark.png"> </div>
         <svg width="295" height="87">
           <path d="M 0 0 C 50 50 250 0 300 87"></path>
         </svg>
@@ -38,11 +38,18 @@
         </div>
       </div>
     </div>
-    <div class="custom-button-container " style=" width: 100%; float: left;" *ngIf="selectedCard">
+    <div class="custom-button-container " style=" width: 100%; float: left;" *ngIf="selectedCard?.card_type_id">
       <ion-button expand="full" color=" " shape=" " (click)="apply()" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Next</ion-button>
     </div>
   </div>
   <div *ngIf="step === 2">
+    <div [innerHtml]="selectedCard.description"></div>
+    <div class="custom-button-container " style=" width: 100%; float: left;display: flex;" *ngIf="selectedCard">
+      <ion-button expand="full" color=" " shape=" " (click)="step = 1" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Back</ion-button>
+      <ion-button expand="full" color=" " shape=" " (click)="step = 3" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Next</ion-button>
+    </div>
+  </div>
+  <div *ngIf="step === 3">
     Select Wallet 
     <div *ngIf="wallet && (wallet.coins?.length ?? 0) > 0">
       <ion-card *ngFor="let coin of wallet.coins; let i = index" (click)="selectedCoin = coin">
@@ -109,7 +116,7 @@
       </div>
     </div>
     <div *ngIf="selectedCoin" class="custom-button-container " style=" width: 100%; float: left;display: flex;">
-      <ion-button expand="full" color=" " shape=" " (click)="step = 1" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Back</ion-button>
+      <ion-button expand="full" color=" " shape=" " (click)="step = 2" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Back</ion-button>
       <ion-button expand="full" color=" " shape=" " (click)="apply2()" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Apply</ion-button>
     </div>
   </div>

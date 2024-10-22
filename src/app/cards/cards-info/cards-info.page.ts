@@ -16,10 +16,10 @@ import { CardService } from 'src/app/services/roynex/card.service';
 export class CardsInfoPage implements OnInit {
   protected currencies = currencies;
   public showDetails: number = -1;
-  public total: number = 0;
+  public total: string = '0';
   public isLoading: boolean = true;
   public cardDetails?: ICardDetails;
-  public bankTransactions: IBankTransaction[] = [];
+  public bankTransactions: any[] = [];
   public cardNumber = '';
   public cvv = '';
   public expire = '';
@@ -91,14 +91,18 @@ export class CardsInfoPage implements OnInit {
     this.cardDetails = response.data;
     if (this.cardDetails != null) {
       this.bankTransactions = [];
-      this.cardDetails.transactions?.forEach((element: ITransactionHyper) => {
+      this.cardDetails.transactions?.forEach((element: any) => {
         if (element && element.bank_tx_list) {
           this.bankTransactions = [...this.bankTransactions, ...element.bank_tx_list];
+          this.bankTransactions.map(res=>{
+            res.credit = parseFloat(res.credit!);
+            res.debit = parseFloat(res.debit!);
+          })
           console.log(this.bankTransactions);
         }
       });
-      if (this.cardDetails.balance && this.cardDetails.balance.available_balance) {
-        // this.total = (this.cardDetails.balance.available_balance);
+      if (this.cardDetails.balance && this.cardDetails.balance.current_balance) {
+        this.total = this.cardDetails.balance.current_balance;
       }
 
       if (this.cardDetails.encoded_card_detail && this.cardDetails.encoded_card_detail.card_number && this.cardDetails.encoded_card_detail.cvv && this.cardDetails.encoded_card_detail.expire) {
@@ -106,23 +110,6 @@ export class CardsInfoPage implements OnInit {
         this.cvv = this.cardDetails.encoded_card_detail.cvv;
         this.expire = this.cardDetails.encoded_card_detail.expire;
       }
-
-      this.total = 0;
-
-      this.bankTransactions.forEach((element: IBankTransaction) => {
-        // Clean up the string value before converting to a number
-        const creditValue = parseFloat(element.credit ?? '0');
-
-        // Check if the conversion is successful and not NaN
-        if (!isNaN(creditValue) && element.status === 1) {
-          console.log(`element ${creditValue}`);
-          this.total += creditValue;
-        } else {
-          console.warn(`Invalid credit value: ${element.credit}`);
-        }
-      });
-
-      // console.log(`total ${this.total}`);
 
     }
     this.isLoading = false;
