@@ -101,7 +101,7 @@ export class CardListPage implements OnInit, OnDestroy {
 
   apply(){
     if(this.assignedCoin){
-      this.router.navigate(['/home/recharge'], { queryParams: { 'card': JSON.stringify(this.cardList.filter(res=>res.card_type_id === this.selectedCard)[0])} });
+      this.router.navigate(['/home/recharge'], { queryParams: { 'card': JSON.stringify(this.selectedCard)} });
     }else{
       this.step = 2;
     }
@@ -110,7 +110,7 @@ export class CardListPage implements OnInit, OnDestroy {
   async apply2(){
     if(this.selectedCoin.transactions.length ? this.selectedCoin.transactions[0].total : false){
       this.step = 1;
-      this.router.navigate(['/cards/application'], { queryParams: { 'card': JSON.stringify(this.cardList.filter(res=>res.card_type_id === this.selectedCard)[0]) ,'coin':JSON.stringify(this.selectedCoin) } });
+      this.router.navigate(['/cards/application'], { queryParams: { 'card': JSON.stringify(this.selectedCard) ,'coin':JSON.stringify(this.selectedCoin) } });
       this.selectedCoin = null;
     }else {
       const toast = await this.toastController.create({
