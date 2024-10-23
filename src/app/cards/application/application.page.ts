@@ -19,7 +19,7 @@ export class ApplicationPage implements OnInit {
   public lastName: string = '';
   public mobileCode: string = '';
   public mobile: string = '';
-  public firstCharge: string = '';
+  public firstCharge!: number;
   public countries: any = countries;
   public port: any;
   card:any;
@@ -30,7 +30,6 @@ export class ApplicationPage implements OnInit {
 
   ngOnInit() {
     this.card = JSON.parse(this.route.snapshot.queryParams['card']);
-    this.coin = JSON.parse(this.route.snapshot.queryParams['coin']);
   }
 
   // apply() {
@@ -58,7 +57,7 @@ export class ApplicationPage implements OnInit {
   }
 
   firstChargeChanage(event: any) {
-    this.firstCharge = event.detail.value;
+    this.firstCharge = parseFloat(event.detail.value);
   }
 
   countryCodeChange(event: any) {
@@ -77,42 +76,43 @@ export class ApplicationPage implements OnInit {
         'first_recharge_amount': this.firstCharge,
         'card_type_id':this.card.card_type_id.toString(),
         'total_card_fee':this.card.total_card_fee.toString(),
-        'coin_id':this.coin.coin_id?.toString() ?? this.coin.id.toString(),
-        'sub_coin_id':this.coin.coin_id ? this.coin.id.toString() : null,
+        // 'coin_id':this.coin.coin_id?.toString() ?? this.coin.id.toString(),
+        // 'sub_coin_id':this.coin.coin_id ? this.coin.id.toString() : null,
       };
-      const response: any = await this.cardService.apply(data);
-      if (isFailedResponse(response)) {
-        this.isLoading = false;
-        const toast = await this.toastController.create({
-          message: response.message as string ?? '',
-          duration: 2500,
-          position: 'middle',
+      this.router.navigate(['/cards/summary'], { queryParams: { 'card': JSON.stringify(this.card), form:JSON.stringify(data)} } )
+      // const response: any = await this.cardService.apply(data);
+      // if (isFailedResponse(response)) {
+      //   this.isLoading = false;
+      //   const toast = await this.toastController.create({
+      //     message: response.message as string ?? '',
+      //     duration: 2500,
+      //     position: 'middle',
 
-        });
-        await toast.present();
-        return;
-      }
-      this.isLoading = false;
-      const toast1 = await this.toastController.create({
-        message: 'Done',
-        duration: 1000,
-        position: 'bottom',
-      });
-      await toast1.present();
-      await toast1.onDidDismiss().then(async () => {
-        this.router.navigate(['/cards/cards-info']);
-      });
+      //   });
+      //   await toast.present();
+      //   return;
+      // }
+      // this.isLoading = false;
+      // const toast1 = await this.toastController.create({
+      //   message: 'Done',
+      //   duration: 1000,
+      //   position: 'bottom',
+      // });
+      // await toast1.present();
+      // await toast1.onDidDismiss().then(async () => {
+      //   this.router.navigate(['/cards/cards-info']);
+      // });
     }
   }
 
   async validateField() {
     let message: string = '';
 
-    if (parseFloat(this.firstCharge) < 0) {
+    if (this.firstCharge < 0) {
       message = 'Please, enter amount greater then 0$';
     }
 
-    if (this.firstCharge.length === 0) {
+    if (!this.firstCharge) {
       message = 'Please, enter amount';
     }
 

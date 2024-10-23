@@ -1,0 +1,57 @@
+ion-card {
+    border-radius: 10px;
+    padding: 2px;
+    background: #0000006b;
+    color: var(--ion-color-secondary-contrast);
+    border: 1px solid #917a48;
+
+    .manage_button {
+      background: var(--ion-color-primary);
+    }
+
+    .add_img {
+      width: 100%;
+      float: left;
+    }
+
+    .add_img img {
+      width: 100%;
+      float: left;
+    }
+
+    ion-card-content {
+      padding: 0px;
+    }
+
+    ion-card-title {
+      font-size: 16px;
+      color: var(--ion-color-secondary-contrast);
+    }
+
+    ion-card-subtitle {
+      color: var(--ion-color-secondary-contrast);
+    }
+
+
+  }
+
+  .custom-button-container {
+    width: 100%;
+    text-align: center;
+    padding: 4vh 50px;
+  }
+  .check_applyicon {
+    width: 38px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    float: right;
+    text-align: right;
+    background: rgb(79, 55, 5);
+    border-radius: 0px 18px 3px 26px;
+}
+
+.check_applyicon img {
+    width: 21px;
+    padding: 4px 7px 0 0;
+}

@@ -28,6 +28,14 @@ const routes: Routes = [
   {
     path: 'cards-info',
     loadChildren: () => import('./cards-info/cards-info.module').then(m => m.CardsInfoPageModule)
+  },
+  {
+    path: 'wallet-list',
+    loadChildren: () => import('./wallet-list/wallet-list.module').then( m => m.WalletListPageModule)
+  },
+  {
+    path: 'summary',
+    loadChildren: () => import('./summary/summary.module').then( m => m.SummaryPageModule)
   }
 ];
 

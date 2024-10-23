@@ -103,23 +103,7 @@ export class CardListPage implements OnInit, OnDestroy {
     if(this.assignedCoin){
       this.router.navigate(['/home/recharge'], { queryParams: { 'card': JSON.stringify(this.selectedCard)} });
     }else{
-      this.step = 2;
-    }
-  }
-
-  async apply2(){
-    if(this.selectedCoin.transactions.length ? this.selectedCoin.transactions[0].total : false){
-      this.step = 1;
-      this.router.navigate(['/cards/application'], { queryParams: { 'card': JSON.stringify(this.selectedCard) ,'coin':JSON.stringify(this.selectedCoin) } });
-      this.selectedCoin = null;
-    }else {
-      const toast = await this.toastController.create({
-        message: "You have no amount",
-        duration: 2500,
-        position: 'bottom',
-
-      });
-      await toast.present();
+      this.router.navigate(['/cards/application'], { queryParams: { 'card': JSON.stringify(this.selectedCard)} });
     }
   }
 

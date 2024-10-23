@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: bold;">Wallet list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="assets">
+    <div class="ion-padding-horizontal">
+      <h2 style="color: var(--ion-color-secondary-contrast); ;font-weight: 500;font-size: 20px;padding: 30px 0 3px 0;margin: 0;text-align: center;">Select wallet to Pay</h2>
+      <!-- <p style="color: var(--ion-color-secondary-contrast); ;margin-top: 0;font-size: 12px;font-style: italic;">Summary of card you seleted and charges that will be applied.</p> -->
+    </div>
+    <div *ngIf="wallet && (wallet.coins?.length ?? 0) > 0">
+      <ion-card *ngFor="let coin of wallet.coins; let i = index" (click)="selectedCoin = coin">
+        <div *ngIf="selectedCoin?.symbol === coin.symbol" class="check_applyicon"><img src="assets/image/check__mark.png"> </div>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row class="ion-align-items-center ion-justify-content-between">
+              <ion-row class="ion-align-items-center">
+                <ion-col size="auto" style="display: flex;">
+                  <img [src]="getIconCoin(coin.main_chain ?? 'btc')" alt="" width="40px" height="40px">
+                </ion-col>
+                <ion-col class="ion-text-start" size="auto">
+                  <ion-card-title style="font-weight: bold;">
+                    {{coin.symbol ?? ''}}
+                  </ion-card-title>
+                  <ion-card-subtitle>
+                    {{ coin.name ?? '' }}
+                  </ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+              <ion-col size="auto" class="ion-text-end">
+                <ion-card-title>
+                  {{(coin.transactions && coin.transactions.length > 0 ? coin.transactions[0].total ?? 0 : 0) | number:'0.1-4'}}
+                </ion-card-title>
+                <ion-card-subtitle>
+                  ≈ ${{(coin.transactions && coin.transactions.length > 0 ? coin.transactions[0].inUSD ?? 0 : 0) | number:'0.1-4'}}
+                </ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+      <div *ngFor="let coin of wallet.coins; let i = index">
+        <ion-card *ngFor="let subCoin of coin.sub_coin; let i = index" (click)="selectedCoin = subCoin">
+          <div *ngIf="selectedCoin?.symbol === subCoin.symbol" class="check_applyicon"><img src="assets/image/check__mark.png"> </div>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row class="ion-align-items-center ion-justify-content-between">
+                <ion-row class="ion-align-items-center">
+                  <ion-col size="auto" style="display: flex;">
+                    <img [src]="getIconCoin(subCoin.main_chain ?? 'btc')" alt="" width="40px" height="40px">
+                  </ion-col>
+                  <ion-col class="ion-text-start" size="auto">
+                    <ion-card-title style="font-weight: bold;">
+                      {{subCoin.symbol ?? ''}}
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      {{ subCoin.name ?? '' }}
+                    </ion-card-subtitle>
+                  </ion-col>
+                </ion-row>
+                <ion-col size="auto" class="ion-text-end">
+                  <ion-card-title>
+                    {{(subCoin.transactions && subCoin.transactions.length > 0 ? subCoin.transactions[0].total ?? 0 : 0) | number:'0.1-4'}}
+                  </ion-card-title>
+                  <ion-card-subtitle>
+                    ≈ ${{(subCoin.transactions && subCoin.transactions.length > 0 ? subCoin.transactions[0].inUSD ?? 0 : 0) | number:'0.1-4'}}
+                  </ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+    <div *ngIf="selectedCoin" class="custom-button-container " style=" width: 100%; float: left">
+      <ion-button expand="full" color=" " shape=" " (click)="apply()" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Apply</ion-button>
+    </div>
+  </div>
+</ion-content>

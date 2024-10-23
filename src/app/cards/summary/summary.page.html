@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: bold;"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="assets" style="background-image: url('assets/image/home_btmbg.png'); background-repeat: repeat-y;background-size: cover; background-position: center;padding: 0px 0 10px;">
+    <div class="ion-padding-horizontal">
+      <h2 style="color: var(--ion-color-secondary-contrast); ;font-weight: 500;font-size: 20px;padding: 30px 0 3px 0;margin: 0;text-align: center;">ORDER SUMMARY</h2>
+      <p style="color: var(--ion-color-secondary-contrast); ;margin-top: 0;font-size: 12px;font-style: italic;">Summary of card you seleted and charges that will be applied.</p>
+    </div>
+    <div style="display: flex;justify-content: center;">
+      <table>
+        <tr>
+          <td style="padding: 4px;border: 1px solid;">Card Name</td>
+          <td style="padding: 4px;border: 1px solid;">{{card.name}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 4px;border: 1px solid;">Card Type</td>
+          <td style="padding: 4px;border: 1px solid;">{{card.card_type == 1?'Virtual Card':'Physical Card'}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 4px;border: 1px solid;">Name On Card</td>
+          <td style="padding: 4px;border: 1px solid;">{{form.first_name}} {{form.last_name}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 4px;border: 1px solid;">Card Issuance Fees</td>
+          <td style="padding: 4px;border: 1px solid;">${{card.total_card_fee}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 4px;border: 1px solid;">Recharge Amount</td>
+          <td style="padding: 4px;border: 1px solid;">${{form.first_recharge_amount}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 4px;border: 1px solid;">Deposit Fees</td>
+          <td style="padding: 4px;border: 1px solid;">{{card.total_recharge_fee}}%</td>
+        </tr>
+        <tr>
+          <td style="padding: 4px;border: 1px solid;">Total Amount</td>
+          <td style="padding: 4px;border: 1px solid;">${{card.total_card_fee + form.first_recharge_amount + (card.total_recharge_fee*form.first_recharge_amount/100)}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="custom-button-container " style=" width: 100%; float: left;">
+      <ion-button expand="full" color=" " shape=" " (click)="next()" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">NEXT</ion-button>
+    </div>
+  </div>
+</ion-content>
