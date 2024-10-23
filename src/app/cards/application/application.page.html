@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title style="font-weight: bold;">Application</ion-title>
+    <ion-title style="font-weight: bold; width: 100%;">Application</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
     <ion-row class="height-container">
       <ion-col size="12">
         <ion-row class="ion-justify-content-center ion-align-items-center">
-          <img src="assets/image/w_logo.png" alt=""
+          <img src="assets/image/newlogo.png" alt=""
             style="margin-bottom: -10px; margin-right: 10px; width: 70%;">
           <!-- <h6 style="font-weight: 400; font-size: 30px; ">CARDAXO</h6> -->
         </ion-row>
@@ -57,7 +57,7 @@
                 (ionChange)="mobileChanage($event)"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input type="number" label="Recharge Amount (USD)" label-placement="floating"
+              <ion-input type="number" label="Recharge Amount (USD) (Minimum $30)" label-placement="floating"
                 (ionChange)="firstChargeChanage($event)" placeholder="Enter first recharge amount (USD)"></ion-input>
             </ion-item>
           </ion-card>
