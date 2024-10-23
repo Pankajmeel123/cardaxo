@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VeriffService } from 'src/app/services/veriff.service';
 import { PictureService } from 'src/app/services/picture.service';
-import { ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { CardService } from 'src/app/services/roynex/card.service';
 import { UserService } from 'src/app/services/roynex/user.service';
 
@@ -49,7 +49,8 @@ export class DocumentPage implements OnInit {
     private pictureService: PictureService,
     private toastController: ToastController,
     private cardService: CardService,
-    private userService: UserService
+    private userService: UserService,
+    private alertController: AlertController
   ) { }
 
   ngOnInit() {
@@ -112,6 +113,25 @@ export class DocumentPage implements OnInit {
 
   }
 
+  async popup(){
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'KYC Done',
+      message: 'Your KYC is submitted Successfully, We are reviewing it. Kindly Wait For Some Time',
+      buttons: [
+        {
+          text: 'OK',
+          role: 'confirm',
+          handler: () => {
+            this.router.navigate(['/home']);
+          },
+        }
+      ],
+    });
+
+    await alert.present();
+  }
+
   async flowVeriff() {
     if (this.session && this.session.status == 'success') {
       this.isLoading = true;
@@ -121,8 +141,9 @@ export class DocumentPage implements OnInit {
           console.log(res)
           if (res && res.status == 'OK') {
             this.isLoading = false;
+            this.popup();
             // this.router.navigate(['/cards/apply-card']);
-            this.router.navigate(['/cards/card-list']);
+            // this.router.navigate(['/cards/card-list']);
             // this.router.navigate(['/home']);
           } else {
             this.isLoading = false;
