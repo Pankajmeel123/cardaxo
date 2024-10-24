@@ -8,10 +8,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="assets">
+  <div *ngIf="!( wallet && (wallet.coins?.length ?? 0) > 0)">
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
+        <ion-col size="8">
+          <h4>
+            Please enable atleast one block coin.
+          </h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="wallet && (wallet.coins?.length ?? 0) > 0" class="assets">
     <div class="ion-padding-horizontal">
       <h2 style="color: var(--ion-color-secondary-contrast); ;font-weight: 500;font-size: 20px;padding: 30px 0 3px 0;margin: 0;text-align: center;">Select wallet to Pay</h2>
-      <!-- <p style="color: var(--ion-color-secondary-contrast); ;margin-top: 0;font-size: 12px;font-style: italic;">Summary of card you seleted and charges that will be applied.</p> -->
     </div>
     <div *ngIf="wallet && (wallet.coins?.length ?? 0) > 0">
       <ion-card *ngFor="let coin of wallet.coins; let i = index" (click)="selectedCoin = coin">

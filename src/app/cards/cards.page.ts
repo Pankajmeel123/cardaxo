@@ -9,22 +9,28 @@ import { AlertController } from '@ionic/angular';
 })
 export class CardsPage implements OnInit {
 
+  declined:boolean = false;
+
   constructor(private router: Router, private alertController:AlertController) { }
 
   ngOnInit() {
   }
 
   ionViewDidEnter(){
-    if(this.router.url.split('=')[1]){
-      this.popup();
+    if(this.router.url.split('=')[1] === 'true'){
+      this.popup('Card Activation in process.', 'Card will be active in 2min, please try again later.');
+    }else if(this.router.url.split('=')[1] === 'kyc'){
+      this.popup('KYC Processing', 'Your KYC is submitted Successfully, We are reviewing it. Kindly Wait For Some Time');
+    }else if(this.router.url.split('=')[1] === 'declined'){
+      this.declined = true;
     }
   }
 
-  async popup(){
+  async popup(title: string, message: string){
     const alert = await this.alertController.create({
       header: 'Alert',
-      subHeader: 'Card Activation in process.',
-      message: 'Card will be active in 2min, please try again later.',
+      subHeader: title,
+      message: message,
       buttons: [
         {
           text: 'OK',

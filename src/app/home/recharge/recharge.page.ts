@@ -23,12 +23,10 @@ export class RechargePage implements OnInit {
 
   ngOnInit() {
     this.card = JSON.parse(this.route.snapshot.queryParams['card']);
-    console.log(123)
   }
 
   async recharge(coin: any, mainChain: string, address: string, amount: number, rateUSD: number) {
     if (amount > 0) {
-      console.log(321)
       this.router.navigate(['/home/recharge/pay'], { queryParams: { name: mainChain, address: address, amount: amount, rateUSD: rateUSD, card:JSON.stringify(this.card), coin: JSON.stringify(coin) } });
     } else {
       const toast = await this.toastController.create({
