@@ -1,0 +1,56 @@
+ 
+ 
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-align-center app_bar_title" style="width: 100%;">Profile </ion-title>
+    <ion-buttons slot="end">
+      <div style="width: 48px;"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   <div class="profile_page">
+<div class="profile_info">
+    <ion-row>
+      <ion-col size="4"><strong>
+          <p>Name  </p>
+        </strong>  </ion-col>
+      <ion-col size="8"><strong>
+          <p>Archit Singhal</p>
+        </strong></ion-col>     
+    </ion-row>
+    <ion-row>
+      <ion-col size="4"><strong>
+          <p>Email  </p>
+        </strong>  </ion-col>
+      <ion-col size="8"><strong>
+          <p>archit@acentriatech.com</p>
+        </strong></ion-col>     
+    </ion-row>
+    <ion-row>
+      <ion-col size="4"><strong>
+          <p>Mobile No.  </p>
+        </strong>  </ion-col>
+      <ion-col size="8"><strong>
+          <p>9876543210</p>
+        </strong></ion-col>     
+    </ion-row> </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" style="padding: 5px 15px; width: 100%" id="logout-alert">
+        <ion-button color="danger" expand="full" style="width: 100%" >LOGOUT</ion-button>
+      </ion-col>
+      <ion-col size="12" style="padding: 5px 15px; width: 100%" id="delete-alert" >
+        <ion-button color="danger" fill="outline" style="width: 100%">DELETE ACCOUNT</ion-button>
+      </ion-col> 
+    </ion-row>
+  </ion-grid>
+</div>
+</ion-content>
+
+ 

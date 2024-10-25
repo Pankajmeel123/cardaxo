@@ -1,0 +1,21 @@
+ion-title{ font-size: 20px; text-transform: uppercase;;}
+ 
+.profile_page {
+	padding: 20px 10px 0;
+	width: 100%;
+	float: left;
+}
+.profile_info ion-col {
+    border: 1px solid #fff;
+  }
+  .profile_info{ padding:0 0 30px 0px ;
+	width: 100%;
+	float: left;}
+.profile_page p {
+    font-size: 14px;
+    text-align: left;
+    float: left;
+    color: #fff;
+    padding: 10px 5px;
+    margin: 0;
+  }
