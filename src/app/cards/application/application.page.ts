@@ -66,7 +66,7 @@ export class ApplicationPage implements OnInit {
 
   async apply() {
     if (await this.validateField()) {
-      this.isLoading = true;
+      // this.isLoading = true;
       const data = {
         'email': this.email,
         'first_name': this.firstName,

@@ -25,6 +25,7 @@ export class WalletListPage implements OnInit {
   ngOnInit() {
     this.card = JSON.parse(this.route.snapshot.queryParams['card']);
     this.form = JSON.parse(this.route.snapshot.queryParams['form']);
+    console.log(this.form)
     this.getWallet();
   }
 
@@ -59,11 +60,11 @@ export class WalletListPage implements OnInit {
     if (this.selectedCoin?.transactions.length && this.selectedCoin?.transactions[0].total > 0) {
       const data = {
         'email': this.form.email,
-        'first_name': this.form.firstName,
-        'last_name': this.form.lastName,
-        'mobile_code': this.form.mobileCode,
+        'first_name': this.form.first_name,
+        'last_name': this.form.last_name,
+        'mobile_code': this.form.mobile_code,
         'mobile': this.form.mobile,
-        'first_recharge_amount': this.form.firstCharge,
+        'first_recharge_amount': this.form.first_recharge_amount,
         'card_type_id':this.card?.card_type_id.toString(),
         'total_card_fee':this.card?.total_card_fee.toString(),
         'coin_id':this.selectedCoin?.coin_id?.toString() ?? this.selectedCoin?.id.toString(),

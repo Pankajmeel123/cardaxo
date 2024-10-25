@@ -26,18 +26,18 @@ export class TabsComponent implements OnInit {
         this.userService.userKycDetail().then((res:any)=>{
           if(res.status === 'OK' && res.data?.user_kyc_details?.user_kyc_status === "accepted"){
             this.cardNav = 'cards/card-list';
-            console.log(this.cardNav)
+          }else if(res.status === 'OK' && res.data?.user_kyc_details?.user_kyc_status === "pending"){
+            this.cardNav = 'cards?showpopup=kyc';
+          }else if(res.status === 'OK' && res.data?.user_kyc_details?.user_kyc_status === "declined"){
+            this.cardNav = 'cards?showpopup=declined';
           }else{
             this.cardNav = 'cards';
-            console.log(this.cardNav)
           }
         })
       }else if(res.status == 'ERROR' && res.message === 'please, retry later'){
         this.cardNav = 'cards?showpopup=true';
-        console.log(this.cardNav)
       }else{
         this.cardNav = 'cards/cards-info';
-        console.log(this.cardNav)
       }
     })
   }

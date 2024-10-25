@@ -22,6 +22,7 @@ export class CardListPage implements OnInit, OnDestroy {
   step: number = 1;
   protected iconCoin: Record<string, any> = iconCoin;
   assignedCoin:any;
+  card!: number;
 
   constructor(private cardService: CardService, private toastController: ToastController, private cryptoCompareService:CryptoCompareService, private walletService: WalletService, private router:Router, private route:ActivatedRoute ,private userService: UserService) { }
 
@@ -34,7 +35,8 @@ export class CardListPage implements OnInit, OnDestroy {
   }
 
   selectCard(index:any){
-    console.log(index)
+    this.card = index;
+    this.selectedCard = this.cardList[this.card];
   }
 
   ngOnDestroy(): void {
@@ -71,24 +73,29 @@ export class CardListPage implements OnInit, OnDestroy {
     this.cardList = cardList.data;
     if(!this.cardList.length && this.assignedCoin){
       this.getnav();
-    }
-    this.selectedCard = this.cardList[0].card_type_id;
+    }else
+      this.selectedCard = this.cardList[0].card_type_id;
   }
 
   getnav(){
     this.cardService.cardDetails({}).then((res:any)=>{
       if(res.status == 'ERROR' && res.message === 'Data Not Found'){
         this.userService.userKycDetail().then((res:any)=>{
+          console.log(res)
           if(res.status === 'OK' && res.data?.user_kyc_details?.user_kyc_status === "accepted"){
             this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
               this.router.navigate(['cards/card-list']);
             });
+          }else if(res.status === 'OK' && res.data?.user_kyc_details?.user_kyc_status === "pending"){
+            this.router.navigate(['cards'],{queryParams:{showpopup:'kyc'}});
+          }else if(res.status === 'OK' && res.data?.user_kyc_details?.user_kyc_status === "declined"){
+            this.router.navigate(['cards'],{queryParams:{showpopup:'declined'}});
           }else{
             this.router.navigate(['cards']);
           }
         })
       }else if(res.status == 'ERROR' && res.message === 'please, retry later'){
-        this.router.navigate(['cards?showpopup=true']);
+        this.router.navigate(['cards'],{queryParams:{showpopup:'true'}});
       }else{
         this.router.navigate(['cards/cards-info']);
       }

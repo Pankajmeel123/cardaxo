@@ -20,8 +20,7 @@ export class RegisterPage implements OnInit {
   }
 
   async register(){
-    await this.authService.signUpByEmail({ 'email': this.form.email, referral_code: this.form.code }).then((res:any)=>{
-      console.log(res);
+    await this.authService.sendCode({ 'email': this.form.email, referral_code: this.form.code ,type:'1' }).then((res:any)=>{
       if(res.success === false){
         if(res.data.email){
           this.presentToast(res.data.email[0]);
@@ -29,7 +28,7 @@ export class RegisterPage implements OnInit {
           this.presentToast(res.data.referral_code[0]);
         }
       }else{
-        this.router.navigate(['/get-started/by-email/enter-code'], { queryParams: { email: this.form.email } });
+        this.router.navigate(['/get-started/by-email/enter-code'], { queryParams: { email: this.form.email, referral_code: this.form.code } });
       }
     })
   }
