@@ -29,15 +29,18 @@
 .earn_upto h2 {
   color: #fff;
   text-align: left;
-  font-size: 21px;
-  line-height: 30px;
-  font-weight: bold;
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: normal;
   text-transform: capitalize;
   padding: 35px 0;
 }
 
 .earn_upto h2 span {
   color: #F00;
+  display: block;
+  font-size: 18px;font-weight: bold;
+  text-transform: uppercase;
 }
 
 .lv1_allbx {
@@ -81,7 +84,10 @@
   font-weight: bold;
   float: right;
 }
-
+.lvi_text h3 span {
+	color: #000;
+	font-size: 12px;
+}
 .withdrawable_bx p {
   font-size: 11px;
   text-align: left;
@@ -232,4 +238,57 @@
 
 .partner_promotion h3 span {
   padding: 0 3px;
+}
+.how_to_earn_bx {
+	width: 100%;
+	float: left; padding: 10px 0 0 0;
+}
+.how_to_earn_bx ul {
+	margin: 0;
+	padding: 0;
+}
+.how_to_earn_bx ul li {
+	display: block;
+	float: left;
+	width: 100%;
+}
+.num_bx {
+	width: 12%;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	margin: auto;
+}
+.num_bx span {
+  float: left;
+  width: 30px;
+  height: 30px;
+  background: #595959;
+  border-radius: 50px;
+  line-height: 32px;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  margin: auto;
+  color: #fff;
+}.text_step {
+	width: 88%;
+  float: left;
+}.text_step h2 {
+	font-size: 12px !important;
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}.text_step p {
+	font-size: 13px;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+}.num_bx p {
+	font-size: 12px;
+	text-align: left;
+	margin: auto;
+	padding: 0 0 0 3px;
+	margin: 0;
 }

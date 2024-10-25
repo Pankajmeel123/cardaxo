@@ -29,7 +29,7 @@
   .total_balance .balance {
     text-align: left;
     padding: 14px 20px;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     color: var(--ion-color-secondary-contrast);
     margin-top: 30px !important;
   }
@@ -53,7 +53,7 @@
   }
 
   h5 {
-    font-size: 12px;
+    font-size: 15px;
     padding: 0px !important;
     color: var(--ion-color-secondary-contrast);
   }
@@ -93,13 +93,7 @@ ion-icon {
   color: var(--ion-color-secondary-contrast)
 }
 
-.iocn_wall {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  border: 2px solid #fff;
-  padding: 11px;
-}
+ 
 
 // .portfolio {
 
@@ -141,7 +135,7 @@ ion-icon {
     padding: 2px;
     background: #0000006b;
     color: var(--ion-color-secondary-contrast);
-    border: 1px solid #917a48;
+    border: 2px solid #917a48;
 
     .manage_button {
       background: var(--ion-color-primary);
@@ -212,4 +206,18 @@ ion-icon {
 
 a {
   text-decoration: none;
+}
+
+.wallet_iocnbx  ion-icon {
+	font-size: 5vh;
+}
+.iocn_wall {
+	text-align: center;
+}
+.wallet_iocnbx {
+	width: 100%;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px;
 }

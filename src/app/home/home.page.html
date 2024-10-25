@@ -21,8 +21,10 @@
       <ion-grid>
         <ion-row>
           <ion-col (click)="navigateAction(i)" *ngFor="let walletAction of walletActions; let i = index" size="4">
+            <div class="wallet_iocnbx">
             <div class="iocn_wall"> <ion-icon [name]="walletAction.icon"></ion-icon></div>
             <h5>{{walletAction.name}}</h5>
+          </div>
           </ion-col>
         </ion-row>
       </ion-grid>

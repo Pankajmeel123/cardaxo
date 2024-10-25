@@ -32,3 +32,32 @@ ion-card {
 a {
   text-decoration: none;
 }
+
+.logo_new{ width: 100%; float: left; text-align: center;}
+.logo_new img{ width: 200px; text-align: center;}
+.form_adress {
+	width: 100%;
+	float: left;
+}
+.one_form {
+	margin: 10px 0 0;
+}
+.paste_scan_button {
+	background: #3a3a3a;
+	padding: 10px 0 !important;
+	width: 100%;
+	margin-top: 12px;
+}.paste_scan_button p {
+	color: var(--ion-color-step-750, #ffffff);
+	padding: 0;
+	margin: 0;
+}
+.send_button {
+	background: #b0893a;
+	padding: 10px 0 !important;
+	width: 100%; color: #fff;
+	margin-top: 12px;
+}.send_button p { 
+	padding: 0;color: #fff;
+	margin: 0;
+}
