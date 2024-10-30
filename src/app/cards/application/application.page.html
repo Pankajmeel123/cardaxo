@@ -57,7 +57,7 @@
                 (ionChange)="mobileChanage($event)"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input type="number" label="Recharge Amount (USD) (Minimum $30)" label-placement="floating"
+              <ion-input type="number" label="Recharge Amount (USD) (Minimum ${{card.min_single_recharge_amount}})" label-placement="floating"
                 (ionChange)="firstChargeChanage($event)" placeholder="Enter first recharge amount (USD)"></ion-input>
             </ion-item>
           </ion-card>

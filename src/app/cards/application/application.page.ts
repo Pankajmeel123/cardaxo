@@ -30,6 +30,7 @@ export class ApplicationPage implements OnInit {
 
   ngOnInit() {
     this.card = JSON.parse(this.route.snapshot.queryParams['card']);
+    this.card.min_single_recharge_amount = parseFloat(this.card.min_single_recharge_amount)
   }
 
   // apply() {
@@ -110,6 +111,10 @@ export class ApplicationPage implements OnInit {
 
     if (this.firstCharge < 0) {
       message = 'Please, enter amount greater then 0$';
+    }
+
+    if (this.firstCharge < parseFloat(this.card.min_single_recharge_amount)) {
+      message = 'Please, enter amount greater then min recaharge value';
     }
 
     if (!this.firstCharge) {

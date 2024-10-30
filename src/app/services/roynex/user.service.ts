@@ -46,6 +46,10 @@ export class UserService {
     return await this.http.get<IUser>('roynex', 'common/bannerList');
   }
 
+  public async commonPagesList(body: Record<string, any>) {
+    return await this.http.post<IUser>('roynex', 'common/commonPagesList', body);
+  }
+
   public async coins() {
     return await this.http.post<IUser>('roynex', 'users/coin', {});
   }

@@ -11,41 +11,50 @@
 
 <ion-content [fullscreen]="true">
   <div class="satting_page">
-  <ion-item [button]="true" class="margin-bottom setting_menu" >
-    <ion-icon slot="start" name="person-outline" size="large"></ion-icon> 
+  <ion-item [button]="true" routerLink="/profile" class="margin-bottom setting_menu" >
+    <ion-icon slot="start" name="person-outline"></ion-icon> 
     <ion-label>Profile</ion-label>
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
   </ion-item>
 
-  <ion-item [button]="true" class="margin-bottom setting_menu"  >
-    <ion-icon slot="start" name="help-circle-outline" size="large"></ion-icon>
+  <ion-item [button]="true" routerLink="/about" class="margin-bottom setting_menu"  >
+    <ion-icon slot="start" name="help-circle-outline"></ion-icon>
     <ion-label>About us</ion-label>
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
   </ion-item>
-  <ion-item [button]="true" class="margin-bottom setting_menu"    >
-    <ion-icon slot="start" name="call-outline" size="large"></ion-icon>
+
+  <ion-item [button]="true" routerLink="/support" class="margin-bottom setting_menu"    >
+    <ion-icon slot="start" name="call-outline"></ion-icon>
     <ion-label>Support</ion-label>
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
   </ion-item>
-  <ion-item [button]="true" class="margin-bottom setting_menu"    >
-    <ion-icon slot="start" name="reader-outline" size="large"></ion-icon>
+
+  <ion-item [button]="true" routerLink="/terms-and-conditions" class="margin-bottom setting_menu"    >
+    <ion-icon slot="start" name="reader-outline"></ion-icon>
     <ion-label>Terms and Conditions</ion-label>
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
   </ion-item>
-  <ion-item [button]="true" class="margin-bottom setting_menu"    >
-    <ion-icon slot="start" name="document-outline" size="large"></ion-icon>
+
+  <ion-item [button]="true" routerLink="/privacy" class="margin-bottom setting_menu"    >
+    <ion-icon slot="start" name="document-outline"></ion-icon>
     <ion-label>Privacy Policy</ion-label>
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
   </ion-item>
 
   <ion-item [button]="true" class="margin-bottom setting_menu" id="delete-alert">
-    <ion-icon slot="start" name="trash-outline" size="large"></ion-icon>
-    <ion-label>DELETE ACCOUNT</ion-label>
+    <ion-icon slot="start" name="trash-outline"></ion-icon>
+    <ion-label color="danger">DELETE ACCOUNT</ion-label>
   </ion-item>
+
   <ion-item [button]="true" class="margin-bottom setting_menu" id="logout-alert">
-    <ion-icon slot="start" name="log-out-outline" size="large"></ion-icon>
-    <ion-label>LOGOUT</ion-label>
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    <ion-label color="primary">LOGOUT</ion-label>
   </ion-item>
 </div>
   <!--  <ion-grid>
     <ion-row>
       <ion-col style="padding: 50px;">
-        <ion-icon name="person-circle-outline" color="primary" size="large"></ion-icon>
+        <ion-icon name="person-circle-outline" color="primary"></ion-icon>
         <p style="color: var(--ion-color-primary);">{{account}}</p>
       </ion-col>
      <ion-col size="12" style="padding: 5px 15px;">

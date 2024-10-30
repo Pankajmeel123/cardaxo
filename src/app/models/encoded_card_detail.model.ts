@@ -3,6 +3,7 @@ import { Transaction } from "./transaction";
 
 export interface IEncoedCardDetail {
   card_number?: string,
+  image?: string,
   cvv?: string,
   expire?: string
 }

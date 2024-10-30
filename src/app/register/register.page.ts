@@ -28,7 +28,7 @@ export class RegisterPage implements OnInit {
           this.presentToast(res.data.referral_code[0]);
         }
       }else{
-        this.router.navigate(['/get-started/by-email/enter-code'], { queryParams: { email: this.form.email, referral_code: this.form.code } });
+        this.router.navigate(['/get-started/by-email/enter-code'], { queryParams: { email: this.form.email, form: JSON.stringify(this.form) } });
       }
     })
   }

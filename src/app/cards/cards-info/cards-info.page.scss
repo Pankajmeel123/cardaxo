@@ -336,3 +336,173 @@ img {
     }
   }
 }
+
+.card_credit_design {
+  // width: 100%;
+  margin: 10px;
+  float: left;
+}
+
+.card_credit_design_text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+
+.card_credit_design_text h2 {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 200;
+  letter-spacing: 2px;
+
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-rendering: geometricprecision;
+  color: rgb(185, 191, 196);
+  text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+  width: 100%;
+  padding: 5px 0 0 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.card_credit_design_text h2 span {
+  font-size: 9px;
+  text-align: left;
+  margin: auto;
+  display: block;
+  width: 100%;
+}
+
+.card_credit_design_text h3 {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  padding: 0 0 0px 0;
+  font-size: 20px;
+  font-family: "OCR A Std", sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-rendering: geometricprecision;
+  color: rgb(185, 191, 196);
+  text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
+  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+}
+
+.card_credit_design_text h4 {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  font-family: "OCR A Std", sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-rendering: geometricprecision;
+  color: rgb(185, 191, 196);
+  text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
+  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+  float: left;
+  width: 50%;
+  padding: 5px 0 0 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.card_credit_design_text h5 {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  font-family: "OCR A Std", sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-rendering: geometricprecision;
+  color: rgb(185, 191, 196);
+  text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
+  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+
+  float: left;
+  width: 50%;
+  padding: 5px 0 0 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.card_credit_design_text h6 {
+  text-align: right;
+  font-size: 12px;
+  font-family: "OCR A Std", sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-rendering: geometricprecision;
+  color: rgb(185, 191, 196);
+  text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+  float: right;
+  width: 100%;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 38px 0 31px 0;
+  ;
+}
+
+.card_credit_design_text h6 span {
+  margin: 0;
+  width: 100%;
+  text-align: right;
+  padding: 0 0 0px 0;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-rendering: geometricprecision;
+  color: rgb(185, 191, 196);
+  text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+  float: right;
+}
+
+.card_credit_img {
+  position: relative;
+  text-align: center;
+}
+
+.card_credit_img img {
+  width: 349px;
+  height: 200px;
+  text-align: center;
+  margin: auto;
+}
+
+.visa_logo_incard {
+  width: auto;
+  float: right;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.visa_logo_incard img {
+  width: 48px !important;
+  height: auto !important;
+}
+
+.card_credit_design_button_more {
+  width: 100%; float: left;
+    text-align: center;
+  }
+  .card_credit_design button {
+    color: #fff;
+    margin-bottom: 12px;
+    background: #b0893a;
+    border-radius: 50px;
+    padding: 11px 20px;
+    text-align: center;
+  }

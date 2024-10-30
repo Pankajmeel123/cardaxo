@@ -66,15 +66,25 @@ export class HomePage {
       this.router.navigate(['/home/log-transactions'], { queryParams: { 'address': address, 'name': mainChain } });
   }
 
-  navigateAction(index: number) {
-    if (index === 0)
-      this.router.navigate(['/home/send-token']);
+  async navigateAction(index: number) {
+    if(!( this.wallet && (this.wallet.coins?.length ?? 0) > 0)){
+      const toast = await this.toastController.create({
+        message: 'Please enable atleast one block coin.',
+        duration: 2500,
+        position: 'bottom',
 
-    if (index === 1)
-      this.router.navigate(['/home/receive-token']);
-
-    if (index === 2){
-      this.router.navigate(['/cards/card-list'], { queryParams: { 'assignedCoin': true } });
+      });
+      await toast.present();
+    }else{
+      if (index === 0)
+        this.router.navigate(['/home/send-token']);
+  
+      if (index === 1)
+        this.router.navigate(['/home/receive-token']);
+  
+      if (index === 2){
+        this.router.navigate(['/cards/card-list'], { queryParams: { 'assignedCoin': true } });
+      }
     }
   }
 

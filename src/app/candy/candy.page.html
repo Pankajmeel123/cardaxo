@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" style="--background: #fff">
   <ion-toolbar>
-    <ion-title style="font-weight: bold;" class="new_logohome">
-      <h2> Refer and Earn</h2>
+    <ion-title style="font-weight: bold;">
+      Refer and Earn
     </ion-title>
     <ion-buttons slot="end">
       <ion-button>
@@ -22,7 +22,7 @@
       </ion-col>
       <ion-col size="7">
         <h2>Candy Balance</h2>
-        <h3>2500 <span>($10.50)</span></h3>
+        <h3>{{candy?.total_candy}} <span>(${{candy.total_candy_usd}})</span></h3>
         <div class="history_button">
         <span>History</span></div>
       </ion-col>
@@ -37,47 +37,25 @@
     <div class="withdrawable_bx">
       <h2>  Candy history  </h2>
       <ion-row>
-        <ion-col size="4"><strong>
+        <ion-col size="6"><strong>
             <p>Task  </p>
           </strong></ion-col>
         <ion-col size="4"><strong>
             <p>Status</p>
           </strong></ion-col>
-        <ion-col size="4"><strong>
+        <ion-col size="2"><strong>
             <p>Candy</p>
           </strong></ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col size="4">  
-          <p>KYC complete</p>
+      <ion-row *ngFor="let data of candy?.result">
+        <ion-col size="6">  
+          <p>{{data.task}}</p>
         </ion-col>
         <ion-col size="4">
-          <p>Approval</p>
+          <p>{{data.status}}</p>
         </ion-col>
-        <ion-col size="4">
-          <p>5000</p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="4">       
-          <p>REF. aviraj@gmail.com</p>
-        </ion-col>
-        <ion-col size="4">
-          <p>KYC pending </p>
-        </ion-col>
-        <ion-col size="4">
-          <p>2500</p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="4"> 
-          <p>avi@gmail.com</p>
-        </ion-col>
-        <ion-col size="4">
-          <p>2500</p>
-        </ion-col>
-        <ion-col size="4">
-          <p>2500</p>
+        <ion-col size="2">
+          <p>{{data.candy}}</p>
         </ion-col>
       </ion-row>
     </div>
@@ -106,11 +84,6 @@
 <li>You receive 2500 Candy.</li>
 <li> The user receives 5000 Candy.</li></ul>
 </div>
-   
-    
-   
-   
- 
     <div class="invited_friends_button">
       <ion-row class="ion-justify-content-center ion-align-items-center" style="align-items: end !important;">
         <ion-col style="padding: 0 15px;--ion-background-color: #c4a051;">

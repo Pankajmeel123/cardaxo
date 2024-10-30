@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title class="text-align-center app_bar_title" style="width: 100%;">Receive {{cryptoName}}</ion-title>
+    <ion-title class="text-align-center app_bar_title" style="width: 100%;">Receive {{crypto.main_chain?? 'btc'}}</ion-title>
     <ion-buttons slot="end">
       <div style="width: 48px;"></div>
     </ion-buttons>
@@ -28,31 +28,27 @@
         <ion-row class="ion-justify-content-center">
           
           <div class="qr_all_bx">
-          <a href="#" (click)="copyQr($event)">
+          <a href="#" (click)="copyQr($event, crypto.address)">
             <div class="qrcode_bg">
-              <qrcode [qrdata]="qrDate" [allowEmptyString]="true" [cssClass]="'center'" [colorDark]="'#000000'"
+              <qrcode [qrdata]="crypto.address" [allowEmptyString]="true" [cssClass]="'center'" [colorDark]="'#000000'"
                 [colorLight]="'#ffffff'" [elementType]="'canvas'" [errorCorrectionLevel]="'M'" [margin]="1" [scale]="1"
                 [width]="200"></qrcode>
               </div>
               <div class="code_copy">
-              <span>{{qrDate}}  <ion-icon name="copy-outline"></ion-icon></span>
+              <span>{{crypto.address}}  <ion-icon name="copy-outline"></ion-icon></span>
             </div>
           
           </a></div>
 
           <div class="qr_details">
-            <p>Deposit Network <span>Tron(TRC20)</span></p>
-            <p>Minimum Deposit <span>1.00USDT</span></p>
-            <p>Deposit arrival <span>5 Confirmation</span></p>
+            <p>Deposit Network <span>{{crypto.main_chain}}({{crypto.name}})</span></p>
+            <p *ngIf="crypto.coin_master?.min_deposit">Minimum Deposit <span>{{crypto.coin_master.min_deposit}}USDT</span></p>
+            <p *ngIf="crypto.coin_master?.deposit">Deposit arrival <span>{{crypto.coin_master.deposit}} Confirmation</span></p>
              
           </div>
-          <div class="card_credit_design"><button>Back</button></div>
-
+          <div class="card_credit_design"><button (click)="back()">Back</button></div>
         </ion-row>
-
       </ion-col>
-
-
     </ion-row>
   </ion-grid>
 

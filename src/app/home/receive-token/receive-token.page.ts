@@ -25,8 +25,8 @@ export class ReceiveTokenPage implements OnInit {
   ngOnInit() {
   }
 
-  receiveInfo(mainChain: string, address: string) {
-    this.router.navigate(['/home/receive-token/receive-info'], { queryParams: { name: mainChain, address: address } });
+  receiveInfo(coin: any) {
+    this.router.navigate(['/home/receive-token/receive-info'], { queryParams: { coin: JSON.stringify(coin) } });
   }
 
   async getWallet() {
@@ -52,6 +52,7 @@ export class ReceiveTokenPage implements OnInit {
         }
       }
       coin.sub_coin?.forEach(async (sub) => {
+        sub.address = coin.address;
         if (sub.transactions && sub.transactions.length > 0) {
           if ((sub.transactions[0].total ?? 0) > 0) {
             let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(sub.main_chain ?? '');

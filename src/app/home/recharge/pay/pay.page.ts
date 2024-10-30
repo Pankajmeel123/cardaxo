@@ -22,7 +22,7 @@ export class PayPage implements OnInit {
   isScreenLarge: boolean = window.innerWidth > 377;
   card:any;
   coin:any;
-
+  total!: number;
 
   constructor(private route: ActivatedRoute, private router: Router, private toastController: ToastController, private cardService: CardService) { }
 
@@ -40,7 +40,7 @@ export class PayPage implements OnInit {
 
   setText(text: string) {
     this.amount = text;
-
+    this.total = parseFloat(this.amount)+(parseFloat(this.amount) * this.card.total_recharge_fee) / 100
   }
 
   @HostListener('window:resize', ['$event'])

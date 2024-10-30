@@ -11,14 +11,21 @@ import { InvitePage } from '../invite/invite.page';
 })
 export class CandyPage implements OnInit {
 
+  candy:any;
+
   constructor(private userService:UserService, private router:Router, private modalCtrl: ModalController) { }
 
   ngOnInit() {
+  }
+  
+  ionViewWillEnter(){
     this.referralUserList();
   }
 
-  referralUserList(){
-    this.userService.referralUserList();
+  async referralUserList(){
+    const res:any = await this.userService.referralUserList();
+    this.candy = res.data;
+    console.log(this.candy)
   }
 
   navigateToReferalPage(){

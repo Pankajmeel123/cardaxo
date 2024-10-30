@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Clipboard } from '@capacitor/clipboard';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-receive-info',
@@ -10,29 +10,31 @@ import { ToastController } from '@ionic/angular';
 })
 export class ReceiveInfoPage implements OnInit {
 
-  public cryptoName = '';
-  public qrDate!: string;
-  constructor(private route: ActivatedRoute, private router: Router, private toastController: ToastController) { }
+  public crypto:any;
+  constructor(private route: ActivatedRoute, private router: Router, private toastController: ToastController, private nav: NavController) { }
 
   async ngOnInit(): Promise<void> {
-    if (this.route.snapshot.queryParams['name'] == null || this.route.snapshot.queryParams['address'] == null)
+    if (this.route.snapshot.queryParams['coin'] == null)
       this.router.navigate(['']);
-    this.cryptoName = this.route.snapshot.queryParams['name'];
-    this.qrDate = this.route.snapshot.queryParams['address'];
+    this.crypto = JSON.parse(this.route.snapshot.queryParams['coin']);
   }
 
-  async copyQr(event: Event) {
+  async copyQr(event: Event, qrDate: string) {
     event.preventDefault();
     await Clipboard.write({
-      string: this.qrDate
+      string: qrDate
     });
     const toast = await this.toastController.create({
-      message: 'copied it',
+      message: 'Copied',
       duration: 800,
       position: 'top',
 
     });
     await toast.present();
+  }
+
+  back(){
+    this.nav.back();
   }
 
 }

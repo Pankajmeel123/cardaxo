@@ -10,11 +10,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="step === 1">
+  <div *ngIf="!( wallet && (wallet.coins?.length ?? 0) > 0)">
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
+        <ion-col size="8">
+          <h4>
+            Please enable atleast one block coin.
+          </h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="step === 1 && ( wallet && (wallet.coins?.length ?? 0) > 0)">
     <div class="card_credit_design_all">
       <div class="card_credit_design" *ngFor="let data of cardList; let i = index">
         <div class="card_credit_img" (click)="selectCard(i)">
-          <img src="assets/image/card_bg1.png">
+          <img [src]="data.image ?? 'assets/image/card_bg1.png'">
           <div class="card_credit_design_text">
             <h2>{{data.name}} <span>{{data.card_type === '1'?'Virtual Card':'Physical Card'}}</span></h2>
             <div class="visa_logo_incard"><img src="assets/image/visa_newlogo.png"></div>
@@ -31,14 +42,14 @@
   
         </div>
         <div class="card_credit_design_button_more">
-        <button (click)="selectCard(i);step = 2">More Details</button></div>
+        <button (click)="selectCard(i);step = 2" *ngIf="data.description">More Details</button></div>
       </div>
     </div>
     <div class="custom-button-container " style=" width: 100%; float: left;" *ngIf="selectedCard?.card_type_id">
       <ion-button expand="full" color=" " shape=" " (click)="apply()" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Next</ion-button>
     </div>
   </div>
-  <div *ngIf="step === 2">
+  <div *ngIf="step === 2 && ( wallet && (wallet.coins?.length ?? 0) > 0)">
     <div [innerHtml]="selectedCard.description"></div>
     <div class="custom-button-container " style=" width: 100%; float: left" *ngIf="selectedCard">
       <ion-button expand="full" color=" " shape=" " (click)="step = 1" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Back</ion-button>

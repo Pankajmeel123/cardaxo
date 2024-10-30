@@ -31,7 +31,7 @@ export class SendingPage implements OnInit {
   }
 
   ngAfterViewInit() {
-    BarcodeScanner.prepare();
+    // BarcodeScanner.prepare();
   }
 
   ngOnDestory() {

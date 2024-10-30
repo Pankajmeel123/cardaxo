@@ -60,15 +60,23 @@
                   <ion-list>
                     <ion-item>
                       <ion-label><b>Conversion Rate:</b></ion-label>
-                      <ion-card-subtitle>{{rateUSD}}</ion-card-subtitle>
+                      <ion-card-subtitle>{{rateUSD | number: '0.0-4'}}</ion-card-subtitle>
                     </ion-item>
                     <ion-item>
-                      <ion-label><b>amount in {{baseCryptoName}}:</b></ion-label>
-                      <ion-card-subtitle>{{getAmountRate()}}</ion-card-subtitle>
+                      <ion-label><b>Amount in {{baseCryptoName}}:</b></ion-label>
+                      <ion-card-subtitle>{{getAmountRate() | number: '0.0-4'}}</ion-card-subtitle>
                     </ion-item>
                     <ion-item lines="none">
-                      <ion-label><b>amount in usdt:</b></ion-label>
-                      <ion-card-subtitle>{{amount}}</ion-card-subtitle>
+                      <ion-label><b>Amount in usdt:</b></ion-label>
+                      <ion-card-subtitle>{{amount | number: '0.0-4'}}</ion-card-subtitle>
+                    </ion-item>
+                    <ion-item lines="none">
+                      <ion-label><b>Deposit Fees:</b></ion-label>
+                      <ion-card-subtitle>{{card.total_recharge_fee}}%</ion-card-subtitle>
+                    </ion-item>
+                    <ion-item lines="none">
+                      <ion-label><b>Total:</b></ion-label>
+                      <ion-card-subtitle>{{total | number: '0.0-4'}}</ion-card-subtitle>
                     </ion-item>
 
                   </ion-list>

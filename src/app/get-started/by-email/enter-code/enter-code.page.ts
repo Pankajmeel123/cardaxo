@@ -20,7 +20,7 @@ export class EnterCodePage implements OnInit {
   @ViewChild('input8') input8?: IonInput;
   public otp: string = '';
   public email: string = '';
-  referral_code:any;
+  form:any;
   public isLoading: boolean = false;
   public otp1: string = '';
   public otp2: string = '';
@@ -37,10 +37,7 @@ export class EnterCodePage implements OnInit {
 
   async ionViewWillEnter() {
     this.email = this.route.snapshot.queryParams['email'];
-    this.referral_code = this.route.snapshot.queryParams['referral_code']
-    if(this.email && !this.referral_code){
-      this.sendCodeByEmail(this.email);
-    }
+    this.form = this.route.snapshot.queryParams['form'] ? JSON.parse(this.route.snapshot.queryParams['form']): '';
   }
 
 
@@ -142,7 +139,12 @@ export class EnterCodePage implements OnInit {
   async verify() {
     if (this.checkInput()) {
       this.isLoading = true;
-      const response: any = await this.authService.signInByEmail({ 'email': this.email, 'code': this.otp, referral_code: this.referral_code});
+      let response:any;
+      if(this.form){
+        response = await this.authService.signUpByEmail({ 'email': this.email, 'code': this.otp, referral_code: this.form.referral_code});
+      }else{
+        response = await this.authService.signInByEmail({ 'email': this.email, 'code': this.otp, referral_code: this.form.referral_code});
+      }
       console.log(`ddd ${JSON.stringify(response)}`);
       if (isFailedResponse(response)) {
         const toast = await this.toastController.create({
