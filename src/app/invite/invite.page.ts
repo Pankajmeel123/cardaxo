@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Share } from '@capacitor/share';
+import { ToastController } from '@ionic/angular';
+import { Clipboard } from '@capacitor/clipboard';
 
 @Component({
   selector: 'app-invite',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvitePage implements OnInit {
 
-  constructor() { }
+  @Input() code:any;
+  @Input() link:any;
+
+  constructor(private toastController: ToastController) { }
 
   ngOnInit() {
+    console.log(this.code, this.link)
+  }
+
+  async share(){
+    await Share.share({
+      text: 'Use my referal code when you register - '+ this.code,
+    });
+  }
+
+  async copy(data: string) {
+    await Clipboard.write({
+      string: data
+    });
+    const toast = await this.toastController.create({
+      message: 'Copied',
+      duration: 800,
+      position: 'top',
+
+    });
+    await toast.present();
   }
 
 }

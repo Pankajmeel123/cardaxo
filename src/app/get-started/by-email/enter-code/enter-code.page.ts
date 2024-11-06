@@ -141,9 +141,9 @@ export class EnterCodePage implements OnInit {
       this.isLoading = true;
       let response:any;
       if(this.form){
-        response = await this.authService.signUpByEmail({ 'email': this.email, 'code': this.otp, referral_code: this.form.referral_code});
+        response = await this.authService.signUpByEmail({ 'email': this.email, 'code': this.otp, referral_code: this.form.code});
       }else{
-        response = await this.authService.signInByEmail({ 'email': this.email, 'code': this.otp, referral_code: this.form.referral_code});
+        response = await this.authService.signInByEmail({ 'email': this.email, 'code': this.otp, referral_code: this.form.code});
       }
       console.log(`ddd ${JSON.stringify(response)}`);
       if (isFailedResponse(response)) {

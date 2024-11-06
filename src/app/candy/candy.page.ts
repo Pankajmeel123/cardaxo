@@ -25,7 +25,6 @@ export class CandyPage implements OnInit {
   async referralUserList(){
     const res:any = await this.userService.referralUserList();
     this.candy = res.data;
-    console.log(this.candy)
   }
 
   navigateToReferalPage(){
@@ -36,6 +35,10 @@ export class CandyPage implements OnInit {
     const modal = await this.modalCtrl.create({
       component: InvitePage,
       cssClass: 'my-custom-class',
+      componentProps:{
+        code: this.candy.referral_code,
+        link: this.candy.referral_link
+      }
     });
     modal.present();
 

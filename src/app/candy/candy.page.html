@@ -22,7 +22,7 @@
       </ion-col>
       <ion-col size="7">
         <h2>Candy Balance</h2>
-        <h3>{{candy?.total_candy}} <span>(${{candy.total_candy_usd}})</span></h3>
+        <h3>{{candy?.total_candy}} <span>(${{candy?.total_candy_usd}})</span></h3>
         <div class="history_button">
         <span>History</span></div>
       </ion-col>
@@ -57,6 +57,9 @@
         <ion-col size="2">
           <p>{{data.candy}}</p>
         </ion-col>
+      </ion-row>
+      <ion-row *ngIf="!candy?.result.length">
+        <ion-col><p style="width: -webkit-fill-available;text-align: center;">No history</p></ion-col>
       </ion-row>
     </div>
   </div>

@@ -54,6 +54,10 @@ export class UserService {
     return await this.http.post<IUser>('roynex', 'users/coin', {});
   }
 
+  public async userDetail() {
+    return await this.http.get<IUser>('roynex', 'users/userDetail');
+  }
+
   public async isLoggedIn(): Promise<boolean> {
     return !!(await Preferences.get({ key: 'token' })).value;
   }
