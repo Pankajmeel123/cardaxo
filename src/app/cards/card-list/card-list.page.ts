@@ -59,7 +59,7 @@ export class CardListPage implements OnInit, OnDestroy {
       coin.sub_coin?.forEach(async (sub) => {
         if (sub.transactions && sub.transactions.length > 0) {
           if ((sub.transactions[0].total ?? 0) > 0) {
-            let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(sub.main_chain ?? '');
+            let responseUSD: any = await this.cryptoCompareService.getCryptoCompare('USDT');
             let inUSD: number = sub.transactions[0].total! * responseUSD['USD'];
             sub.transactions[0].inUSD = inUSD;
           }
