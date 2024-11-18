@@ -10,7 +10,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="!( wallet && (wallet.coins?.length ?? 0) > 0)">
+  <div class="card_credit_design" *ngIf="isLoading">
+    <div class="card_credit_img">
+      <img [src]="'assets/image/card_bg1.png'">
+      <div class="card_credit_design_text">
+        <h2>Prepaid Card <span>Virtual Card</span></h2>
+        <div class="visa_logo_incard"><img src="assets/image/visa_newlogo.png"></div>
+        <app-skeleton-big-card style="position: absolute;bottom: 17px;left: 25px;width: 84%;"></app-skeleton-big-card>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!( wallet && (wallet.coin?.length ?? 0) > 0) && !isLoading">
     <ion-grid>
       <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
         <ion-col size="8">
@@ -21,18 +31,18 @@
       </ion-row>
     </ion-grid>
   </div>
-  <div *ngIf="step === 1 && ( wallet && (wallet.coins?.length ?? 0) > 0)">
+  <div *ngIf="step === 1 && !isLoading">
     <div class="card_credit_design_all">
       <div class="card_credit_design" *ngFor="let data of cardList; let i = index">
         <div class="card_credit_img" (click)="selectCard(i)">
-          <img [src]="data.image ?? 'assets/image/card_bg1.png'">
+          <img [src]="data.image ? 'https://wallet.cardaxo.com/'+data.image : 'assets/image/card_bg1.png'">
           <div class="card_credit_design_text">
-            <h2>{{data.name}} <span>{{data.card_type === '1'?'Virtual Card':'Physical Card'}}</span></h2>
+            <!-- <h2>{{data.name}} <span>{{data.card_type === '1'?'Virtual Card':'Physical Card'}}</span></h2>
             <div class="visa_logo_incard"><img src="assets/image/visa_newlogo.png"></div>
             <h6>Available Balance<span>$****</span></h6>
             <h3>**** **** **** **** </h3>
             <h4>Valid Thru **/** </h4>
-            <h5>CVV *** </h5>
+            <h5>CVV *** </h5> -->
             <div class="div_select">
               <ion-radio-group [(ngModel)]="card">
                 <ion-radio [value]="i"></ion-radio>
@@ -49,7 +59,7 @@
       <ion-button expand="full" color=" " shape=" " (click)="apply()" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Next</ion-button>
     </div>
   </div>
-  <div *ngIf="step === 2 && ( wallet && (wallet.coins?.length ?? 0) > 0)">
+  <div *ngIf="step === 2 && ( wallet && (wallet.coin?.length ?? 0) > 0)">
     <div [innerHtml]="selectedCard.description"></div>
     <div class="custom-button-container " style=" width: 100%; float: left" *ngIf="selectedCard">
       <ion-button expand="full" color=" " shape=" " (click)="step = 1" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Back</ion-button>

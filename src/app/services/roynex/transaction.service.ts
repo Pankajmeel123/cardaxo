@@ -13,7 +13,7 @@ export class TransactionService {
     return await this.http.post('roynex', 'transaction/transfer', body);
   }
 
-  public async getTransactions(address: string) {
-    return await this.http.get<ITransactionRoynex[]>('roynex', 'transaction/address', { 'address': address });
+  public async getTransactions(address: string, coinId: string) {
+    return await this.http.get<ITransactionRoynex[]>('roynex', 'transaction/address', { 'address': address, 'coin_id': coinId });
   }
 }

@@ -5,6 +5,7 @@ export interface ICoin {
   name?: string;
   symbol?: string;
   main_chain?: string;
+  price?: any;
   image?: string;
   address?: string;
   toggle_coin?: boolean;

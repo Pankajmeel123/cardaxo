@@ -23,6 +23,7 @@ export class CardListPage implements OnInit, OnDestroy {
   protected iconCoin: Record<string, any> = iconCoin;
   assignedCoin:any;
   card!: number;
+  isLoading:boolean = false;
 
   constructor(private cardService: CardService, private toastController: ToastController, private cryptoCompareService:CryptoCompareService, private walletService: WalletService, private router:Router, private route:ActivatedRoute ,private userService: UserService) { }
 
@@ -46,9 +47,11 @@ export class CardListPage implements OnInit, OnDestroy {
   }
 
   async getWallet() {
+    this.isLoading = true;
     const response: any = await this.walletService.getWallet();
     this.wallet = response.data;
-    this.wallet?.coins?.forEach(async (coin) => {
+    this.wallet?.coin?.forEach(async (coin) => {
+      this.isLoading = false;
       if (coin.transactions && coin.transactions.length > 0) {
         if ((coin.transactions[0].total ?? 0) > 0) {
           let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(coin.main_chain ?? '');
@@ -69,8 +72,10 @@ export class CardListPage implements OnInit, OnDestroy {
   }
 
   async getCardList(){
+    // this.isLoading = true;
     const cardList:any = await this.cardService.cardList({assignedCoin:this.assignedCoin});
     this.cardList = cardList.data;
+    // this.isLoading = false;
     if(!this.cardList.length && this.assignedCoin){
       this.getnav();
     }else

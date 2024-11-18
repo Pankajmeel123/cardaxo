@@ -16,6 +16,7 @@ export class LogTransactionsPage implements OnInit {
   public transactionsRoynex?: ITransactionRoynex[];
   public showDetails: number = -1;
   public cryptoName = '';
+  public coinId:any;
   constructor(private transactionService: TransactionService, private route: ActivatedRoute, private router: Router, private toastController: ToastController) { }
 
   async ngOnInit() {
@@ -23,11 +24,12 @@ export class LogTransactionsPage implements OnInit {
       this.router.navigate(['']);
     this.address = this.route.snapshot.queryParams['address'];
     this.cryptoName = this.route.snapshot.queryParams['name'];
+    this.coinId = this.route.snapshot.queryParams['coinId'];
     await this.getTransaction();
   }
 
   async getTransaction() {
-    const response: any = await this.transactionService.getTransactions(this.address);
+    const response: any = await this.transactionService.getTransactions(this.address, this.coinId);
     if (isFailedResponse(response)) {
       this.isLoading = false;
       const toast = await this.toastController.create({

@@ -25,9 +25,9 @@ export class RechargePage implements OnInit {
     this.card = JSON.parse(this.route.snapshot.queryParams['card']);
   }
 
-  async recharge(coin: any, mainChain: string, address: string, amount: number, rateUSD: number) {
+  async recharge(coin: any, name: string, address: string, amount: number, rateUSD: number) {
     if (amount > 0) {
-      this.router.navigate(['/home/recharge/pay'], { queryParams: { name: mainChain, address: address, amount: amount, rateUSD: rateUSD, card:JSON.stringify(this.card), coin: JSON.stringify(coin) } });
+      this.router.navigate(['/home/recharge/pay'], { queryParams: { name: name, address: address, amount: amount, rateUSD: rateUSD, card:JSON.stringify(this.card), coin: JSON.stringify(coin) } });
     } else {
       const toast = await this.toastController.create({
         message: "You have no amount",
@@ -53,7 +53,7 @@ export class RechargePage implements OnInit {
       return;
     }
     this.wallet = response.data;
-    this.wallet?.coins?.forEach(async (coin) => {
+    this.wallet?.coin?.forEach(async (coin) => {
       if (coin.transactions && coin.transactions.length > 0) {
         if ((coin.transactions[0].total ?? 0) > 0) {
           let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(coin.main_chain ?? '');

@@ -22,7 +22,7 @@
     </div>
     <div class="card_credit_design" *ngIf="isLoading">
       <div class="card_credit_img">
-        <img [src]="'assets/image/card_bg1.png'">
+        <img [src]="cardDetails?.card_detail?.image ? 'https://wallet.cardaxo.com/'+cardDetails?.card_detail?.image : 'assets/image/card_bg1.png'">
         <div class="card_credit_design_text">
           <h2>Prepaid Card <span>Virtual Card</span></h2>
           <div class="visa_logo_incard"><img src="assets/image/visa_newlogo.png"></div>
@@ -46,7 +46,7 @@
     </div> -->
     <div class="card_credit_design" *ngIf="!isLoading && cardDetails && cardDetails.encoded_card_detail">
       <div class="card_credit_img">
-        <img [src]="cardDetails.encoded_card_detail.image ?? 'assets/image/card_bg1.png'">
+        <img [src]="cardDetails?.card_detail?.image ? 'https://wallet.cardaxo.com/'+cardDetails?.card_detail?.image : 'assets/image/card_bg1.png'">
         <div class="card_credit_design_text">
           <h2>Prepaid Card <span>Virtual Card</span></h2>
           <div class="visa_logo_incard"><img src="assets/image/visa_newlogo.png"></div>
@@ -117,12 +117,12 @@
             <ion-item *ngIf="bankTransaction.credit">
               <ion-label>Credit</ion-label>
               <ion-label slot="end">{{ bankTransaction.credit | number:'1.1-4'}} {{
-                bankTransaction.tx_currency}}</ion-label>
+                bankTransaction.tx_currency === 'thb' ? 'usst' :bankTransaction.tx_currency }}</ion-label>
             </ion-item>
             <ion-item *ngIf="bankTransaction.debit">
               <ion-label>Debit</ion-label>
               <ion-label slot="end">{{ bankTransaction.debit | number:'1.1-4'}} {{
-                bankTransaction.tx_currency}}</ion-label>
+                bankTransaction.tx_currency === 'thb' ? 'usst' :bankTransaction.tx_currency}}</ion-label>
             </ion-item>
             <ion-item>
               <ion-label>Amount</ion-label>

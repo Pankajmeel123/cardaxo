@@ -7,6 +7,7 @@ import { isFailedResponse } from '../core/http/http.model';
 import { ToastController } from '@ionic/angular';
 import { CryptoCompareService } from '../services/roynex/crypto-compare.service';
 import { UserService } from '../services/roynex/user.service';
+import { CardService } from '../services/roynex/card.service';
 
 
 
@@ -40,12 +41,14 @@ export class HomePage {
     },
   ];
   banners:any;
+  cardList:any;
 
-  constructor(private router: Router, private userService: UserService, private walletService: WalletService, private toastController: ToastController, private cryptoCompareService: CryptoCompareService) {
+  constructor(private router: Router, private cardService:CardService, private userService: UserService, private walletService: WalletService, private toastController: ToastController, private cryptoCompareService: CryptoCompareService) {
   }
 
   async ngOnInit() {
-    await this.bannerList();
+    this.bannerList();
+    this.getCardList();
   }
 
   bannerList(){
@@ -61,13 +64,13 @@ export class HomePage {
       this.router.navigate(['/home/manage-coins'], { queryParams: { 'wallet': JSON.stringify(this.wallet) ,'coins':JSON.stringify(coins.data) } });
   }
 
-  logTransaction(address: string, mainChain: string) {
+  logTransaction(address: string, mainChain: string, coinId: number) {
     if (this.wallet)
-      this.router.navigate(['/home/log-transactions'], { queryParams: { 'address': address, 'name': mainChain } });
+      this.router.navigate(['/home/log-transactions'], { queryParams: { 'address': address, 'name': mainChain, coinId: coinId } });
   }
 
   async navigateAction(index: number) {
-    if(!( this.wallet && (this.wallet.coins?.length ?? 0) > 0)){
+    if(!( this.wallet && (this.wallet.coin?.length ?? 0) > 0)){
       const toast = await this.toastController.create({
         message: 'Please enable atleast one block coin.',
         duration: 2500,
@@ -83,9 +86,24 @@ export class HomePage {
         this.router.navigate(['/home/receive-token']);
   
       if (index === 2){
-        this.router.navigate(['/cards/card-list'], { queryParams: { 'assignedCoin': true } });
+        if(this.cardList.length){
+          this.router.navigate(['/cards/card-list'], { queryParams: { 'assignedCoin': true } });
+        }else{
+          const toast = await this.toastController.create({
+            message: 'You Do Not have any Active Card. Please Apply a Card First',
+            duration: 2500,
+            position: 'bottom',
+    
+          });
+          await toast.present();
+        }
       }
     }
+  }
+
+  async getCardList(){
+    const cardList:any = await this.cardService.cardList({assignedCoin:true});
+    this.cardList = cardList.data;
   }
 
   async getWallet() {
@@ -103,11 +121,12 @@ export class HomePage {
       return;
     }
     this.wallet = response.data;
-    this.wallet?.coins?.forEach(async (coin) => {
+    this.wallet?.coin?.forEach(async (coin) => {
       if (coin.transactions && coin.transactions.length > 0) {
+        console.log(coin.price)
         if ((coin.transactions[0].total ?? 0) > 0) {
-          let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(coin.main_chain ?? '');
-          let inUSD: number = coin.transactions[0].total! * responseUSD['USD'];
+          // let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(coin.main_chain ?? '');
+          let inUSD: number = coin.transactions[0].total! * coin.price;
           this.total += inUSD;
           coin.transactions[0].inUSD = inUSD;
         }
@@ -115,13 +134,14 @@ export class HomePage {
       coin.sub_coin?.forEach(async (sub) => {
         if (sub.transactions && sub.transactions.length > 0) {
           if ((sub.transactions[0].total ?? 0) > 0) {
-            let responseUSD: any = await this.cryptoCompareService.getCryptoCompare('USDT');
-            let inUSD: number = sub.transactions[0].total! * responseUSD['USD'];
+            // let responseUSD: any = await this.cryptoCompareService.getCryptoCompare('USDT');
+            let inUSD: number = sub.transactions[0].total! * sub.price;
             this.total += inUSD;
             sub.transactions[0].inUSD = inUSD;
           }
         }
       })
+      console.log(this.total)
     });
     this.isLoading = false;
   }

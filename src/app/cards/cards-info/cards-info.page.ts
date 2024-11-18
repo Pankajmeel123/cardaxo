@@ -18,7 +18,7 @@ export class CardsInfoPage implements OnInit {
   public showDetails: number = -1;
   public total: string = '0';
   public isLoading: boolean = true;
-  public cardDetails?: ICardDetails;
+  public cardDetails?: any;
   public bankTransactions: any[] = [];
   public cardNumber = '';
   public cvv = '';

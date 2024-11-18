@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title class="text-align-center app_bar_title">Recharge {{cryptoName}}</ion-title>
+    <ion-title class="text-align-center app_bar_title">Recharge {{baseCryptoName}}</ion-title>
     <ion-buttons slot="end">
       <div style="width: 48px;"></div>
     </ion-buttons>
@@ -70,9 +70,13 @@
                       <ion-label><b>Amount in usdt:</b></ion-label>
                       <ion-card-subtitle>{{amount | number: '0.0-4'}}</ion-card-subtitle>
                     </ion-item>
-                    <ion-item lines="none">
+                    <!-- <ion-item lines="none">
                       <ion-label><b>Deposit Fees:</b></ion-label>
                       <ion-card-subtitle>{{card.total_recharge_fee}}%</ion-card-subtitle>
+                    </ion-item> -->
+                    <ion-item lines="none">
+                      <ion-label><b>Recharge Fees:</b></ion-label>
+                      <ion-card-subtitle>{{rechargeFee}}</ion-card-subtitle>
                     </ion-item>
                     <ion-item lines="none">
                       <ion-label><b>Total:</b></ion-label>

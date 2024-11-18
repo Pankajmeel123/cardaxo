@@ -23,7 +23,7 @@
     </ion-card>
   </div>
 
-  <div *ngIf="!isLoading && !( wallet && (wallet.coins?.length ?? 0) > 0)">
+  <div *ngIf="!isLoading && !( wallet && (wallet.coin?.length ?? 0) > 0)">
     <ion-grid>
       <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
         <ion-col size="8">
@@ -35,9 +35,9 @@
     </ion-grid>
   </div>
 
-  <div *ngIf="!isLoading && wallet && (wallet.coins?.length ?? 0) > 0">
-    <ion-card *ngFor="let coin of wallet.coins; let i = index"
-      (click)="recharge(coin, coin.main_chain ?? 'btc', coin.address ?? '', coin.transactions && coin.transactions.length > 0 ? coin.transactions[0].total ?? 0 : 0, coin.transactions && coin.transactions.length > 0 ? coin.transactions[0].rateUSD ?? 0 : 0)">
+  <div *ngIf="!isLoading && wallet && (wallet.coin?.length ?? 0) > 0">
+    <ion-card *ngFor="let coin of wallet.coin; let i = index"
+      (click)="recharge(coin, coin.name ?? 'btc', coin.address ?? '', coin.transactions && coin.transactions.length > 0 ? coin.transactions[0].total ?? 0 : 0, coin.transactions && coin.transactions.length > 0 ? coin.transactions[0].rateUSD ?? 0 : 0)">
       <ion-card-content>
         <ion-grid>
           <ion-row class="ion-align-items-center ion-justify-content-between">
@@ -66,8 +66,8 @@
         </ion-grid>
       </ion-card-content>
     </ion-card>
-    <div *ngFor="let coin of wallet.coins; let i = index">
-      <ion-card *ngFor="let subCoin of coin.sub_coin; let i = index" (click)="recharge(subCoin, subCoin.main_chain ?? 'btc', subCoin.address ?? '', subCoin.transactions && subCoin.transactions.length > 0 ? subCoin.transactions[0].total ?? 0 : 0, subCoin.transactions && subCoin.transactions.length > 0 ? subCoin.transactions[0].rateUSD ?? 0 : 0)">
+    <div *ngFor="let coin of wallet.coin; let i = index">
+      <ion-card *ngFor="let subCoin of coin.sub_coin; let i = index" (click)="recharge(subCoin, subCoin.name ?? 'btc', subCoin.address ?? '', subCoin.transactions && subCoin.transactions.length > 0 ? subCoin.transactions[0].total ?? 0 : 0, subCoin.transactions && subCoin.transactions.length > 0 ? subCoin.transactions[0].rateUSD ?? 0 : 0)">
         <ion-card-content>
           <ion-grid>
             <ion-row class="ion-align-items-center ion-justify-content-between">

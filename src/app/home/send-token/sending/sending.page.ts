@@ -17,6 +17,7 @@ export class SendingPage implements OnInit {
   public fromAddress = '';
   public address = '';
   public amount = '';
+  coin_master: any;
   public baseAmount: number = 0;
   public isLoading: boolean = false;
   public scanActive: boolean = false;
@@ -28,6 +29,8 @@ export class SendingPage implements OnInit {
     this.cryptoName = this.route.snapshot.queryParams['name'];
     this.address = this.route.snapshot.queryParams['address'];
     this.baseAmount = this.route.snapshot.queryParams['amount'];
+    this.coin_master = this.route.snapshot.queryParams['coin_master'] ? JSON.parse(this.route.snapshot.queryParams['coin_master']): [];
+    console.log(this.coin_master)
   }
 
   ngAfterViewInit() {

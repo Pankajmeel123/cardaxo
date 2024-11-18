@@ -23,6 +23,7 @@ export class PayPage implements OnInit {
   card:any;
   coin:any;
   total!: number;
+  rechargeFee:any;
 
   constructor(private route: ActivatedRoute, private router: Router, private toastController: ToastController, private cardService: CardService) { }
 
@@ -40,7 +41,8 @@ export class PayPage implements OnInit {
 
   setText(text: string) {
     this.amount = text;
-    this.total = parseFloat(this.amount)+(parseFloat(this.amount) * this.card.total_recharge_fee) / 100
+    this.rechargeFee = (this.card.min_single_recharge_amount/100)* parseFloat(this.amount);
+    this.total = parseFloat(this.amount)+ this.rechargeFee
   }
 
   @HostListener('window:resize', ['$event'])

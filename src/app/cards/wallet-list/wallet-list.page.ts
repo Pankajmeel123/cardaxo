@@ -36,7 +36,7 @@ export class WalletListPage implements OnInit {
   async getWallet() {
     const response: any = await this.walletService.getWallet();
     this.wallet = response.data;
-    this.wallet?.coins?.forEach(async (coin) => {
+    this.wallet?.coin?.forEach(async (coin) => {
       if (coin.transactions && coin.transactions.length > 0) {
         if ((coin.transactions[0].total ?? 0) > 0) {
           let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(coin.main_chain ?? '');

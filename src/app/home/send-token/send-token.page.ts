@@ -14,7 +14,7 @@ import { CryptoCompareService } from 'src/app/services/roynex/crypto-compare.ser
 })
 export class SendTokenPage implements OnInit {
 
-  public wallet?: IWallet;
+  public wallet?: any;
   public isLoading: boolean = true;
   protected currencies = currencies;
   protected iconCoin: Record<string, any> = iconCoin;
@@ -24,9 +24,10 @@ export class SendTokenPage implements OnInit {
   ngOnInit() {
   }
 
-  async sending(mainChain: string, address: string, amount: number) {
+  async sending(mainChain: string, address: string, amount: number, coin_master: any) {
     if (amount > 0) {
-      this.router.navigate(['/home/send-token/sending'], { queryParams: { name: mainChain, address: address, amount: amount } });
+      console.log(coin_master)
+      this.router.navigate(['/home/send-token/sending'], { queryParams: { name: mainChain, address: address, amount: amount, coin_master: JSON.stringify(coin_master) } });
     } else {
       const toast = await this.toastController.create({
         message: "You have no amount",
@@ -52,7 +53,7 @@ export class SendTokenPage implements OnInit {
       return;
     }
     this.wallet = response.data;
-    this.wallet?.coins?.forEach(async (coin) => {
+    this.wallet?.coin?.forEach(async (coin: any) => {
       if (coin.transactions && coin.transactions.length > 0) {
         if ((coin.transactions[0].total ?? 0) > 0) {
           let responseUSD: any = await this.cryptoCompareService.getCryptoCompare(coin.main_chain ?? '');
@@ -60,7 +61,7 @@ export class SendTokenPage implements OnInit {
           coin.transactions[0].inUSD = inUSD;
         }
       }
-      coin.sub_coin?.forEach(async (sub) => {
+      coin.sub_coin?.forEach(async (sub: any) => {
         if (sub.transactions && sub.transactions.length > 0) {
           if ((sub.transactions[0].total ?? 0) > 0) {
             let responseUSD: any = await this.cryptoCompareService.getCryptoCompare('USDT');

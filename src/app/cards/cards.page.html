@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-text-center" >
-  <div class="assets" style="background-image: url('assets/image/home_btmbg.png'); background-repeat: repeat-y;background-size: cover; background-position: center;padding: 0px 0 10px;">
+  <div *ngIf="!router.url.split('?')[1]" class="assets" style="background-image: url('assets/image/home_btmbg.png'); background-repeat: repeat-y;background-size: cover; background-position: center;padding: 0px 0 10px;">
     <div class="ion-padding-horizontal">
       <h2 style="color: var(--ion-color-secondary-contrast); ;font-weight: 500;font-size: 20px;padding: 30px 0 3px 0;margin: 0;">CARD APPLICATION</h2>
       <p *ngIf="!declined" style="color: var(--ion-color-secondary-contrast); ;margin-top: 0;font-size: 12px;font-style: italic;">To apply for a card you must complete your KYC first.</p>

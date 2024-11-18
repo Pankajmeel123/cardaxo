@@ -23,7 +23,7 @@
     </ion-card>
   </div>
 
-  <div *ngIf="!isLoading && !( wallet && (wallet.coins?.length ?? 0) > 0)">
+  <div *ngIf="!isLoading && !( wallet && (wallet.coin?.length ?? 0) > 0)">
     <ion-grid>
       <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
         <ion-col size="8">
@@ -35,8 +35,8 @@
     </ion-grid>
   </div>
 
-  <div *ngIf="!isLoading && wallet && (wallet.coins?.length ?? 0) > 0">
-    <ion-card *ngFor="let coin of wallet.coins; let i = index" (click)="receiveInfo(coin)">
+  <div *ngIf="!isLoading && wallet && (wallet.coin?.length ?? 0) > 0">
+    <ion-card *ngFor="let coin of wallet.coin; let i = index" (click)="receiveInfo(coin)">
       <ion-card-content>
         <ion-grid>
           <ion-row class="ion-align-items-center ion-justify-content-between">
@@ -65,7 +65,7 @@
         </ion-grid>
       </ion-card-content>
     </ion-card>
-    <div *ngFor="let coin of wallet.coins; let i = index">
+    <div *ngFor="let coin of wallet.coin; let i = index">
       <ion-card *ngFor="let subCoin of coin.sub_coin; let i = index" (click)="receiveInfo(subCoin)">
         <ion-card-content>
           <ion-grid>

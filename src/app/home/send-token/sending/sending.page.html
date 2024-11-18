@@ -35,6 +35,9 @@
   <ion-item>
     <ion-input type="number" placeholder="Enter amount" (ionChange)="amountChanage($event)"></ion-input>
   </ion-item>
+  Min Withdraw amount {{coin_master?.min_withdraw_amount}} {{cryptoName}}<br/>
+  Withdraw Fee {{coin_master?.withdraw_fee}} %<br/>
+  Gas Fee {{coin_master?.gas_fee}} %<br/>
 </div>
 
 <ion-row>

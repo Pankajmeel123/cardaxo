@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="!( wallet && (wallet.coins?.length ?? 0) > 0)">
+  <div *ngIf="!( wallet && (wallet.coin?.length ?? 0) > 0)">
     <ion-grid>
       <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
         <ion-col size="8">
@@ -19,12 +19,12 @@
       </ion-row>
     </ion-grid>
   </div>
-  <div *ngIf="wallet && (wallet.coins?.length ?? 0) > 0" class="assets">
+  <div *ngIf="wallet && (wallet.coin?.length ?? 0) > 0" class="assets">
     <div class="ion-padding-horizontal">
       <h2 style="color: var(--ion-color-secondary-contrast); ;font-weight: 500;font-size: 20px;padding: 30px 0 3px 0;margin: 0;text-align: center;">Select wallet to Pay</h2>
     </div>
-    <div *ngIf="wallet && (wallet.coins?.length ?? 0) > 0">
-      <ion-card *ngFor="let coin of wallet.coins; let i = index" (click)="selectedCoin = coin">
+    <div *ngIf="wallet && (wallet.coin?.length ?? 0) > 0">
+      <ion-card *ngFor="let coin of wallet.coin; let i = index" (click)="selectedCoin = coin">
         <div *ngIf="selectedCoin?.symbol === coin.symbol" class="check_applyicon"><img src="assets/image/check__mark.png"> </div>
         <ion-card-content>
           <ion-grid>
@@ -54,7 +54,7 @@
           </ion-grid>
         </ion-card-content>
       </ion-card>
-      <div *ngFor="let coin of wallet.coins; let i = index">
+      <div *ngFor="let coin of wallet.coin; let i = index">
         <ion-card *ngFor="let subCoin of coin.sub_coin; let i = index" (click)="selectedCoin = subCoin">
           <div *ngIf="selectedCoin?.symbol === subCoin.symbol" class="check_applyicon"><img src="assets/image/check__mark.png"> </div>
           <ion-card-content>

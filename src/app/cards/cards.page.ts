@@ -11,7 +11,7 @@ export class CardsPage implements OnInit {
 
   declined:boolean = false;
 
-  constructor(private router: Router, private alertController:AlertController) { }
+  constructor(public router: Router, private alertController:AlertController) { }
 
   ngOnInit() {
   }
@@ -31,6 +31,7 @@ export class CardsPage implements OnInit {
       header: 'Alert',
       subHeader: title,
       message: message,
+      backdropDismiss: false,
       buttons: [
         {
           text: 'OK',
