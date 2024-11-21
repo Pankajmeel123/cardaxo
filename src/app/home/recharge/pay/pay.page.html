@@ -17,21 +17,13 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <ion-row class="ion-justify-content-center ion-align-items-center">
-          <img src="assets/image/logo-carddd.png" alt="" width="30px" height="45px"
-            style="margin-bottom: -10px; margin-right: 10px;">
-          <h6 style="font-weight: 400; font-size: 30px; ">CARDAXO</h6>
-        </ion-row>
-      </ion-col>
-
-      <ion-col size="12">
         <ion-row class="ion-justify-content-center">
           <ion-card>
             <ion-grid>
               <ion-row>
                 <ion-col>
                   <ion-item>
-                    <ion-input type="number" placeholder="Enter your amount" [(ngModel)]="amount"></ion-input>
+                    <ion-input type="number" placeholder="Enter your amount" (change)="amountChanage($event)" [(ngModel)]="amount"></ion-input>
                   </ion-item>
                 </ion-col>
               </ion-row>
@@ -58,6 +50,18 @@
               <ion-row>
                 <ion-col>
                   <ion-list>
+                    <ion-item lines="none">
+                      <ion-label><b>Amount in usdt:</b></ion-label>
+                      <ion-card-subtitle>{{amount | number: '0.0-4'}}</ion-card-subtitle>
+                    </ion-item>
+                    <ion-item lines="none">
+                      <ion-label><b>Recharge Fees:</b></ion-label>
+                      <ion-card-subtitle>{{rechargeFee | number:'0.0-2'}}</ion-card-subtitle>
+                    </ion-item>
+                    <ion-item lines="none">
+                      <ion-label><b>Total:</b></ion-label>
+                      <ion-card-subtitle>{{total | number: '0.0-4'}}</ion-card-subtitle>
+                    </ion-item>
                     <ion-item>
                       <ion-label><b>Conversion Rate:</b></ion-label>
                       <ion-card-subtitle>{{rateUSD | number: '0.0-4'}}</ion-card-subtitle>
@@ -66,22 +70,10 @@
                       <ion-label><b>Amount in {{baseCryptoName}}:</b></ion-label>
                       <ion-card-subtitle>{{getAmountRate() | number: '0.0-4'}}</ion-card-subtitle>
                     </ion-item>
-                    <ion-item lines="none">
-                      <ion-label><b>Amount in usdt:</b></ion-label>
-                      <ion-card-subtitle>{{amount | number: '0.0-4'}}</ion-card-subtitle>
-                    </ion-item>
                     <!-- <ion-item lines="none">
                       <ion-label><b>Deposit Fees:</b></ion-label>
                       <ion-card-subtitle>{{card.total_recharge_fee}}%</ion-card-subtitle>
                     </ion-item> -->
-                    <ion-item lines="none">
-                      <ion-label><b>Recharge Fees:</b></ion-label>
-                      <ion-card-subtitle>{{rechargeFee}}</ion-card-subtitle>
-                    </ion-item>
-                    <ion-item lines="none">
-                      <ion-label><b>Total:</b></ion-label>
-                      <ion-card-subtitle>{{total | number: '0.0-4'}}</ion-card-subtitle>
-                    </ion-item>
 
                   </ion-list>
                   <!-- <ion-item>

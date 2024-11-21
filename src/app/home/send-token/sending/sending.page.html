@@ -31,15 +31,6 @@
       (ionChange)="addressChanage($event)"></ion-input>
   </ion-item>
 </div>
-<div class="one_form">
-  <ion-item>
-    <ion-input type="number" placeholder="Enter amount" (ionChange)="amountChanage($event)"></ion-input>
-  </ion-item>
-  Min Withdraw amount {{coin_master?.min_withdraw_amount}} {{cryptoName}}<br/>
-  Withdraw Fee {{coin_master?.withdraw_fee}} %<br/>
-  Gas Fee {{coin_master?.gas_fee}} %<br/>
-</div>
-
 <ion-row>
   <ion-col class="ion-text-center">
     <div class="paste_scan_button">
@@ -57,6 +48,33 @@
       <p expand="full">Scan</p>
     </a>
   </div>
+  </ion-col>
+</ion-row>
+<div class="one_form">
+  <ion-item>
+    <ion-input type="number" placeholder="Enter amount" (change)="amountChanage($event)" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+</div>
+<ion-row>
+  <ion-col style="padding-top: 15px;">
+    <ion-list>
+      <ion-item lines="none">
+        <ion-label><b>Withdraw Fee:</b></ion-label>
+        <ion-card-subtitle>{{coin_master?.withdraw_fee | number: '0.0-4'}} {{cryptoName}}</ion-card-subtitle>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label><b>Total:</b></ion-label>
+        <ion-card-subtitle>{{total | number: '0.0-4'}}{{total ? cryptoName : ''}}</ion-card-subtitle>
+      </ion-item>
+      <!-- <ion-item lines="none">
+        <ion-label><b>Deposit Fees:</b></ion-label>
+        <ion-card-subtitle>{{card.total_recharge_fee}}%</ion-card-subtitle>
+      </ion-item> -->
+
+    </ion-list>
+    <!-- <ion-item>
+      <ion-input type="number" placeholder="Enter your amount" [(ngModel)]="amount"></ion-input>
+    </ion-item> -->
   </ion-col>
 </ion-row>
 <ion-row>

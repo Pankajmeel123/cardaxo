@@ -39,9 +39,20 @@ export class PayPage implements OnInit {
     this.coin = JSON.parse(this.route.snapshot.queryParams['coin']);
   }
 
-  setText(text: string) {
+  async setText(text: string) {
+    if(parseFloat(this.amount) < parseFloat(this.card.min_single_recharge_amount)){
+      this.amount = '';
+      const toast = await this.toastController.create({
+        message: `Amount should be greater the ${parseFloat(this.card.min_single_recharge_amount)}`,
+        duration: 2500,
+        position: 'bottom',
+
+      });
+      await toast.present();
+      return;
+    }
     this.amount = text;
-    this.rechargeFee = (this.card.min_single_recharge_amount/100)* parseFloat(this.amount);
+    this.rechargeFee = (this.card.total_recharge_fee/100)* parseFloat(this.amount);
     this.total = parseFloat(this.amount)+ this.rechargeFee
   }
 
@@ -51,7 +62,7 @@ export class PayPage implements OnInit {
   }
 
   amountChanage(event: any) {
-    this.amount = event.detail.value;
+    this.setText(event.target.value);
   }
 
   async recharge(event: Event) {
@@ -59,7 +70,7 @@ export class PayPage implements OnInit {
     if (await this.validateField()) {
       this.isLoading = true;
       const data = {
-        'recharge_amount': this.getAmountRate().toString(),
+        'recharge_amount': this.total.toString(),
         'pay_coin': 'usdt',
         'address': this.address,
         'usdt_amount': this.amount.toString(),
@@ -120,6 +131,6 @@ export class PayPage implements OnInit {
   }
 
   getAmountRate() {
-    return Number(this.amount) / this.rateUSD;
+    return Number(this.total) / this.rateUSD;
   }
 }

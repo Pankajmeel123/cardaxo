@@ -21,6 +21,9 @@ export class SendingPage implements OnInit {
   public baseAmount: number = 0;
   public isLoading: boolean = false;
   public scanActive: boolean = false;
+  withdraw_fee! : number;
+  gas_fee! : number;
+  total! : number;
   constructor(private route: ActivatedRoute, private router: Router, private toastController: ToastController, private transactionService: TransactionService, private alertController: AlertController) { }
 
   async ngOnInit(): Promise<void> {
@@ -115,8 +118,23 @@ export class SendingPage implements OnInit {
     this.fromAddress = event.detail.value;
   }
 
-  amountChanage(event: any) {
-    this.amount = event.detail.value;
+  async amountChanage(event: any) {
+    console.log(event.target.value)
+    if(parseFloat(event.target.value) < parseFloat(this.coin_master?.min_withdraw_amount)){
+      this.amount = '';
+      const toast = await this.toastController.create({
+        message: `Amount should be greater the ${parseFloat(this.coin_master?.min_withdraw_amount)}`,
+        duration: 2500,
+        position: 'middle',
+
+      });
+      await toast.present();
+      return;
+    }
+    this.amount = event.target.value;
+    // this.withdraw_fee = parseFloat(this.coin_master?.withdraw_fee) + parseFloat(this.amount);
+    // this.gas_fee = (parseFloat(this.coin_master?.gas_fee)/100) * parseFloat(this.amount);
+    this.total = parseFloat(this.amount) + parseFloat(this.coin_master?.withdraw_fee);
   }
 
   async transfer(event: Event) {
