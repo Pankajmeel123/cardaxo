@@ -1,13 +1,10 @@
 .total_balance {
   margin-top: 15px;
-  padding: 0px 10px;
+  padding: 0px 2px;
 
   ion-card {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 8px;
     color: var(--ion-color-primary);
-    margin: 10px;
+    margin: 0;
     background: var(--ion-color-secondary);
   }
 
@@ -28,7 +25,7 @@
 
   .total_balance .balance {
     text-align: left;
-    padding: 14px 20px;
+    padding: 14px 0;
     border: 2px solid #fff;
     color: var(--ion-color-secondary-contrast);
     margin-top: 30px !important;
@@ -36,8 +33,8 @@
 
   .balance {
     text-align: left;
-    padding: 0 20px;
-    border: 1px solid #fff;
+    padding: 0 0;
+    // border: 1px solid #fff;
     color: var(--ion-color-secondary-contrast);
     text-transform: uppercase;
 
@@ -45,6 +42,8 @@
       display: flex;
       align-items: center;
       color: var(--ion-color-secondary-contrast);
+      padding: 0;
+      margin: 0;
     }
 
     ion-icon {
@@ -53,15 +52,28 @@
   }
 
   h5 {
-    font-size: 12px;
-    padding: 0px !important;
+    font-size: 13px;
     color: var(--ion-color-secondary-contrast);
+    text-transform: uppercase;
+    padding: 8px 0 0 !important;
+    float: left;letter-spacing: 1px;
+    width: 100%;
+    text-align: left;
+    position: relative; margin: 0;
+    z-index: 9;
   }
 
   h1 {
     font-weight: bold;
-    font-size: 30px;
-    margin-top: -10px;
+    font-size: 35px;
+    margin: 0 0 20px;
+    font-family: Poppins;
+    background-color: #383838;
+    color: #fff;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.36);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
   }
 }
 
@@ -85,7 +97,8 @@
 }
 
 .total_balance ion-card {
-  background: #0000004f;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: none;
 }
 
 
@@ -93,7 +106,7 @@ ion-icon {
   color: var(--ion-color-secondary-contrast)
 }
 
- 
+
 
 // .portfolio {
 
@@ -129,13 +142,47 @@ ion-icon {
   ion-grid {
     padding: 0;
   }
+.ion_card_bg{
+  width: 100%;
+  border: 2px solid rgba(65, 65, 65, 0.62);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(86deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.48) 82%);
+  padding: 0;
+  margin: 5px 0 0;
 
+}
+ion-label span {
+  display: block;
+  padding: 0;
+  font-size: 11px;
+  color: #fff;
+  text-transform: uppercase;
+}ion-label h2 {
+	float: left !important;
+	width: auto !important;
+}
+.list-ios {
+	background: #1c1c1d00;
+}
+.list-ios-lines-none .item-lines-default {
+	--inner-border-width: 0px;
+	--border-width: 0px;
+	--background: #1c1c1d00;
+}
+.item.ios.item-lines-default.item-fill-none.hydrated.item-label {
+	--background: #1c1c1d00;
+}
+:host { 
+	--padding-start: 0 !important; 
+}
   ion-card {
-    border-radius: 10px;
-    padding: 2px;
-    background: #0000006b;
-    color: var(--ion-color-secondary-contrast);
-    border: 2px solid #917a48;
+    border-radius: 10px;--padding-start: 0 !important;
+    padding: 2px; margin: 0; 
+    color: var(--ion-color-secondary-contrast);background: none;
+   
 
     .manage_button {
       background: var(--ion-color-primary);
@@ -186,12 +233,18 @@ ion-icon {
 
   p {
     margin: 0;
-    color: var(--ion-color-secondary-contrast);
-    font-weight: normal;
-    font-size: 14px;
-    background: var(--ion-color-primary);
-    padding: 3px 10px;
-    border-radius: 5px;
+  color: var(--ion-color-secondary-contrast);
+  font-weight: normal;
+  font-size: 14px;text-transform: uppercase;
+  padding: 3px 0;
+  border-radius: 5px;
+  float: right;
+  }
+  img {
+    width: 22px;
+    padding: 3px 0 0 5px;
+    margin: 0;
+    float: right;
   }
 }
 
@@ -208,16 +261,154 @@ a {
   text-decoration: none;
 }
 
-.wallet_iocnbx  ion-icon {
-	font-size: 4vh;
+.wallet_iocnbx ion-icon {
+  font-size: 3.2vh;
+  text-align: center;
+  margin: auto;
+}.wallet_iocnbx p {
+  background: #ffffff80;
+  float: right;
+  border-radius: 50px;
+  width: 25px;
+  height: 25px;
+  margin: 5px 0 0 0;
+  padding: 0;
 }
+
 .iocn_wall {
-	text-align: center;
+  text-align: center;
+  width: 100%;
+  float: left;
+  position: relative;
+  z-index: 9;
 }
+
+.iocn_wall img {
+  width: 30px;
+  float: left;
+}
+
 .wallet_iocnbx {
-	width: 100%;
-	border: 2px solid #fff;
-	border-radius: 5px;
-	text-align: center;
-	padding: 10px;
+  width: 100%;
+  border: 2px solid rgba(65, 65, 65, 0.62);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(86deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0.21) 82%);
+  padding:13px 8px 5px;
 }
+
+
+.wallet_all {
+  position: absolute;
+  right: -20px;
+  bottom: -7px;
+  width: 60px;
+  transform: rotate(330deg);
+  opacity: 0.3;
+}
+
+.bg_allpage {
+  background: rgb(9, 45, 22);
+  background: linear-gradient(160deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 82%);
+ 
+
+
+}
+
+ion-toolbar {
+  background: none !important;
+  --background: transparent;
+}
+
+.header-md {
+  box-shadow: none;
+} 
+
+ion-back-button {
+  background: #ffffff40;
+  border-radius: 50px;
+}
+
+ion-title {
+  text-align: left;
+  margin-left: 0;
+  font-size: 14px;
+}
+
+.manage_coin_list{ width: 100%; float: left;
+  .manage_coin_listbx{
+    float: left;
+  width: 100%;
+  border: 2px solid rgba(65, 65, 65, 0.62);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(86deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0.21) 82%);
+  padding: 13px 8px 5px;
+  }
+  .manage_coin_img{ width: 100%; float: left;}
+  .manage_coin_img img{ width: 50px; float: left;}
+  .manage_coin_num{ width: 100%; float: left;}
+  .manage_coin_num h2{ 
+    color: var(--ion-color-secondary-contrast);
+    margin: 0;
+    font-weight: bold;
+    font-size: 23px;
+    float: left;
+  }
+.manage_coin_num p{ 
+  color: var(--ion-color-secondary-contrast);
+  margin: 0;
+  font-weight: normal;
+  font-size: 14px;
+  float: left;
+  }
+  .manage_coin_num h3{ 
+    color: #39ac10;
+    margin: 0;
+    font-weight: normal;
+    font-size: 15px;
+    float: right;
+    padding: 16px 0 0 0;
+    }
+    .manage_coin_num h3 span img {
+      float: right;
+      width: 11px;
+    }
+    .manage_coin_num h3 span{ float: left;
+  padding: 6px 4px 0 0px;
+}
+  h5 {
+	padding:3px 10px 0 0;
+	margin: 0;
+	float: right;
+	border-bottom: 1px solid #fff;
+	font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+}
+
+.recent_transaction{ width: 100%; float: left; padding: 10px 0 0 0;
+ h2{
+  padding: 3px 0 0 7px;
+  margin: 0;
+  float: left;
+  width: 100%;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+ 
+}
+.green_text{font-size: 12px; color: #06C512;}
+.red_text{font-size: 12px; color: #F00;}

@@ -1,44 +1,45 @@
  
 
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title class="text-align-center app_bar_title" style="width: 100%;">Support </ion-title>
-    <ion-buttons slot="end">
-      <div style="width: 48px;"></div>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-text-center ">
+  <div class="login_bgnew" style="background-image: url('assets/image/login_bg_img.png'); background-size: cover; background-position: center;padding: 0px 0 10px;"> 
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title lot="start">
+          Support
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content [fullscreen]="true">
+ 
    <div class="support_page">
     <ion-grid>
       <ion-row class="height-container">
         <ion-row class="ion-align-items-center padding-head">
           <ion-col size="12" size-md="6">
             <ion-row class="ion-justify-content-center ion-align-items-center newlogo_w"> <img
-                src="assets/image/newlogo.png" alt=""> </ion-row>
+                src="assets/image/login_logo.png" alt=""> </ion-row>
           </ion-col>
           <ion-col size="12" size-md="6" class="text_get_started" style="padding: 0;">
-            <h2>Support</h2>
+           
             <ion-row style="padding: 10px 0;">
-              <label>Full Name</label>
+              <div class="text_get_started">
               <ion-input style="padding: 0px 20px; box-shadow: none;" class="ion-text-start max-width-input"
-                fill="outline" type="email" placeholder="Enter Full Name" style="--placeholder-color: #bfa56a;">
-              </ion-input>
+                fill="outline" type="email" placeholder="Enter Full Name" style="--placeholder-color: #fff;">
+              </ion-input> <span><img src="assets/icon/username.png" alt=""></span></div>
             </ion-row>
             <ion-row>
-              <label>Email</label>
+              <div class="text_get_started">
               <ion-input style="padding: 0px 20px; box-shadow: none;" class="ion-text-start max-width-input"
-                fill="outline" type="email" placeholder="Enter E-Mail" style="--placeholder-color: #bfa56a;">
-              </ion-input>
+                fill="outline" type="email" placeholder="Enter E-Mail" style="--placeholder-color: #fff;">
+              </ion-input> <span><img src="assets/icon/gmail_icon.png" alt=""></span></div>
             </ion-row>
             <ion-row>
-              <label>Message</label>
+               
               <ion-textarea placeholder="Type your message here..." style="padding: 0px 20px; box-shadow: none;" class="ion-text-start max-width-input"
-              fill="outline" type="email"  style="--placeholder-color: #bfa56a;"></ion-textarea>
+              fill="outline" type="email"  style="--placeholder-color: #fff;"></ion-textarea>
             
             </ion-row>
 
@@ -51,6 +52,7 @@
       </ion-row>
     </ion-grid>
   
+  </div>
   </div>
 </ion-content>
 

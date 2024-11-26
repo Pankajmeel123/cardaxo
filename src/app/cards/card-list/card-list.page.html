@@ -1,15 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title style="font-weight: bold;">
-      Card List
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
+
+<ion-content [fullscreen]="true" class="ion-text-center ">
+  <div class="login_bgnew" style="background-image: url('assets/image/card-list_bg.png'); background-size: cover; background-position: center;padding: 0px 0 10px; float: left; width: 100%;"> 
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title lot="start"> 
+          Card List
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+
+
   <div class="card_credit_design" *ngIf="isLoading">
     <div class="card_credit_img">
       <img [src]="'assets/image/card_bg1.png'">
@@ -56,13 +61,14 @@
       </div>
     </div>
     <div class="custom-button-container " style=" width: 100%; float: left;" *ngIf="selectedCard?.card_type_id">
-      <ion-button expand="full" color=" " shape=" " (click)="apply()" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Next</ion-button>
-    </div>
+      <ion-button expand="full" color=" " shape=" " (click)="apply()" class="applybutton">Next</ion-button>
+    </div> 
   </div>
   <div *ngIf="step === 2 && ( wallet && (wallet.coin?.length ?? 0) > 0)">
-    <div [innerHtml]="selectedCard.description"></div>
+    <div [innerHtml]="selectedCard.description" class="card_listpageul"></div>
     <div class="custom-button-container " style=" width: 100%; float: left" *ngIf="selectedCard">
-      <ion-button expand="full" color=" " shape=" " (click)="step = 1" style="font-weight: bold; text-transform: unset;  max-width: 700px; margin: auto; height: 50px; background-color: #b0893a;">Back</ion-button>
+      <ion-button expand="full" color=" " shape=" " (click)="step = 1" class="applybutton">Back</ion-button>
     </div>
   </div>
+</div>
 </ion-content>

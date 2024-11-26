@@ -1,29 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="ion-text-center app_bar_title" style="font-weight: bold;"></ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-text-center ">
+  <div class="login_bgnew" style="background-image: url('assets/image/login_bg_img.png'); background-size: cover; background-position: center;padding: 0px 0 10px;"> 
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title lot="start">
+          Log in  
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
 
-<ion-content [fullscreen]="true" class="ion-text-center">
 
   <ion-grid>
     <ion-row class="height-container">
       <ion-row class="ion-align-items-center padding-head">
         <ion-col size="12" size-md="6">
           <ion-row class="ion-justify-content-center ion-align-items-center newlogo_w">
-            <img src="assets/image/newlogo.png" alt="">
+            <img src="assets/image/login_logo.png" alt="">
           </ion-row>
         </ion-col>
-        <ion-col size="12" size-md="6" class="text_get_started">
-          <h2>Sign in</h2>
-          <!-- <p class="limited-width" style="text-align: left; margin: 20px 0px 5px;"></p> -->
-          <ion-input style="padding: 0px 20px; box-shadow: none;" class="ion-text-start max-width-input" fill="outline"
-              (ionChange)="inputEmailChanage($event)" type="email" placeholder="Enter E-Mail" style="--placeholder-color: #bfa56a;"></ion-input>
-          <app-primary-button label="NEXT" (click)="send()">  </app-primary-button>
+        <ion-col size="12" size-md="6">
+          <div class="text_get_started">
+           <ion-input style="padding: 0px 20px; box-shadow: none;" class="ion-text-start max-width-input" fill="outline"
+              (ionChange)="inputEmailChanage($event)" type="email" placeholder="Enter E-Mail" style="--placeholder-color: #fff;"></ion-input>
+              <span><img src="assets/icon/gmail_icon.png" alt=""></span>
+            </div>
+              <app-primary-button label="NEXT" (click)="send()">  </app-primary-button>
+          
         </ion-col>
       </ion-row>
     </ion-row>
   </ion-grid>
-  <p>New user! <span [routerLink]="['/register']">Register</span></p>
-
+  <p style="text-transform: uppercase;">New user! <span [routerLink]="['/register']">Register</span></p>
+</div>
 </ion-content>
+

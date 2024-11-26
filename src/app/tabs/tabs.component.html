@@ -1,20 +1,20 @@
 <ion-tabs (ionTabsWillChange)="getTabValue()">
   <ion-tab-bar slot="bottom" class="sidebar-tab-bar">
     <ion-tab-button tab="home">
-      <ion-icon name="wallet-outline"></ion-icon>
+      <img src="assets/icon/footer_wallet.png">
       Wallet
     </ion-tab-button>
     <ion-tab-button [class.tab-selected]="router.url.includes('cards')" [tab]="cardNav">
-      <ion-icon name="card"></ion-icon>
+      <img src="assets/icon/footer_cards.png">
       Cards
     </ion-tab-button>
     <ion-tab-button tab="candy"> 
-      <ion-icon name="gift-outline"></ion-icon>
+      <img src="assets/icon/footer_candy.png">
       Candy
     </ion-tab-button>
     <ion-tab-button tab="settings">
-      <ion-icon name="settings"></ion-icon>
+     <img src="assets/icon/footer_account.png">
       Account
-    </ion-tab-button>
+    </ion-tab-button> 
   </ion-tab-bar>
 </ion-tabs>

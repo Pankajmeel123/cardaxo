@@ -25,6 +25,7 @@ export class HomePage {
   protected iconCoin: Record<string, any> = iconCoin;
   public total2: number = 3293.45;
   public total: number = 0;
+  public showDetails: boolean = false;
 
   protected walletActions = [
     {
@@ -153,7 +154,9 @@ export class HomePage {
   getIconCoin(symbol: string) {
     return this.iconCoin[symbol];
   }
-
+  toggleDetails() {
+    this.showDetails = !this.showDetails;;
+  }
 
 
 }

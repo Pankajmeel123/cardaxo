@@ -1,9 +1,16 @@
 ion-button {
-  font-weight: 600;
-  text-transform: unset;
-  max-width: 700px;
-  margin: 0px auto;
-  height: 50px; text-transform: uppercase;
+	font-weight: 600;
+  max-width: 100%;
+  margin: 15px auto;
+  height: 54px;
+  text-transform: uppercase;
+  --color: var(--ion-color-primary-contrast, #fff);
+  background: rgba(0, 0, 0, 0);
+  --background: linear-gradient(90deg, rgba(0, 0, 0, 0.17) 0%, rgba(255, 255, 255, 0.18) 57%);
+  width: 190px;
+  border: 2px solid rgba(255, 255, 255, 0.1019607843);
+  box-shadow: inset 4px 4px 10px #0000001f, inset -4px -4px 10px #000;
+  border-radius: 15px;
 }
 
 .padding-bottom {

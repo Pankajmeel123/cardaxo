@@ -1,32 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title class="text-align-center app_bar_title">{{isSavedPin ? '' : 'Setup '}}PIN{{isSavedPin ? ' Verification' :
-      ''}}</ion-title>
-    <ion-buttons slot="end">
-      <div style="width: 48px;"></div>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
 
+<ion-content [fullscreen]="true" class="ion-text-center ">
+  <div class="login_bgnew" style="background-image: url('assets/image/login_bg_img.png'); background-size: cover; background-position: center;padding: 0px 0 10px;"> 
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+         <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title lot="start">
+          {{isSavedPin ? '' : 'Setup '}}PIN{{isSavedPin ? ' Verification' :
+      ''}}
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
 
-<ion-content [fullscreen]="true" class="ion-text-center">
-
-
+ 
   <ion-grid>
     <ion-row class="height-container">
       <ion-row class="ion-align-items-center padding-head">
         <ion-col size="12" size-md="6">
           <div class="image-width">
             <ion-row class="ion-justify-content-center ion-align-items-center newlogo_w">
-              <img src="assets/image/newlogo.png" alt="">
+              <img src="assets/image/login_logo.png" alt="">
             </ion-row></div>
           <div size="12" style="padding: 0 15px;" class="text_get_started">
-            <h2>{{isSavedPin ? '' : 'Setup '}}PIN{{isSavedPin ? ' Verification' :
-              ''}}</h2>
+            <!-- <h2>{{isSavedPin ? '' : 'Setup '}}PIN{{isSavedPin ? ' Verification' :
+              ''}}</h2> -->
               
             <p class="limited-width">Please {{isSavedPin ? 'enter' : 'create'}} your PIN</p>
             <ion-row class="limited-width">
@@ -60,6 +60,6 @@
 
 
 
-
+</div>
 
 </ion-content>

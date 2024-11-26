@@ -1,20 +1,18 @@
 .limited-width {
   font-style: italic;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
+  padding: 0 10px;
+  margin: 0;
 }
-.newlogo_w {
-	border: 2px solid #d7bd87;
-	height: 280px;
-	border-radius: 50px;
-	width: 280px !important;
- margin: 34% auto 0;
-}
-.newlogo_w img{ width: 280px; height: auto;}
+ 
+.newlogo_w img{  height: auto;}
 .text_get_started h1 {
-	color: #fff;
-	text-transform: uppercase;
-	padding: 40px 0 0px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 40px 0 0px;
+  line-height: 52px;
+  font-size: 39px;
 }
 .dytxt {
 	animation-name: example;
@@ -44,7 +42,7 @@ ion-row {
 }
 
 .height-container {
-  height: 98vh;
+  height: 100vh;
 }
 
 ion-menu {

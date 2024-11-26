@@ -1,18 +1,39 @@
  
 
+ion-toolbar {
+  background: none !important;
+  --background: transparent;
+}
+.header-md{ box-shadow:none;} 
+ion-back-button {
+	background: #ffffff40;
+	border-radius: 50px;
+}
+ion-title {
+  text-align: left;
+  margin-left: 0;
+  font-size: 14px;
+}
+ 
 
 .candy_bx_page {
   width: 100%;
   float: left;
   padding: 10px;
 }
- .candy_bx_balance{ width: 100%;
-  float: left;
-  padding: 0px 6px;
-  background: #1f1f1f;
+ .candy_bx_balance{ 
   margin-bottom: 20px;
+  float: left;
+  width: 100%;
+  border: 2px solid rgba(65, 65, 65, 0.62);
   border-radius: 10px;
-  border: 1px solid #b0893a8c;}
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(86deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0.21) 82%);
+  padding: 13px 8px 5px;
+
+}
  .candy_bx_balance img{ width: 100%; float: left;}
  .candy_bx_balance h2 {
 	font-size: 20px;
@@ -39,25 +60,36 @@
 }
 .history_button{ width: 100%; float: left;}
 .history_button span {
-  color: #fff;
   float: right;
-  padding: 2px 11px;
-  text-align: right;
   font-size: 12px;
-  margin: 0; 
-  background: #b0893a;
-  border-radius: 50px;
-  margin-top: 6px;
+  color: #fff;
+  padding: 6px 0;
+  text-align: center;
+  font-weight: 600;
+  max-width: 100%;
+  margin: 5px auto;
+  height: 35px;
+  text-transform: uppercase;
+  --color: var(--ion-color-primary-contrast, #fff);
+  background: rgba(0, 0, 0, 0);
+  --background: linear-gradient(90deg, rgba(0, 0, 0, 0.17) 0%, rgba(255, 255, 255, 0.18) 57%);
+  width: 90px;
+  border: 3px solid rgba(255, 255, 255, 0.19);
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1215686275), inset -4px -4px 10px #000;
+  border-radius: 15px;
 }
 
 .refer_and_earn {
-	background: rgb(145, 120, 70);
-  background: linear-gradient(101deg, rgb(176, 137, 58) 0%, rgb(176, 137, 58) 82%);
-	float: left;
-	width: 100%;
-	margin: auto;
-	border-radius: 10px;
-	padding: 10px;
+  float: left;
+  width: 100%;
+  border: 2px solid rgba(65, 65, 65, 0.62);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(86deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.48) 82%);
+  padding: 17px 10px;
+  margin: 5px 0 0;
 }.refer_and_earn h2 {
 	padding: 0;
   margin: 0;
@@ -91,7 +123,7 @@
   font-weight: 600;
 }
 .withdrawable_bx ion-col {
-  border: 1px solid #fff;
+  border:1px solid #ffffff6b;;
 }
 ion-title h2 {
 	color: #fff;
@@ -117,17 +149,22 @@ ion-title h2 {
   float: left;
   background: #1f1f1f;
   border-radius: 10px;
-  border: 1px solid rgba(176, 137, 58, 0.5490196078);
+  border: 2px solid rgba(255, 255, 255, 0.28);
   color: #fff;}
-.how_to_earn ul li h2{width: 100%;
-  display: block;font-weight: 500;text-align: left;
-  background: rgb(145, 120, 70);
-  background: linear-gradient(101deg, rgb(176, 137, 58) 0%, rgb(176, 137, 58) 82%);
-  color: #fff;
+.how_to_earn ul li h2{ 
   font-size: 16px;
-  padding: 7px;
+  float: left;
+  width: 100%;
   border-radius: 6px 6px 0 0;
-  margin: 0;}
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(86deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.48) 82%);
+  padding: 6px 0px;
+  margin: 0 0 6px;
+
+
+}
   .how_to_earn ul li p {
     padding:8px 10px 10px;
     margin: 0;
@@ -136,12 +173,16 @@ ion-title h2 {
     color: #fff;
   }
  
-  .rewards_bx{ width: 100%;
-    float: left; 
-    background: #1f1f1f;
-    margin-bottom: 20px;padding: 15px 10px;
-    border-radius: 10px;
-    border: 1px solid #b0893a8c;}
+  .rewards_bx{ margin-bottom: 20px;
+  float: left;
+  width: 100%;
+  border: 2px solid rgba(65, 65, 65, 0.62);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(86deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0.21) 82%);
+  padding: 19px 10px;}
 
     .rewards_bx h2 {padding: 0 0 3px;
       margin: 0;
@@ -153,13 +194,6 @@ ion-title h2 {
     }
 
     .rewards_bx ul{ margin: 0; padding: 0;}
-.rewards_bx ul li{width: 100%;
-  display: block;
-  float: left;
-  padding: 0px 0px 0;
-  margin: 0;
-  font-size: 15px;
+.rewards_bx ul li{display: block;
   text-align: left;
-  color: #fff;
-  text-align: left
   }

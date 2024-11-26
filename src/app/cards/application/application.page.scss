@@ -1,14 +1,144 @@
-ion-card {
-  border-radius: 12px; 
-   width: 100%; background: #000
+ion-row {
+  width: 100%;
+}
+ 
+
+ion-toolbar {
+  background: none !important;
+  --background: transparent;
+}
+.header-md{ box-shadow:none;} 
+ion-back-button {
+	background: #ffffff40;
+	border-radius: 50px;
+}
+ion-title {
+  text-align: left;
+  margin-left: 0;
+  font-size: 14px;
+}
+ 
+
+.newlogo_w img{ width: 280px; height: auto;}
+.height-container {
+  height: 80vh;
+}
+.text_get_started h2 {
+	color: #fff;
+	text-transform: uppercase;
+	padding: 40px 0 0px;
+	text-align: left;
+	font-size: 20px; position: relative;margin-bottom: 30px;
+}
+.text_get_started h2::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 30px;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+}
+ion-input{
+	min-height: 45px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+  border: 1px solid #ffffff4a;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 14px;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.19) 0%, rgba(255, 255, 255, 0.18) 57%);
+  font-size: 16px;
+  padding: 7px 20px !important; margin: 0 0 10px;text-align: left;
+  float: left;
+
 }
 
-.custom-button-container {
-  width: 100%;
-  text-align: center;
-  padding: 1vh 50px;
+ionic-selectable{
+	min-height: 45px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+  border: 1px solid #ffffff4a;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 14px;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.19) 0%, rgba(255, 255, 255, 0.18) 57%);
+  font-size: 16px;
+  padding: 7px 20px !important; margin: 0 0 10px;text-align: left;
+  float: left;
+
 }
-ion-item { 
-	--ion-background-color: #000;
-	margin: 10px 0 !important;
+
+.input-fill-outline.sc-ion-input-md-h {
+ 	--border-radius: 14px; 
+}
+ 
+.app_bar_title { 
+	font-size: 12px;
+	text-align: left;
+}
+
+.max-width-input {
+  max-width: 400px;
+}
+
+.text_get_started{ position: relative;width: 100%}
+ .text_get_started span{position: absolute;
+  right: 11px;
+  top: 25px;}
+  .text_get_started span img {
+    width: 26px;
+  
+  }
+
+.image-width {
+  max-width: 400px;
+}
+
+ion-toolbar {
+  background: none !important;
+  --background: transparent;
+}
+.header-md{ box-shadow:none;} 
+ion-back-button {
+	background: #ffffff40;
+	border-radius: 50px;
+}
+ion-title {
+  text-align: left;
+  margin-left: 0;
+  font-size: 14px;
+}
+ 
+.padding-head {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+ .application_bx{ padding:10px; float: left; width: 100%;}
+ 
+ ion-button  {
+	font-weight: 600;
+	max-width: 100%;
+	margin: 15px auto;
+	height: 54px;
+	text-transform: uppercase;
+	--color: var(--ion-color-primary-contrast, #fff);
+	background: rgba(0, 0, 0, 0);
+	--background: linear-gradient(90deg, rgba(0, 0, 0, 0.17) 0%, rgba(255, 255, 255, 0.18) 57%);
+	width: 190px;
+	border: 2px solid rgba(255, 255, 255, 0.1019607843);
+	box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1215686275), inset -4px -4px 10px #000;
+	border-radius: 15px;
+}
+.input-fill-outline.sc-ion-input-md-h {
+	--border-color: #59595900;
+	--border-radius: 4px;
+	--padding-start: 0;
+	--padding-end: 0;
+}.sc-ion-input-md-h:not(.legacy-input) {
+	min-height: 50px;
+}
+.input-fill-outline.sc-ion-input-md-h {
+ 	--border-radius: 14px; 
 }

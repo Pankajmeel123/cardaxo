@@ -7,7 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { SharedComponentModule } from '../components/shared-component.module';
-
+ 
 
 @NgModule({
   imports: [
@@ -16,8 +16,9 @@ import { SharedComponentModule } from '../components/shared-component.module';
     IonicModule,
     HomePageRoutingModule,
     NgApexchartsModule,
-    SharedComponentModule
+    SharedComponentModule,
   ],
+ 
   declarations: [HomePage]
 })
 export class HomePageModule { }

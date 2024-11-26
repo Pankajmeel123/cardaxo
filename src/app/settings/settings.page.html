@@ -1,15 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title style="font-weight: bold;">
-      Account
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button><ion-icon name="notifications-outline"></ion-icon></ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-text-center ">
+  <div class="login_bgnew" style="background-image: url('assets/image/login_bg_img.png'); background-size: cover; background-position: center;padding: 0px 0 10px; float: left; width: 100%;"> 
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title lot="start"> 
+          Account
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+  
   <div class="satting_page">
   <ion-item [button]="true" routerLink="/profile" class="margin-bottom setting_menu" >
     <ion-icon slot="start" name="person-outline"></ion-icon> 
@@ -68,4 +71,7 @@
   <ion-alert trigger="logout-alert" header="Are you sure you want to logout!" [buttons]="alertButtons"></ion-alert>
   <ion-alert trigger="delete-alert" header="Are you sure you want to delete your account!"
     [buttons]="alertButtons"></ion-alert>
+
+
+    </div>
 </ion-content>
