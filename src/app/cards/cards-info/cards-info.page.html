@@ -13,7 +13,70 @@
     </ion-header>
  
   
-  <div class="information">
+ <div class="card_info">
+      <div class="card-container">
+        <div class="card" (click)="toggleFlip()">
+          <div class="card-inner" [class.flipped]="isFlipped">
+            <div class="card-front">
+               <div class="card_bg_images">
+                <img src="assets/image/card_bgback.png">
+                <div class="card_Detlas">
+                  <h2>Prepaid Card <span>(Virtual Card)</span></h2>
+                  <h6>Available Balance <span>$18.20</span></h6>
+                  <div class="card_nu_detlas">
+                  <h3>4859 3201 4015 9688 </h3>
+                  <div class="eye_icon"><ion-icon name="eye-outline"></ion-icon></div>
+                </div>
+                </div>
+               </div>
+            </div>
+            <div class="card-back">
+              <div class="card_bg_images">
+                <img src="assets/image/card_bgback.png"> 
+                <div class="card_Detlas">
+                  <h2>Prepaid Card <span>(Virtual Card)</span></h2>
+                  <h6> </h6>
+                  <div class="card_nu_detlas">
+                    <h5>CVV - 503 </h5>
+                  <h4>Valid Thru - 12/2029 </h4>
+          
+                  </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+      <div class="  recent_transaction">
+        <div class="head_section">
+          <h3> Transactions </h3>
+        </div>      
+        <ion-card style="width: 100%;float: left;padding: 10px 10px;margin: 0;background: none;">
+          <div class="ion_card_bg">       
+          <ion-card-content>
+            <ion-item>
+              <ion-label>
+                <img src="assets/icon/transaction_green.png" style="width: 36px;float: left;padding: 8px 4px 0px 0px;">  
+                <!-- <img src="assets/icon/transaction_red.png" style="width: 36px;float: left;padding: 8px 4px 0px 0px;">   -->
+                <!-- <img src="assets/icon/transaction_blue.png" style="width: 36px;float: left;padding: 8px 4px 0px 0px;">    -->
+               <h2> 123123123 <span>usdt to Btc 20-11-2024</span> </h2> 
+              </ion-label>
+              <ion-label slot="end" class="green_text">
+                <img src="assets/icon/transaction_greenup.png" style="width: 8px;">
+                <!-- <img src="assets/icon/transaction_red_down.png" style="width: 8px;"> -->
+                +1,0217</ion-label>
+            </ion-item>
+           </ion-card-content>
+        </div>
+        </ion-card>
+         
+      </div>
+
+
+  <!-- <div class="information">
     <div *ngIf="!isLoading && !( cardDetails && cardDetails.encoded_card_detail)">
       <ion-grid>
         <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
@@ -33,7 +96,7 @@
           <app-skeleton-big-card style="position: absolute;bottom: 17px;left: 25px;width: 84%;"></app-skeleton-big-card>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- <div class="wrapper" *ngIf="isLoading">
       <div class="cc mastercard "> 
         <svg width="295" height="87">
@@ -48,19 +111,20 @@
         <app-skeleton-big-card style="position: absolute;bottom: 17px;left: 25px;width: 84%;"></app-skeleton-big-card>
       </div>
     </div> -->
-    <div class="card_credit_design" *ngIf="!isLoading && cardDetails && cardDetails.encoded_card_detail">
+    <!-- <div class="card_credit_design" *ngIf="!isLoading && cardDetails && cardDetails.encoded_card_detail">
       <div class="card_credit_img">
         <img [src]="cardDetails?.card_detail?.image ? 'https://wallet.cardaxo.com/'+cardDetails?.card_detail?.image : 'assets/image/card_bg1.png'">
         <div class="card_credit_design_text">
           <h2>Prepaid Card <span>Virtual Card</span></h2>
           <div class="visa_logo_incard"><img src="assets/image/visa_newlogo.png"></div>
-          <h6>Available Balance<span>${{total}}</span></h6>
-          <h3>{{cardNumber}}</h3>
-          <h4>Valid Thru {{expire}} </h4>
-          <h5>CVV {{cvv}} </h5>
-        </div>
+          <h6>Available Balance<span>${{total}}</span> </h6>
+          <div class="card_number_bx">
+          <h3>{{cardNumber}} </h3><div class="eye_icon"><ion-icon name="eye-outline"></ion-icon></div></div> -->
+          <!-- <h4>Valid Thru {{expire}} </h4>
+          <h5>CVV {{cvv}} </h5> --> 
+        <!-- </div>
       </div>
-    </div>
+    </div> -->
     <!-- <div class="wrapper" *ngIf="!isLoading && cardDetails && cardDetails.encoded_card_detail">
       <div class="cc mastercard "> 
         <svg width="295" height="87">
@@ -83,12 +147,37 @@
           <p style="color: #fff; font-weight: bold; padding: 2px 10px 6px; margin: 0; font-size: 16px; text-align: right;"><span style="float: left;width: 100%;font-size: 10px;font-weight: normal;color: #fff;text-align: right;">USD</span>{{total | number:'1.1-4'}}</p>
         </div>
       </div>
-    </div> -->
-  </div>
-  <div class="assets">
+    </div> 
+  </div>-->
+
+
+  
+  <!-- <div class="assets recent_transaction">
     <div class="head_section">
       <h4 > Transactions </h4>
     </div>
+
+    <ion-card>
+      <div class="ion_card_bg">
+   
+      <ion-card-content>
+        <ion-item>
+          <ion-label>
+            <img src="assets/icon/transaction_green.png" style="width: 36px;float: left;padding: 8px 4px 0px 0px;">   -->
+            <!-- <img src="assets/icon/transaction_red.png" style="width: 36px;float: left;padding: 8px 4px 0px 0px;">   -->
+            <!-- <img src="assets/icon/transaction_blue.png" style="width: 36px;float: left;padding: 8px 4px 0px 0px;">    -->
+  <!-- <h2>
+            123123123 <span>usdt to Btc 20-11-2024</span>
+          </h2> 
+          </ion-label>
+          <ion-label slot="end" class="green_text">
+            <img src="assets/icon/transaction_greenup.png" style="width: 8px;"> -->
+            <!-- <img src="assets/icon/transaction_red_down.png" style="width: 8px;"> -->
+            <!-- +1,0217</ion-label>
+        </ion-item>
+       </ion-card-content>
+    </div>
+    </ion-card>
     
     <div *ngIf="isLoading">
       <ion-card *ngFor="let i of [].constructor(10);">
@@ -159,6 +248,6 @@
         </ion-card-content>
       </ion-card>
     </div>
-  </div>
+  </div> -->
   </div>
 </ion-content>

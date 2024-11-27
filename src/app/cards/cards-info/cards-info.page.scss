@@ -11,489 +11,11 @@ ion-back-button {
 ion-title {
   text-align: left;
   margin-left: 0;
-  font-size: 14px;
-}
-
-
-
-.information {
-  ion-card {
-    background: linear-gradient(to right bottom, #a460f8, #4c48ff);
-    border-radius: 12px;
-  }
-}
-
-.new_logohome img {
-  width: 50px;
-  border: 1.5px solid #e3bb69;
-  height: 50px;
-  border-radius: 50px;
-  padding: 3px;
-  float: left;
-}
-
-.new_logohome h2 {
-  color: var(--ion-color-secondary-contrast);
-  float: left;
-  vertical-align: top;
-  padding: 13px 0 0 7px;
-  margin: 0;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.assets {
-  ion-card {
-    border-radius: 10px;
-    padding: 8px;
-
-
-
-    ion-card-content {
-      padding: 0px;
-    }
-
-    ion-card-title {
-      font-size: 16px;
-    }
-
-
-  }
-
-
-
-}
-
-.head_section {
-  display: flex;
-  justify-content: space-between;
-  padding: 0vh 2vh 0vh 2vh;
-
-  h4 {
-    font-weight: bold;
-  }
-}
-
-
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card-number {
-  font-size: 1.75rem;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  height: 45px;
-}
-
-.front {
-  justify-content: space-between;
-}
-
-.back {
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.front,
-.back {
-  width: 100%;
-  height: 220px;
-  padding: 20px;
-  border-radius: 8px;
-  font-size: 1.125rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-wrapper {
-  display: block;
-  width: fit-content;
-}
-
-
-
-.custom-button-container {
-  width: 100%;
-  text-align: center;
-  padding: 4vh 50px;
-}
-
-.new_logohome img {
-  width: 40px;
-  border: 1.5px solid #e3bb69;
-  height: 40px;
-  border-radius: 50px;
-  padding: 3px;
-  float: left;
-}
-
-.check_applyicon {
-  width: 38px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  float: right;
-  text-align: right;
-  background: rgb(79, 55, 5);
-  border-radius: 0px 18px 3px 26px;
-}
-
-.check_applyicon img {
-  width: 21px;
-  padding: 4px 7px 0 0;
-}
-
-.new_logohome h2 {
-  color: var(--ion-color-secondary-contrast);
-  float: left;
-  vertical-align: top;
-  padding: 8px 0 0 7px;
-  margin: 0;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.total_balance {
-  padding: 0px 10px;
-  border: 2px solid rgba(176, 137, 58, 0.6);
-  width: 90%;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
-
-
-  ion-card {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 8px;
-    color: var(--ion-color-primary);
-    margin: 10px 5px;
-    background: var(--ion-color-secondary);
-  }
-
-  h5 {
-    margin: 10px 0 0;
-    color: var(--ion-color-secondary-contrast);
-  }
-
-  ion-col {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  ion-icon {
-    font-size: 3vh;
-  }
-
-  .balance {
-    text-align: left;
-    padding: 10px;
-    color: var(--ion-color-primary);
-
-    p {
-      display: flex;
-      align-items: center;
-      color: var(--ion-color-secondary-contrast);
-    }
-
-    ion-icon {
-      margin-right: 10px;
-    }
-  }
-
-  h5 {
-    font-size: 12px;
-    padding: 0px !important;
-    color: var(--ion-color-secondary-contrast);
-  }
-
-  h1 {
-    font-weight: bold;
-    font-size: 40px;
-    margin-top: -10px;
-  }
-}
-
-
-
-
-
-
-
-
-
-.wrapper {
-  width: 100%;
-  float: left;
-
-  .logo_card {
-    width: 100%;
-    float: left;
-    position: absolute;
-    left: 0;
-  }
-
-  .head_section {
-    width: 100%;
-    float: left;
-  }
-
-  .head_section h4 {
-    width: 100%;
-    float: left;
-  }
-
-  .assets ion-card {
-    border-radius: 10px;
-    padding: 0px;
-    background: rgba(0, 0, 0, 0.4196078431);
-    color: var(--ion-color-secondary-contrast);
-    border: 1px solid #917a48;
-  }
-
-
-  .cc {
-    position: relative;
-    font-family: "Maven Pro", sans-serif;
-    font-size: 16px;
-    color: white;
-    width: 90%;
-    height: 190px;
-    border-radius: 18px;
-    box-shadow: 0px 0px 18px -1px #2E2E2E;
-    margin: 10px auto 20px;
-
-
-    &.mastercard {
-      background-image: linear-gradient(to top right, #020202, #040B2E);
-      border: 2px solid #e3bb698f;
-
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 16px;
-      background-image: linear-gradient(to top, transparent, #FFFFFF);
-      opacity: 30%;
-      left: 0;
-    }
-
-    svg {
-      position: absolute;
-      top: 77px;
-      width: 100%;
-      float: left;
-      left: 10px;
-      right: 0;
-      opacity: 0.09;
-
-
-      path {
-        fill: transparent;
-        stroke: #FFFFFF;
-        stroke-width: 2px;
-        stroke-linecap: round;
-      }
-    }
-
-    .container {
-      position: absolute;
-      top: 25px;
-      left: 25px;
-      right: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .holder {
-      position: absolute;
-      bottom: 17px;
-      left: 25px;
-
-      .number-container {
-        display: flex;
-      }
-
-      span {
-        display: block;
-
-        &.name {
-          padding: 0;
-          margin: 0;
-          font-size: 10px;
-          text-align: left;
-          color: #fff;
-          font-size: 15px;
-          text-transform: uppercase;
-          font-weight: bold;
-        }
- 
-        &.number {
-          color: #fff;
-          font-weight: 600;
-          letter-spacing: 1px;
-          padding: 0 5px 0px 0px;
-        }
-      }
-    }
-  }
-}
-
-.card_credit_design {
-  margin: 10px;
-  float: left;
-  width: 100%;   
-}
-
-.card_credit_design_text {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 200px;
-  text-align: center;
-  margin: auto;
-  padding: 10px;
-}
-
-.card_credit_design_text h2 {
-  text-align: left;
   font-size: 18px;
-  font-weight: 200;
-  letter-spacing: 2px;
-
-  font-weight: 200;
-  letter-spacing: 1px;
-  text-rendering: geometricprecision;
-  color:#fff;
-  text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
-  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
-  width: 100%;
-  padding: 5px 0 0 0;
-  margin: 0;
-  text-transform: uppercase;
 }
 
-.card_credit_design_text h2 span {
-  font-size: 9px;
-  text-align: left;
-  margin: auto;
-  display: block;
-  width: 100%;
-}
-
-.card_credit_design_text h3 {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  text-align: left;
-  padding: 0 0 0px 0;
-  font-size: 20px;
-  font-family: "OCR A Std", sans-serif;
-  font-weight: 200;
-  letter-spacing: 1px;
-  text-rendering: geometricprecision;
-  color: #fff;
-  text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
-  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
-}
-
-.card_credit_design_text h4 {
-  text-align: left;
-  font-size: 12px;
-  font-weight: 200;
-  letter-spacing: 2px;
-  font-family: "OCR A Std", sans-serif;
-  font-weight: 200;
-  letter-spacing: 1px;
-  text-rendering: geometricprecision;
-  color: #fff;
-  text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
-  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
-  float: left;
-  width: 50%;
-  padding: 5px 0 0 0;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.card_credit_design_text h5 {
-  text-align: left;
-  font-size: 12px;
-  font-weight: 200;
-  letter-spacing: 2px;
-  font-family: "OCR A Std", sans-serif;
-  font-weight: 200;
-  letter-spacing: 1px;
-  text-rendering: geometricprecision;
-  color:#fff;
-  text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
-  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
-
-  float: left;
-  width: 50%;
-  padding: 5px 0 0 0;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.card_credit_design_text h6 {
-  text-align: right;
-  font-size: 12px;
-  font-family: "OCR A Std", sans-serif;
-  font-weight: 200;
-  letter-spacing: 1px;
-  text-rendering: geometricprecision;
-  color:#fff;
-  text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
-  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
-  float: right;
-  width: 100%;
-  margin: 0;
-  text-transform: uppercase;
-  padding: 38px 0 31px 0;
-  ;
-}
-
-.card_credit_design_text h6 span {
-  margin: 0;
-  width: 100%;
-  text-align: right;
-  padding: 0 0 0px 0;
-  font-size: 14px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  text-rendering: geometricprecision;
-  color:#fff;
-  text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
-  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
-  float: right;
-}
-
-.card_credit_img {
-  position: relative;
-  text-align: center;
-  width: 94%;
-  text-align: center;
-}
- 
+.green_text{font-size: 12px; color: #06C512;}
+.red_text{font-size: 12px; color: #F00;}
 .card_credit_img img {
   width: 100%;
   height: auto;
@@ -513,16 +35,704 @@ img {
   width: 48px !important;
   height: auto !important;
 }
+.card_info{ width: 100%; float: left;}
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32vh;
+}
+.head_section h3{
+	padding: 3px 0 0 7px;
+	margin: 0;
+	float: left;
+	width: 100%;
+	font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+	text-align: left;
+	text-transform: uppercase;
+}
+.recent_transaction h2 {
+	padding: 3px 0 0 7px;
+	margin: 0;
+	float: left;
+	width: auto;
+	font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+	text-align: left;
+	text-transform: uppercase;
+}
+.card-content-md {
+	-webkit-padding-start: 0;
+	padding-inline-start: 0;
+	-webkit-padding-end: 0;
+	padding-inline-end: 0;
+	padding-top: 0;
+	padding-bottom: 0; 
+}
+.ion_card_bg {
+	width: 100%;
+	border: 2px solid rgba(65, 65, 65, 0.62);
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	background: linear-gradient(86deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0.19) 82%);
+	padding: 0;
+	margin: 0 0 0;
+}
+.recent_transaction ion-label span {
+	display: block;
+	padding: 0;
+	font-size: 11px;
+	color: #fff;
+	text-transform: uppercase;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  padding: 10px;
+}
 
-.card_credit_design_button_more {
-  width: 100%; float: left;
-    text-align: center;
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-back { 
+  transform: rotateY(180deg);
+}
+.card_bg_images{ position: relative;}
+.card_bg_images img{ width: 100%; float: left;}
+.card_Detlas{ position: absolute; left:15px; right: 15px; top: 0;}
+.card_Detlas h2 {
+	font-size: 16px;
+	color: #fff;
+	text-align: left;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.card_Detlas h2 span {
+	display: block;
+	color: #ffffffd6;
+  margin: 0;
+  letter-spacing: 0.6px;
+	font-size: 10px; 
+}
+.card_Detlas h6 {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 25px 0; color: #ffffffd6;
+  margin: 0;
+  letter-spacing: 0.6px; 
+}
+.card_Detlas h6 span {
+ 	display: block; 
+   margin: 0;
+   width: 100%;
+   text-align: left;
+   padding: 0 0 0px 0;font-weight: bold;
+   font-size: 20px;
+   /* font-weight: 600; */
+   letter-spacing: 0;
+   /* text-rendering: geometricprecision; */
+   /* filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48)); */
+   color: #fff;
+   /* text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5), 2px 0px 0 rgba(255, 255, 255, 0.9); */
+}
+.card_nu_detlas {
+	width: 100%;
+	float: left;
+	position: relative;
+}
+.card_nu_detlas h3 {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0 0 0px 0;
+     /* font-weight: 600; */
+     /* text-rendering: geometricprecision; */
+    /* filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48)); */
+    color: #FFF;
+    /* text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5), 2px 0px 0 rgba(255, 255, 255, 0.9); */
+    font-size: 20px;
+    letter-spacing: 2px; 
+    font-weight: bold;
+}
+ .eye_icon {
+  float: left;
+  position: absolute;
+  right: 60px;
+  top: 1px;
   }
-  .card_credit_design button {
+  .eye_icon ion-icon {
+    font-size: 20px;
+  }
+  .card_nu_detlas h4 {
+    float: right;
+    font-size: 12px;
     color: #fff;
-    margin-bottom: 12px;
-    background: #b0893a;
-    border-radius: 50px;
-    padding: 11px 20px;
-    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase; 
   }
+  .card_nu_detlas h5 {
+    float: left;
+    font-size: 12px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .card-back .card_nu_detlas { 
+    padding: 40px 0 0 0; 
+  }
+
+
+
+
+// .information {
+//   ion-card {
+//     background: linear-gradient(to right bottom, #a460f8, #4c48ff);
+//     border-radius: 12px;
+//   }
+// }
+
+// .new_logohome img {
+//   width: 50px;
+//   border: 1.5px solid #e3bb69;
+//   height: 50px;
+//   border-radius: 50px;
+//   padding: 3px;
+//   float: left;
+// }
+
+// .new_logohome h2 {
+//   color: var(--ion-color-secondary-contrast);
+//   float: left;
+//   vertical-align: top;
+//   padding: 13px 0 0 7px;
+//   margin: 0;
+//   font-size: 20px;
+//   font-weight: 500;
+// }
+
+// .assets {
+//   ion-card {
+//     border-radius: 0;
+//     padding: 0;
+
+
+
+//     ion-card-content {
+//       padding: 0px;
+//     }
+
+//     ion-card-title {
+//       font-size: 16px;
+//     }
+
+
+//   }
+
+
+
+// }
+
+// .head_section {
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 0vh 2vh 0vh 2vh;
+
+//   h4 {
+//     font-weight: bold;
+//   }
+// }
+
+
+
+// .row {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// .card-number {
+//   font-size: 1.75rem;
+// }
+
+// p {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// // img {
+// //   height: 45px;
+// // }
+// .recent_transaction h2 {
+// 	padding: 3px 0 0 7px;
+// 	margin: 0;
+// 	float: left;
+// 	width:  auto;
+// 	font-weight: 400;
+// 	color: #fff;
+// 	text-decoration: none;
+// 	font-size: 18px;
+// 	text-align: left;
+// 	text-transform: uppercase;
+// }
+// .recent_transaction ion-label span {
+// 	display: block;
+// 	padding: 0;
+// 	font-size: 11px;
+// 	color: #fff;
+// 	text-transform: uppercase;
+// }
+// .front {
+//   justify-content: space-between;
+// }
+
+// .back {
+//   justify-content: flex-end;
+//   align-items: flex-end;
+// }
+
+// .front,
+// .back {
+//   width: 100%;
+//   height: 220px;
+//   padding: 20px;
+//   border-radius: 8px;
+//   font-size: 1.125rem;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .card-wrapper {
+//   display: block;
+//   width: fit-content;
+// }
+
+
+
+// .custom-button-container {
+//   width: 100%;
+//   text-align: center;
+//   padding: 4vh 50px;
+// }
+
+// .new_logohome img {
+//   width: 40px;
+//   border: 1.5px solid #e3bb69;
+//   height: 40px;
+//   border-radius: 50px;
+//   padding: 3px;
+//   float: left;
+// }
+
+// .check_applyicon {
+//   width: 38px;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   float: right;
+//   text-align: right;
+//   background: rgb(79, 55, 5);
+//   border-radius: 0px 18px 3px 26px;
+// }
+
+// .check_applyicon img {
+//   width: 21px;
+//   padding: 4px 7px 0 0;
+// }
+
+// .new_logohome h2 {
+//   color: var(--ion-color-secondary-contrast);
+//   float: left;
+//   vertical-align: top;
+//   padding: 8px 0 0 7px;
+//   margin: 0;
+//   font-size: 20px;
+//   font-weight: 500;
+// }
+
+// .total_balance {
+//   padding: 0px 10px;
+//   border: 2px solid rgba(176, 137, 58, 0.6);
+//   width: 90%;
+//   margin: auto;
+//   border-radius: 10px;
+//   box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
+
+
+//   ion-card {
+//     padding-top: 5px;
+//     padding-bottom: 5px;
+//     border-radius: 8px;
+//     color: var(--ion-color-primary);
+//     margin: 10px 5px;
+//     background: var(--ion-color-secondary);
+//   }
+
+//   h5 {
+//     margin: 10px 0 0;
+//     color: var(--ion-color-secondary-contrast);
+//   }
+
+//   ion-col {
+//     align-items: center;
+//     justify-content: center;
+//     display: flex;
+//     flex-direction: column;
+//   }
+
+//   ion-icon {
+//     font-size: 3vh;
+//   }
+
+//   .balance {
+//     text-align: left;
+//     padding: 10px;
+//     color: var(--ion-color-primary);
+
+//     p {
+//       display: flex;
+//       align-items: center;
+//       color: var(--ion-color-secondary-contrast);
+//     }
+
+//     ion-icon {
+//       margin-right: 10px;
+//     }
+//   }
+
+//   h5 {
+//     font-size: 12px;
+//     padding: 0px !important;
+//     color: var(--ion-color-secondary-contrast);
+//   }
+
+//   h1 {
+//     font-weight: bold;
+//     font-size: 40px;
+//     margin-top: -10px;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+// .wrapper {
+//   width: 100%;
+//   float: left;
+
+//   .logo_card {
+//     width: 100%;
+//     float: left;
+//     position: absolute;
+//     left: 0;
+//   }
+
+//   .head_section {
+//     width: 100%;
+//     float: left;
+//   }
+
+//   .head_section h4 {
+//     width: 100%;
+//     float: left;
+//   }
+
+//   .assets ion-card {
+//     border-radius: 10px;
+//     padding: 0px;
+//     background: rgba(0, 0, 0, 0.4196078431);
+//     color: var(--ion-color-secondary-contrast);
+//     border: 1px solid #917a48;
+//   }
+
+
+//   .cc {
+//     position: relative;
+//     font-family: "Maven Pro", sans-serif;
+//     font-size: 16px;
+//     color: white;
+//     width: 90%;
+//     height: 190px;
+//     border-radius: 18px;
+//     box-shadow: 0px 0px 18px -1px #2E2E2E;
+//     margin: 10px auto 20px;
+
+
+//     &.mastercard {
+//       background-image: linear-gradient(to top right, #020202, #040B2E);
+//       border: 2px solid #e3bb698f;
+
+//     }
+
+//     &:after {
+//       content: '';
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       border-radius: 16px;
+//       background-image: linear-gradient(to top, transparent, #FFFFFF);
+//       opacity: 30%;
+//       left: 0;
+//     }
+
+//     svg {
+//       position: absolute;
+//       top: 77px;
+//       width: 100%;
+//       float: left;
+//       left: 10px;
+//       right: 0;
+//       opacity: 0.09;
+
+
+//       path {
+//         fill: transparent;
+//         stroke: #FFFFFF;
+//         stroke-width: 2px;
+//         stroke-linecap: round;
+//       }
+//     }
+
+//     .container {
+//       position: absolute;
+//       top: 25px;
+//       left: 25px;
+//       right: 25px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//     }
+
+//     .holder {
+//       position: absolute;
+//       bottom: 17px;
+//       left: 25px;
+
+//       .number-container {
+//         display: flex;
+//       }
+
+//       span {
+//         display: block;
+
+//         &.name {
+//           padding: 0;
+//           margin: 0;
+//           font-size: 10px;
+//           text-align: left;
+//           color: #fff;
+//           font-size: 15px;
+//           text-transform: uppercase;
+//           font-weight: bold;
+//         }
+ 
+//         &.number {
+//           color: #fff;
+//           font-weight: 600;
+//           letter-spacing: 1px;
+//           padding: 0 5px 0px 0px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .card_credit_design {
+//   margin: 10px;
+//   float: left;
+//   width: 100%;   
+// }
+
+// .card_credit_design_text {
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   width: 100%;
+//   height: 200px;
+//   text-align: center;
+//   margin: auto;
+//   padding: 10px;
+// }
+
+// .card_credit_design_text h2 {
+//   text-align: left;
+//   font-size: 18px;
+//   font-weight: 200;
+//   letter-spacing: 2px; 
+//   font-weight: 200;
+//   letter-spacing: 1px;
+//   text-rendering: geometricprecision;
+//   color:#fff;
+//   text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
+//   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+//   width: 100%;
+//   padding: 5px 0 0 0;
+//   margin: 0;
+//   text-transform: uppercase;
+// }
+
+// .card_credit_design_text h2 span {
+//   font-size: 9px;
+//   text-align: left;
+//   margin: auto;
+//   display: block;
+//   width: 100%; color: #fff;
+// }
+
+// .card_credit_design_text h3 {
+  
+//     margin: 0;
+//     width: 100%;
+//     text-align: left;
+//     padding: 0 0 0px 0;
+//     font-size: 22px;
+//     /* font-weight: 600; */
+//     letter-spacing: 4px;
+//     /* text-rendering: geometricprecision; */
+//     /* filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48)); */
+//     color: #FFF;
+//     /* text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5), 2px 0px 0 rgba(255, 255, 255, 0.9); */
+//   }
+ 
+
+// .card_credit_design_text h4 {
+//   text-align: left;
+//   font-size: 12px;
+//   font-weight: 200;
+//   letter-spacing: 2px;
+//   font-family: "OCR A Std", sans-serif;
+//   font-weight: 200;
+//   letter-spacing: 1px;
+//   text-rendering: geometricprecision;
+//   color: #fff;
+//   text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
+//   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+//   float: left;
+//   width: 50%;
+//   padding: 5px 0 0 0;
+//   margin: 0;
+//   text-transform: uppercase;
+// }
+
+// .card_credit_design_text h5 {
+//   text-align: left;
+//   font-size: 12px;
+//   font-weight: 200;
+//   letter-spacing: 2px; 
+//   font-weight: 200;
+//   letter-spacing: 1px;
+//   text-rendering: geometricprecision;
+//   color:#fff;
+//   text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
+//   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
+
+//   float: left;
+//   width: 50%;
+//   padding: 5px 0 0 0;
+//   margin: 0;
+//   text-transform: uppercase;
+// }
+   
+// .card_credit_design_text h6 {
+//   text-align: left;
+//   font-size: 14px;
+//   letter-spacing: 0.9px;
+//   color: #fff;
+//   float: right;
+//   width: 100%;
+//   margin: 0;
+//   text-transform: uppercase;
+//   padding: 30px 0 25px 0;
+//   ;
+// }
+
+// .card_credit_design_text h6 span { 
+//   margin: 0;
+//   width: 100%;
+//   text-align: left;
+//   padding: 0 0 0px 0;
+//   font-size: 22px;
+//   letter-spacing: 1px;
+//   color: #FFF;
+//   width: 100%;
+//   float: left;
+//   font-weight: bold;
+//   }
+//   .card_number_bx{ position: relative;
+//     float: left;
+//     width: 100%;}
+//   .eye_icon {
+//     float: left;
+//     position: absolute;
+//     right: 40px;
+//     top: 5px;
+//   }
+
+//   .ion_card_bg{
+//     width: 100%;
+//     border: 2px solid rgba(65, 65, 65, 0.62);
+//     border-radius: 10px;
+//     position: relative;
+//     overflow: hidden;
+//     text-align: center;
+//     background: linear-gradient(86deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0.19) 82%);
+//     padding: 0;
+//     margin:  0 0;
+  
+//   }
+// .card_credit_img {
+//   position: relative;
+//   text-align: center;
+//   width: 94%;
+//   text-align: center;
+// }
+
+// .card_credit_design_button_more {
+//   width: 100%; float: left;
+//     text-align: center;
+//   }
+//   .card_credit_design button {
+//     color: #fff;
+//     margin-bottom: 12px;
+//     background: #b0893a;
+//     border-radius: 50px;
+//     padding: 11px 20px;
+//     text-align: center;
+//   }

@@ -33,6 +33,15 @@ ion-row {
 	background: none !important;
 	--background: transparent;
   }
+  body p {
+	color: #fff;
+	padding: 0 0 11px;
+	margin: 0;
+}
+h2, span {
+	color: #fff;
+	font-weight: bold;
+}
   .header-md{ box-shadow:none;} 
   ion-back-button {
 	  background: #ffffff40;

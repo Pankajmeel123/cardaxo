@@ -114,9 +114,11 @@ export class CardsInfoPage implements OnInit {
     }
     this.isLoading = false;
   }
-
-
-
-
+  isFlipped = false;
+  
+    toggleFlip() {
+      this.isFlipped = !this.isFlipped;
+    }
+ 
 
 }
