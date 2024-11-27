@@ -1,3 +1,21 @@
+
+ion-toolbar {
+  background: none !important;
+  --background: transparent;
+}
+.header-md{ box-shadow:none;} 
+ion-back-button {
+	background: #ffffff40;
+	border-radius: 50px;
+}
+ion-title {
+  text-align: left;
+  margin-left: 0;
+  font-size: 14px;
+}
+
+
+
 .information {
   ion-card {
     background: linear-gradient(to right bottom, #a460f8, #4c48ff);
@@ -325,7 +343,7 @@ img {
           text-transform: uppercase;
           font-weight: bold;
         }
-
+ 
         &.number {
           color: #fff;
           font-weight: 600;
@@ -338,9 +356,9 @@ img {
 }
 
 .card_credit_design {
-  // width: 100%;
   margin: 10px;
   float: left;
+  width: 100%;   
 }
 
 .card_credit_design_text {
@@ -364,7 +382,7 @@ img {
   font-weight: 200;
   letter-spacing: 1px;
   text-rendering: geometricprecision;
-  color: rgb(185, 191, 196);
+  color:#fff;
   text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
   width: 100%;
@@ -392,7 +410,7 @@ img {
   font-weight: 200;
   letter-spacing: 1px;
   text-rendering: geometricprecision;
-  color: rgb(185, 191, 196);
+  color: #fff;
   text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
 }
@@ -406,7 +424,7 @@ img {
   font-weight: 200;
   letter-spacing: 1px;
   text-rendering: geometricprecision;
-  color: rgb(185, 191, 196);
+  color: #fff;
   text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
   float: left;
@@ -425,7 +443,7 @@ img {
   font-weight: 200;
   letter-spacing: 1px;
   text-rendering: geometricprecision;
-  color: rgb(185, 191, 196);
+  color:#fff;
   text-shadow: .3px 0px 0px rgb(220 220 220 / 50%), -.1px .68px .2px rgb(220 220 220 / 100%), -1px -.3px .5px rgb(0 0 0 / 50%), 1px 1px .5px rgb(0 0 0 / 40%);
   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
 
@@ -443,7 +461,7 @@ img {
   font-weight: 200;
   letter-spacing: 1px;
   text-rendering: geometricprecision;
-  color: rgb(185, 191, 196);
+  color:#fff;
   text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
   float: right;
@@ -463,7 +481,7 @@ img {
   font-weight: 200;
   letter-spacing: 1px;
   text-rendering: geometricprecision;
-  color: rgb(185, 191, 196);
+  color:#fff;
   text-shadow: 0.3px 0px 0px rgba(220, 220, 220, 0.5), -0.1px 0.68px 0.2px rgb(220, 220, 220), -1px -0.3px 0.5px rgba(0, 0, 0, 0.5), 1px 1px 0.5px rgba(0, 0, 0, 0.4);
   filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.48));
   float: right;
@@ -472,11 +490,13 @@ img {
 .card_credit_img {
   position: relative;
   text-align: center;
+  width: 94%;
+  text-align: center;
 }
-
+ 
 .card_credit_img img {
-  width: 349px;
-  height: 200px;
+  width: 100%;
+  height: auto;
   text-align: center;
   margin: auto;
 }

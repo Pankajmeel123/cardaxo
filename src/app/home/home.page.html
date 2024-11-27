@@ -222,17 +222,17 @@
 
 
 
-
+<!-- 
       <div *ngIf="isLoading">
         <ion-card *ngFor="let i of [].constructor(10);">
           <ion-card-content>
             <app-skeleton-card></app-skeleton-card>
           </ion-card-content>
         </ion-card>
-      </div>
+      </div> -->
 
 
-
+<!-- 
       <div *ngIf="!isLoading && !( wallet && (wallet.coin?.length ?? 0) > 0)">
         <ion-grid>
           <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 30vh;">
@@ -243,9 +243,9 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-      </div>
+      </div> -->
 
-      <div *ngIf="!isLoading && wallet && (wallet.coin?.length ?? 0) > 0">
+      <!-- <div *ngIf="!isLoading && wallet && (wallet.coin?.length ?? 0) > 0">
         <ion-card *ngFor="let coin of wallet.coin; let i = index">
           <ion-card-content (click)="logTransaction(coin.address ?? '', coin.main_chain ?? '', coin.id!)">
             <ion-grid>
@@ -310,7 +310,7 @@
             </ion-card-content>
           </ion-card>
         </div>
-      </div>
+      </div> -->
       <ng-container *ngIf="banners">
         <div *ngFor="let data of banners">
           <a [href]="data.link">

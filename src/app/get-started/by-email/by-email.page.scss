@@ -1,8 +1,28 @@
 ion-row {
   width: 100%;
 }
+.input-fill-outline.sc-ion-input-md-h {
+	--border-color: #59595900;
+	--border-radius: 4px;
+	--padding-start: 0;
+	--padding-end: 0;
+}.sc-ion-input-md-h:not(.legacy-input) {
+	min-height: 50px;
+}
+.input-fill-outline.sc-ion-input-md-h {
+ 	--border-radius: 14px; 
+}
  
-
+.input-fill-solid.sc-ion-input-md-h {
+	--background: #1c1c1d00 !important; 
+}
+.input-fill-solid.sc-ion-input-md-h .input-wrapper.sc-ion-input-md {
+	border-bottom: var(--border-width) var(--border-style) #89898900;
+} 
+.input-fill-solid.sc-ion-input-md-h {
+	--background: var(--ion-color-step-50, #f2f2f2);
+	--border-color: #89898900; 
+}
 ion-toolbar {
   background: none !important;
   --background: transparent;
