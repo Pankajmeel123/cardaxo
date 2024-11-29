@@ -1,10 +1,30 @@
-ion-title{ font-size: 20px; text-transform: uppercase;;}
-
+ 
+ion-row {
+    width: 100%;
+  }
+   
+  
+  ion-toolbar {
+    background: none !important;
+    --background: transparent;
+  }
+  .header-md{ box-shadow:none;} 
+  ion-back-button {
+      background: #ffffff40;
+      border-radius: 50px;
+  }
+  ion-title {
+    text-align: left;
+    margin-left: 0;
+    font-size: 20px;
+  }
+   
 .about_page {
 	padding: 0px 10px;
 	width: 100%;
-	float: left;
+	float: left;text-align: left;
 }
+ 
 .about_page h2 {
 	font-size: 24px;
 	text-transform: uppercase;

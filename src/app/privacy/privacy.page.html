@@ -1,16 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title class="text-align-center app_bar_title" style="width: 100%;">Privacy Policy </ion-title>
-    <ion-buttons slot="end">
-      <div style="width: 48px;"></div>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+ 
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-text-center ">
+  <div class="login_bgnew" style="background-image: url('assets/image/login_bg_img.png'); background-size: cover; background-position: center; padding: 0px 0 10px;float: left;width: 100%;"> 
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title lot="start">
+          Privacy Policy 
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+ 
   <div class="about_page" [innerHtml]="data">
   </div>
+ </div>
 </ion-content>
