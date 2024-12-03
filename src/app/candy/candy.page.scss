@@ -15,6 +15,156 @@ ion-title {
   font-size: 14px;
 }
  
+.candy_card {
+	float: left;
+	width: 100%;
+	border: 2px solid rgba(65, 65, 65, 0.62);
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	background: linear-gradient(86deg, rgba(0, 0, 0, 0.22) 0%, rgba(7, 196, 37, 0.11) 82%);
+	padding: 13px 8px 5px; margin-bottom: 10px;
+}
+.candy_logo{ width: 100%; float: left;}
+.candy_logo img{ width: 70px; float: left;}
+.current_price h2{ float: right;
+  width: 100%;
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  text-transform: uppercase;
+  color: #fff;}
+.current_price h3{float: right;
+  display: block;
+  margin: 0; 
+  width: 100%;
+  text-align: right;
+  padding: 0 0 0px 0;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0;
+  color: #fff;}
+.current_price h4 {color: #39ac10;
+  margin: 0;
+  font-weight: normal;
+  font-size: 12px;
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+.current_price h4 span img { width: 20px; float: left; padding:3px 4px 0 0;}
+.current_balance {
+	float: left;
+	width: 100%;
+	padding: 6px 0;
+}
+.current_balance h2{float: left;
+  width: 100%;
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  color: #fff;}
+ 
+.current_balance h3{float: left;
+  display: block;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  padding: 1px 0 0px 0;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0;
+  color: #fff;}
+ 
+  .current_balance h3 img {
+    width: 28px;
+    float: left;
+    padding: 4px 5px 0 0;
+  }
+  .current_balance ion-button {
+    font-weight: 600;
+    max-width: 100%;
+    margin: 28px auto;
+    height: 36px;
+    text-transform: uppercase;
+    --color: var(--ion-color-primary-contrast, #fff);
+    background: rgba(0, 0, 0, 0);
+    --background: linear-gradient(90deg, rgba(0, 0, 0, 0.17) 0%, rgba(255, 255, 255, 0.18) 57%);
+    width: 137px;
+    border: 2px solid rgba(255, 255, 255, 0.1019607843);
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1215686275), inset -4px -4px 10px #000;
+    border-radius: 15px;float: right;
+  }
+
+.green_text{font-size: 12px; color: #06C512;}
+.red_text{font-size: 12px; color: #F00;}
+ 
+.candy_bx_page {
+	float: left;
+	width: 100%;
+	padding: 10px 10px;
+}
+
+.candy_network{ width: 100%; float: left;padding: 30px 0 0;}
+.candy_network h2{float: left;
+  width: 100%;
+  font-size: 22px;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  color: #fff;}
+
+.silder_bx_one {
+	float: left;
+	width: 80%;
+	border: 2px solid rgba(65, 65, 65, 0.62);
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	background: linear-gradient(86deg, rgba(138, 208, 142, 0.22) 0%, rgba(4, 4, 4, 0.11) 82%);
+	padding:10px;
+	margin-top: 10px;
+}
+
+
+
+.network_logo {
+	float: left;
+	width: 100px;
+	border: 2px solid rgba(65, 65, 65, 0.62);
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	background: linear-gradient(86deg, rgba(138, 208, 142, 0.22) 0%, rgba(4, 4, 4, 0.11) 82%);
+	padding: 10px;
+	margin-top: 10px;
+}
+.network_bxtext{ width: 100%; float: left;}
+.network_bxtext h3{float: left;
+  width: 100%;
+  font-size: 18px;
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 12px 0px 0;}
+  .network_bxtext p{float: left;
+    width: 100%;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+     color: #fff;
+    line-height: 20px;
+    letter-spacing: 0.4px;}
+
 
 .candy_bx_page {
   width: 100%;
@@ -87,7 +237,7 @@ ion-title {
   position: relative;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(86deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.48) 82%);
+  background: linear-gradient(86deg, rgba(138, 208, 142, 0.22) 0%, rgba(4, 4, 4, 0.11) 82%);
   padding: 17px 10px;
   margin: 5px 0 0;
 }.refer_and_earn h2 {
@@ -159,9 +309,9 @@ ion-title h2 {
   position: relative;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(86deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.48) 82%);
   padding: 6px 0px;
   margin: 0 0 6px;
+  background: linear-gradient(86deg, rgba(138, 208, 142, 0.22) 0%, rgba(4, 4, 4, 0.11) 82%);
 
 
 }
@@ -173,16 +323,18 @@ ion-title h2 {
     color: #fff;
   }
  
-  .rewards_bx{ margin-bottom: 20px;
-  float: left;
-  width: 100%;
-  border: 2px solid rgba(65, 65, 65, 0.62);
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  background: linear-gradient(86deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0.21) 82%);
-  padding: 19px 10px;}
+  .rewards_bx {
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    border: 2px solid rgba(65, 65, 65, 0.62);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 19px 10px;
+    background: linear-gradient(86deg, rgba(138, 208, 142, 0.22) 0%, rgba(4, 4, 4, 0.11) 82%);
+  }
 
     .rewards_bx h2 {padding: 0 0 3px;
       margin: 0;
@@ -196,4 +348,22 @@ ion-title h2 {
     .rewards_bx ul{ margin: 0; padding: 0;}
 .rewards_bx ul li{display: block;
   text-align: left;
+  } 
+
+
+  .explore_new ion-button {font-weight: 600;
+    max-width: 100%;
+    margin: 21px auto;
+    height: 30px !important;
+    text-transform: uppercase;
+    --color: var(--ion-color-primary-contrast, #fff);
+    background: rgba(0, 0, 0, 0);
+    --background: linear-gradient(90deg, rgba(0, 0, 0, 0.17) 0%, rgba(255, 255, 255, 0.18) 57%);
+    width: 177px;
+    border: 2px solid rgba(255, 255, 255, 0.1019607843);
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1215686275), inset -4px -4px 10px #000;
+    border-radius: 15px;
+    padding: 0;
+    font-size: 12px;
+    text-align: center;
   }

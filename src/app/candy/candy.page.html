@@ -1,7 +1,6 @@
- 
-
 <ion-content [fullscreen]="true" class="ion-text-center ">
-  <div class="login_bgnew" style="background-image: url('assets/image/login_bg_img.png'); background-size: cover; background-position: center; padding: 0px 0 10px;float: left;width: 100%;"> 
+  <div class="login_bgnew"
+    style="background-image: url('assets/image/candy_bg.jpg'); background-size: cover; background-position: center; padding: 0px 0 10px;float: left;width: 100%;">
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -19,9 +18,66 @@
       </ion-toolbar>
     </ion-header>
 
- 
-  <div class="candy_bx_page">
-  <div class="candy_bx_balance">
+
+    <div class="candy_bx_page">
+      <div class="candy_card">
+        <ion-row>
+          <ion-col size="6">
+            <div class="candy_logo">
+              <img src="assets/image/candy_logo.png">
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="current_price">
+              <h2>Candy Price</h2>
+              <h3>$10.10</h3>
+              <h4><span> <img src="assets/icon/up_icon.png"> </span> 3.25% </h4>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="current_balance">
+              <h2> Candy Balance</h2>
+              <h3><img src="assets/icon/current_balance_iocn.png"> 5000</h3>
+            </div>
+            <div class="current_balance">
+              <h2>Amount in usd</h2>
+              <h3>$10.10</h3>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="current_balance">
+              <ion-button style="font-size: 12px;">View History</ion-button>
+            </div>
+
+          </ion-col>
+
+        </ion-row>
+
+      </div>
+
+     
+<div class="candy_network">
+  <h2>candy network</h2>
+   <!-- silder --- -->
+<div class="silder_bx_one">
+<div class="network_logo">
+  <img src="assets/image/candy_logo.png">
+</div>
+<div class="network_bxtext">
+<h3>candy shopee</h3>
+<p>Lorem Ipsum is simply dummy text of the printing and 
+  typesetting industry. Lorem Ipsum has  been the  indu
+  stry's standard dummy text ever since the 1500s, when 
+  an unknown printer took a galley of type  and  scramb
+  led it to make a type specimen book.</p>
+  <div class="explore_new">
+  <ion-button>Explore Now</ion-button></div>
+</div>
+</div>
+</div>
+
+      
+  <!-- <div class="candy_bx_balance">
     <ion-row>
       <ion-col size="5">
         <img src="assets/image/candy_logo.png">
@@ -34,8 +90,8 @@
       </ion-col>
     </ion-row>
 
-  </div>
-  <div class="refer_and_earn">
+  </div> -->
+  <!-- <div class="refer_and_earn">
     <h2> Refer and Earn </h2>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
   </div>
@@ -91,8 +147,8 @@
 <h2>Rewards</h2>
 <ul>
 <li>You receive 2500 Candy.</li>
-<li> The user receives 5000 Candy.</li></ul>
-</div>
+<li> The user receives 5000 Candy.</li></ul>
+</div> -->
     <div class="invited_friends_button">
       <ion-row class="ion-justify-content-center ion-align-items-center" style="align-items: end !important;">
         <ion-col style="padding: 0 15px;--ion-background-color: #c4a051;">
@@ -102,5 +158,6 @@
       </ion-row>
     </div>
   </div>
+   
   </div>
 </ion-content>
